@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link rel="icon" th:href="@{/static/favicon.ico}" type="image/ico" />
+<title>Đăng ký tài khoản</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" th:href="@{/static/Administrator/vendors/bootstrap/dist/css/bootstrap.min.css}" />
+<!-- Font Awesome -->
+<link rel="stylesheet" th:href="@{/static/Administrator/vendors/font-awesome/css/font-awesome.min.css}" />
+<!-- Custom Theme Style -->
+<link rel="stylesheet" th:href="@{/static/css/custom.min.css}" />
+<link rel="stylesheet" th:href="@{/static/css/signup.css}" />
+<link rel="stylesheet" th:href="@{/static/css/main.css}" />
+<!-- Script -->
+<script th:src="@{/static/Administrator/vendors/jquery/dist/jquery.min.js}"></script>
+<script type='text/javascript' th:src="@{/static/js/common.js}"></script>
+<script type='text/javascript' th:src="@{/static/js/utilities.js}"></script>
+<script type='text/javascript' th:src="@{/static/js/message.js}"></script>
+<script type='text/javascript' th:src="@{/static/js/jquery.validate.min.js}"></script>
+<script type='text/javascript' th:src="@{/static/js/signup.js}"></script>
+</head>
+<body class="login">
+    <div>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="content-header">
+                    <div class="alert alert-success" th:if="${messageSuccess != null}">
+                        <span th:text="#{${messageSuccess}}"></span>
+                    </div>
+                    <div class="alert alert-error" th:if="${messageError != null}">
+                        <span th:text="#{${messageError}}"></span>
+                    </div>
+                </section>
+                <section class="login_content">
+                    <form id="formSignup" th:action="@{/freemember/signup}" th:object="${signupForm}" method="post">
+                        <div class="logo row">
+                            <div class="col-md-12">
+                                <img th:src="@{/static/images/logo-light.png}" />
+                                <img th:src="@{/static/images/logo-gears-light.png}" class="logo-gears"/>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                            <input type="text" class="form-control" placeholder="Email" th:field="*{email}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                            <input type="password" class="form-control" placeholder="Mật khẩu" th:field="*{password}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('rePassword')}" th:errors="*{rePassword}"></span>
+                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" th:field="*{rePassword}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></span>
+                            <input type="text" class="form-control" placeholder="Họ tên" th:field="*{fullName}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+                            <input type="text" class="form-control" placeholder="Số điện thoại" th:field="*{phone}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('position')}" th:errors="*{position}"></span>
+                            <input type="text" class="form-control" placeholder="Chức vụ" th:field="*{position}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}"></span>
+                            <input type="text" class="form-control" placeholder="Tên công ty" th:field="*{companyName}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('companyNameAbbr')}" th:errors="*{companyNameAbbr}"></span>
+                            <input type="text" class="form-control" placeholder="Tên công ty viết tắt" th:field="*{companyNameAbbr}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('companyScale')}" th:errors="*{companyScale}"></span>
+                            <select class="form-control" th:field="*{companyScale}">
+                                <option value="">Chọn quy mô công ty</option>
+                                <option value="0">0 - 200 người</option>
+                                <option value="200">200 - 500 người</option>
+                                <option value="500">500 - 1000 người</option>
+                                <option value="1000">1000 - 5000 người</option>
+                                <option value="5000">Trên 5000 người</option>
+                            </select>
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('companyBusiness')}" th:errors="*{companyBusiness}"></span>
+                            <input type="text" class="form-control" placeholder="Ngành" th:field="*{companyBusiness}" />
+                        </div>
+                        <div class="pb-20">
+                            <span th:if="${#fields.hasErrors('companyArea')}" th:errors="*{companyArea}"></span>
+                            <select class="form-control" th:field="*{companyArea}">
+                                <option value="" >Chọn khu vực</option>
+                                <option value="HN">Hà Nội</option>
+                                <option value="HCM">TP Hồ Chí Minh</option>
+                                <option value="MB">Miền Bắc</option>
+                                <option value="MT">Miền Trung</option>
+                                <option value="MN">Miền Nam</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text-right">
+                                <button id="btnSignup" type="button" class="btn btn-success" th:text="#{form.button.signup}"></button>
+                                <a class="btn btn-warning" th:href="@{/}" th:text="#{form.button.cancel}"></a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

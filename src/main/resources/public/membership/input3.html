@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="common/layout">
+<head>
+  <link rel="stylesheet" type="text/css" th:href="@{/static/css/inputPage.css}" />
+  <script type='text/javascript' th:src="@{/static/js/input3.js}"></script>
+</head>
+<body>
+	<main layout:fragment="content">
+		<form th:object="${table3Form}" id="table3DataForm" method="post">
+			<div class="container minHeight">
+				<div class="row justify-content-center align-self-center mt-3">
+					<div class="col-12 card">
+						<div class="card-header">BAN LÃNH ĐẠO</div>
+						<div style="padding-left: 1.25rem; color: red" id="validateClientText" >
+		                    <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
+		                      <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+		                    </ul>
+		                </div>
+						
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-striped jambo_table table-bordered" >
+		                        <thead>
+		                          <tr class="headings">
+		                            <th class="column-title text-center" style="width: 40%;"></th>
+		                            <th class="column-title text-center" style="width: 30%;">Số người</th>
+		                            <th class="column-title text-center" style="width: 30%;">%</th>
+		                            
+		                          </tr>
+		                        </thead>
+		                        <tbody>
+		                          <tr th:each="result, idx : *{dataTable3DtoList}">
+		                            <td class="pl-2">
+		                                <span th:if="${result.gender=='m'}">Thành viên ban lãnh đạo là nam giới</span>
+                                        <span th:if="${result.gender=='f'}">Thành viên ban lãnh đạo là nữ giới</span>
+                                        <span th:if="${result.gender!='m' and result.gender!='f'}">Tổng cộng</span>
+		                            </td>
+		                            <td>
+										<input class="changeAny validation" type="text" maxlength="7" th:attr="colTable3=${result.gender=='m' or result.gender=='f'} ? 'numPeople' : ''" th:classappend="${result.gender!='m' and result.gender!='f'} ? bg-transparent : ''" th:readonly="${result.gender!='m' and result.gender!='f'}" th:field="*{dataTable3DtoList[__${idx.index}__].total}"></input>
+									</td>
+									<td><input type="text" th:name="'percent' + *{dataTable3DtoList[__${idx.index}__].gender}" class="bg-transparent" th:readonly="true" value="50%" /> </td>
+									<td style="display: none">
+		                                <input type="hidden" th:readonly="true" th:field="*{dataTable3DtoList[__${idx.index}__].gender}" />
+		                            </td>
+		                          </tr>
+		                        </tbody>
+		                      </table>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+				<div class="row justify-content-center align-self-center">
+					<div class="col-12">
+						<a type="button" class="btn btn-back" th:href="@{/membership/}" th:text="#{form.button.back}"></a>
+						<th:block th:if="${session.reportStatus == null}">
+						    <input type="button" class="btn btn-send-contact float-right mx-sm-4" onclick="actionSubmitForm(this, './complete', '#table3DataForm');" th:value="#{form.button.complete}" />
+						    <input type="button" class="btn btn-send-contact float-right" onclick="actionSubmitForm(this, './save', '#table3DataForm');" th:value="#{form.button.save}" />
+						</th:block>
+					</div>
+				</div>
+			</div>
+			<input type="hidden" id="autosaveInterval" th:value="${autosaveInterval}"/>
+            <input type="hidden" th:id="statusSave" th:name="status" th:value="${session.reportStatus}"/>
+            <input type="hidden" th:id="statusInBrdComp" th:name="statusInBrdComp" th:value="*{statusInBrdComp}"/>
+		</form>
+	</main>
+</body>
+</html>

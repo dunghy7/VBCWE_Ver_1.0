@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dtsvn.vbcwe.dao.FreeMemberMapper">
+	<select id="loadFreeMember" resultType="com.dtsvn.vbcwe.dto.MemberDTO">
+		SELECT 
+            USER_ID           AS userId,
+            INPUT_DATA        AS inputData,
+            OUTPUT_FILEPATH   AS outputFilePath
+        FROM SUR_FREE_MEMBER
+        WHERE
+            USER_ID = #{userId}
+	</select>
+	
+	<insert id="insertSurveyInfo" parameterType="com.dtsvn.vbcwe.dto.MemberDTO">
+        INSERT INTO
+        SUR_FREE_MEMBER (
+            USER_ID,
+            INPUT_DATA,
+            OUTPUT_FILEPATH,
+            CREATED_DATE,
+            CREATED_BY
+        )
+        VALUES (
+            #{userId},
+            #{inputData},
+            #{outputFilePath},
+            now()::timestamp,
+            #{userId}
+        )
+    </insert>
+    
+    <update id="updateSurveyInfo" parameterType="com.dtsvn.vbcwe.dto.MemberDTO">
+        UPDATE
+            SUR_FREE_MEMBER
+        SET
+        	INPUT_DATA = #{inputData},
+        	OUTPUT_FILEPATH = #{outputFilePath}
+        WHERE
+            USER_ID = #{userId}
+    </update>
+
+</mapper>

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link th:replace="admin-common/head" />
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <!-- Left menu -->
+            <div th:replace="admin-common/left-menu :: left-menu"></div>
+            <!-- Header -->
+            <div th:replace="admin-common/header :: header"></div>
+            <!-- Content -->
+            <div layout:fragment="content"></div>
+            <!-- Main Footer -->
+            <footer th:replace="admin-common/footer :: footer"></footer>
+        </div>
+    </div>
+    <!-- Custom Theme Scripts -->
+    <script type='text/javascript' th:src="@{/static/js/custom.min.js}"></script>
+</body>
+</html>

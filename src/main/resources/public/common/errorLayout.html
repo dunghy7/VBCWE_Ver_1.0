@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link th:replace="common/errorHead" />
+</head>
+<body>
+    <div class="news-page bg-gray">
+        <!-- Header -->
+        <header class="main-header" th:replace="common/header :: header"></header>
+        <div layout:fragment="content"></div>
+        <!-- Main Footer -->
+        <footer class="main-footer" th:replace="common/footer :: footer"></footer>
+    </div>
+</body>
+</html>

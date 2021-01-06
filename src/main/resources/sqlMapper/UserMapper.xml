@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dtsvn.vbcwe.dao.UserMapper">
+
+    <select id="doLogin" resultType="com.dtsvn.vbcwe.entity.UserEntity">
+        SELECT 
+            U.USER_ID           AS userId,
+            U.PASSWORD          AS password,
+            I.USER_TYPE         AS userType,
+            I.FULL_NAME         AS fullName
+        FROM USER_LOGIN U
+        INNER JOIN USER_INFO I
+        ON U.USER_ID = I.USER_ID
+        WHERE
+            U.USER_ID = #{userId}
+        AND
+            I.DELETE_FLG = '0'
+        AND
+            EMAIL_VERIFY = '1'
+    </select>
+    
+    <insert id="insertUser" parameterType="com.dtsvn.vbcwe.entity.UserEntity">
+        INSERT INTO
+        USER_LOGIN (
+            USER_ID,
+            PASSWORD,
+            CREATED_DATE,
+            EMAIL_VERIFY
+        )
+        VALUES (
+            #{userId},
+            #{password},
+            now()::timestamp,
+            '1'
+        )
+    </insert>
+    
+    <update id="updatePassword" parameterType="com.dtsvn.vbcwe.entity.UserEntity">
+        UPDATE USER_LOGIN
+        SET
+            PASSWORD = #{password},
+            UPDATED_DATE = now()::timestamp,
+            UPDATED_BY = #{userId}
+        WHERE
+            USER_ID = #{userId}
+    </update>
+</mapper>

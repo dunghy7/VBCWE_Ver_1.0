@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
+.row{
+	margin-bottom: 5px;
+}
+
+.container {
+    max-width: 1500px !important;
+}
+
+html {
+  height: 100%
+}
+
+p {
+  color: grey
+}
+
+/* .nav-item:hover {
+  opacity: 75%;
+} */
+
+.backgroundColor{
+  background-color: #7952b3
+}
+
+/* footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+} */
+
+#heading {
+  text-transform: uppercase;
+  color: #392f87;
+  font-weight: bold
+}
+
+#msform {
+  text-align: center;
+  position: relative;
+  margin-top: 20px
+}
+
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative
+}
+
+.form-card {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#msform fieldset:not(:first-of-type) {
+  display: none
+}
+
+#msform input,
+#msform textarea {
+  /* padding: 8px 15px 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 25px;
+  margin-top: 2px; */
+  width: 100%;
+  /* box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #2C3E50;
+  background-color: #ECEFF1;
+  font-size: 16px;
+  letter-spacing: 1px */
+}
+
+/* #msform input:focus,
+#msform textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #673AB7;
+  outline-width: 0
+} */
+
+#msform .action-button {
+  width: 100px;
+  background: #453c9c;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 0px 10px 5px;
+  float: right
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+  background-color: #673AB7
+}
+
+#msform .action-button-previous {
+  width: 100px;
+  background: #616161;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px 10px 0px;
+  float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+  background-color: #000000
+}
+
+/* .card {
+  z-index: 0;
+  border: none;
+  position: relative
+} */
+
+.fs-title {
+  font-size: 20px;
+  color: #392f87;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: left
+}
+
+.fs-subtitle {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.purple-text {
+  color: #673AB7;
+  font-weight: normal
+}
+
+.steps {
+  font-size: 25px;
+  color: gray;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: right
+}
+
+.fieldlabels {
+  color: gray;
+  text-align: left
+}
+
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey
+}
+
+#progressbar .active {
+  color: #392f87
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: 15px;
+  width: 9%;
+  float: left;
+  position: relative;
+  font-weight: 400
+}
+
+#progressbar #account:before {
+  font-family: FontAwesome;
+  content: "\f0f0"
+}
+
+#progressbar #personal:before {
+  font-family: FontAwesome;
+  content: "\f007"
+}
+
+#progressbar #payment:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "1"
+}
+
+#progressbar #confirm:before {
+  font-family: FontAwesome;
+  content: "\f030"
+}
+
+#progressbar #success:before {
+  font-family: FontAwesome;
+  content: "\f00c"
+}
+
+#progressbar #num1:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "1"
+}
+
+#progressbar #num2:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "2"
+}
+
+#progressbar #num3:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "3"
+}
+
+#progressbar #num4:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "4"
+}
+
+#progressbar #num5:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "5"
+}
+
+#progressbar #num6:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "6"
+}
+
+#progressbar #num7:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "7"
+}
+
+#progressbar #num8:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "8"
+}
+
+#progressbar #num9:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "9"
+}
+
+#progressbar #num10:before {
+  font-family: Roboto,sans-serif;/*FontAwesome;*/
+  content: "10"
+}
+
+#progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px
+}
+
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #392f87
+}
+
+.progress {
+  height: 20px
+}
+
+.progress-bar {
+  background-color: #392f87
+}
+
+.fit-image {
+  width: 100%;
+  object-fit: cover
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #0062cc;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-default{
+	background-color: #2CC990;
+	color: white;
+	border-radius: 0px;
+	width: 200px;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+a{
+	font-size: 14px !important;
+	color: inherit !important;
+}
+
+.btn-back{
+  width: 100px;
+  padding: 10px;
+  background: #616161;
+  font-weight: bold;
+  color: white !important;
+  border: 0 none;
+  border-radius: 0px;
+  float: left;
+  margin: 10px 0px 10px 5px;
+}
+.btn-back:hover,
+.btn-back:focus {
+  background-color: #000000
+}
+
+.btn-back-home{
+  padding: 10px;
+  background: #616161;
+  font-weight: bold;
+  color: white !important;
+  border: 0 none;
+  border-radius: 0px;
+  margin: 10px 0px 10px 5px;
+}
+.deleteFile{
+  cursor: pointer;
+  font-size: 20px;
+  color: red;
+}

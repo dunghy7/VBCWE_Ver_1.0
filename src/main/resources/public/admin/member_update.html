@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="admin-common/layout">
+<body>
+    <div layout:fragment="content">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="clearfix"></div>
+            <section class="content-header" th:if="${messageError != null}">
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="fa fa-times-circle"></i><span th:text="${messageError}"></span></h5>
+                </div>
+            </section>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_content">
+                    <form th:object="${userInfoForm}" th:action="@{/admin/doUpdateUserInfo}" method="post" class="form-horizontal form-label-left">
+                      <span class="section">Thông tin tài khoản</span>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Họ tên <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control col-md-7 col-xs-12" required="required" maxlength="100" th:field="*{fullName}"/>
+                          <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" class="form-control col-md-7 col-xs-12" required="required" maxlength="50" th:field="*{userId}" readonly="readonly"/>
+                          <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Số điện thoại <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control col-md-7 col-xs-12" required="required" maxlength="15" pattern="\d*" th:field="*{phone}"/>
+                          <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Chức vụ <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control col-md-7 col-xs-12" required="required" maxlength="200" th:field="*{position}"/>
+                          <span th:if="${#fields.hasErrors('position')}" th:errors="*{position}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tên công ty <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control col-md-7 col-xs-12" required="required" maxlength="200" th:field="*{companyName}"/>
+                          <span th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tên công ty viết tắt<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control col-md-7 col-xs-12" th:field="*{companyNameAbbr}"/>
+                          <span th:if="${#fields.hasErrors('companyNameAbbr')}" th:errors="*{companyNameAbbr}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Quy mô công ty <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" th:field="*{companyScale}">
+                            <option value="0">0 - 200 người</option>
+                            <option value="200">200 - 500 người</option>
+                            <option value="500">500 - 1000 người</option>
+                            <option value="1000">1000 - 5000 người</option>
+                            <option value="5000">Trên 5000 người</option>
+                          </select>
+                          <span th:if="${#fields.hasErrors('companyScale')}" th:errors="*{companyScale}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3">Ngành </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control col-md-7 col-xs-12" required="required" maxlength="200" th:field="*{companyBusiness}"/>
+                          <span th:if="${#fields.hasErrors('companyBusiness')}" th:errors="*{companyBusiness}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Khu vực <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" th:field="*{companyArea}">
+                            <option value="HN">Hà Nội</option>
+                            <option value="HCM">TP Hồ Chí Minh</option>
+                            <option value="MB">Miền Bắc</option>
+                            <option value="MT">Miền Trung</option>
+                            <option value="MN">Miền Nam</option>
+                          </select>
+                          <span th:if="${#fields.hasErrors('companyArea')}" th:errors="*{companyArea}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Loại tài khoản <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <div class="radio">
+                            <label>
+                              <input type="radio" checked="checked" value="02" th:field="*{userType}"/> Miễn phí
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <label>
+                              <input type="radio" value="01" th:field="*{userType}"/> Trả phí
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <label>
+                              <input type="radio" value="00" th:field="*{userType}"/> Administrator
+                            </label>
+                          </div>
+                          <br />
+                          <span th:if="${#fields.hasErrors('userType')}" th:errors="*{userType}" style="color: red"></span>
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6">
+                          <input th:if="*{deleteFlg == '1'}" th:formaction="@{/admin/deleteMember}" type="submit" class="btn btn-info" value="Mở khoá"></input>
+                          <input th:if="*{deleteFlg == '0'}" th:formaction="@{/admin/deleteMember}" type="submit" class="btn btn-danger" value="Khóa"></input>
+                        </div>
+                        <div class="col-md-3 text-right">
+                          <input type="submit" class="btn btn-success" value="Cập nhật"/>
+                          <a type="button" class="btn btn-warning btn-cancel" th:href="@{/admin/initSearchUserInfo}">Hủy</a>
+                        </div>
+                      </div>
+                      <input type="text" th:field="*{deleteFlg}" hidden="hidden"/>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- /page content -->
+    </div>
+</body>
+</html>

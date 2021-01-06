@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<title>Đăng nhập</title>
+<!-- Bootstrap -->
+<link rel="stylesheet"
+    th:href="@{/static/Administrator/vendors/bootstrap/dist/css/bootstrap.min.css}" />
+<!-- Font Awesome -->
+<link rel="stylesheet"
+    th:href="@{/static/Administrator/vendors/font-awesome/css/font-awesome.min.css}" />
+<!-- Custom Theme Style -->
+<link rel="stylesheet" th:href="@{/static/css/custom.min.css}" />
+<link rel="stylesheet" th:href="@{/static/css/signup.css}" />
+<link rel="stylesheet" th:href="@{/static/css/main.css}" />
+<!-- Script -->
+<script
+    th:src="@{/static/Administrator/vendors/jquery/dist/jquery.min.js}"></script>
+</head>
+<body class="login">
+    <div>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <div class="logo row">
+                        <div class="col-md-12">
+                            <img th:src="@{/static/images/logo-light.png}" />
+                            <img th:src="@{/static/images/logo-gears-light.png}" class="logo-gears"/>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="pb-20" style="color: white;">
+                        Bạn đã đăng ký tài khoản thành công. <br/>Vui lòng kiểm tra hòm thư điện tử để kích hoạt tài khoản.
+                    </div>
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <a class="btn btn-success" th:href="@{/}">Đăng nhập</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

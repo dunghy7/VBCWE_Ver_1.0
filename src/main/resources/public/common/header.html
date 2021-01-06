@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <header class="bg-white" th:fragment="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-md-4 col-sm12">
+                    <div class="logo">
+                        <a href="#">
+                            <img th:src="@{/static/images/logo.png}" />
+                            <img th:src="@{/static/images/logo-gears.png}" style="padding-left: 1%; max-width: 177px;"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-8 col-md-8 col-sm12 profile">
+                    <div class="pull-right">
+                        <ul class="nav pull-right">
+                            <li class="nav-item dropdown ml-auto">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                    <span th:text="${session.LOGIN_USER_SESSION_KEY != null ? session.LOGIN_USER_SESSION_KEY.fullName : ''}">User</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a th:href="@{/freemember/changepass}" class="dropdown-item">Đổi mật khẩu</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a th:href="@{/?logout}" class="dropdown-item">Thoát</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

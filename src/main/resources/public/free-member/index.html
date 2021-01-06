@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="common/layout">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/static/css/admin_custom.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/static/css/css-loader.css}" />
+</head>
+<body>
+
+    <div layout:fragment="content">
+    	<!-- Loader -->
+  		<div class="loader loader-default is-active" data-blink="true" data-text="Đang xử lý file "></div>
+        <main oncontextmenu='return false' class='snippet-body'>
+            <div class="container">
+                <div class="row justify-content-center align-self-center">
+                    <div class="col-11 text-center p-0 mt-3 mb-2">
+                        <div class="card px-5 pt-4 pb-0 mt-3 mb-3">
+                            <h2 id="heading">XEM XÉT CÁC CHÍNH SÁCH BÌNH ĐẲNG GIỚI TẠI NƠI LÀM VIỆC</h2>
+                            <p class="fs-subtitle">Bảng câu hỏi này mất khoảng từ 10 đến 15 phút để hoàn thành.</p>
+                            <form id="msform" th:action="@{/freemember/submitSurvey}">
+                                <!-- progressbar -->
+                                <ul id="progressbar">
+                                    <li class="active" id="personal">Thông tin liên hệ</li>
+                                    <li id="num1">Lĩnh vực 1</li>
+                                    <li id="num2">Lĩnh vực 2</li>
+                                    <li id="success">Kết quả</li>
+                                </ul>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div> <br /> <!-- fieldsets -->
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class="row">
+                                            <div class="col-11">
+                                                <h2 class="fs-title">THÔNG TIN LIÊN HỆ</h2>
+                                            </div>
+                                        </div> 
+                                        <div class="row justify-content-center col-md-7 col-sm-12 col-xs-12">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="companyName">Tên công ty</label>
+                                                <input name="companyName" class="form-control"></input>
+                                              </div>
+                                              <div class="item form-group">
+                                                <label for="address">Địa chỉ</label>
+                                                <input name="address" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="district">Quận</label>
+                                                <input name="district" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="city">Thành phố</label>
+                                                <input name="city" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="fullName">Họ tên</label>
+                                                <input name="fullName" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="position">Chức vụ</label>
+                                                <input name="position" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="phone">Số điện thoại bàn</label>
+                                                <input name="phone" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="mobile">Số di động</label>
+                                                <input name="mobile" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="fax">Số fax</label>
+                                                <input name="fax" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                              <div class="item form-group">
+                                                <label for="email">Địa chỉ email</label>
+                                                <input name="email" class="form-control"></input>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="button" name="next" class="next action-button" th:value="#{form.button.next}"></input>
+                                </fieldset>
+                                <fieldset class="survey-area">
+                                    <div class="form-card">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h2 class="fs-title">Lồng ghép chế độ làm việc linh hoạt</h2>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="fs-subtitle">Lĩnh vực này liên quan tới việc đánh giá sự bình đẳng đối với các cách thức làm việc linh hoạt, bao gồm
+                                                                        hỗ trợ các trách nhiệm chăm sóc gia đình của người lao động nhằm tăng khả năng thu hút nhân tài và
+                                                                        giữ chân nhân viên, tăng sự gắn kết của người lao động cũng như hiệu suất công việc.
+                                                                        Làm việc linh hoạt cho phép cá nhân hoá các trải nghiệm của người lao động, cân nhắc tới nhu cầu của
+                                                                        cả cá nhân và tổ chức dựa trên việc tập trung vào hiệu quả công việc. Các cam kết về chăm sóc bao gồm
+                                                                        chăm sóc trẻ em, người lớn tuổi hoặc người khuyết tật – những điều này ngày càng trở nên phổ biến tại
+                                                                        nhiều môi trường làm việc khác nhau.
+                                                                        Tất cả các tổ chức đều phải đảm bảo rằng ít nhất họ phải tuân thủ các luật lệ của địa phương sở tại để
+                                                                        cung cấp cho một số người lao động cần có chế độ làm việc linh hoạt trong một số hoàn cảnh cụ thể</p>
+                                            </div>
+                                        </div> 
+                                        <div class="row text-center font-weight-bold mb-2">
+                                            <div class="col-md-1 col-sm-2 col-2">#</div>
+                                            <!-- <div class="col-md-1 col-sm-2 col-2">Cấp độ</div> -->
+                                            <div class="col-md-9 col-sm-6 col-6">Câu hỏi</div>
+                                            <div class="col-md-1 col-sm-2 col-2">Có</div>
+                                            <div class="col-md-1 col-sm-2 col-2 text-nowrap">Không</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">1</div>
+                                            <input type="text" value="A" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có chính sách hoặc chiến lược thực hiện chế độ làm việc linh hoạt không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0101"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0101"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">2</div>
+                                            <input type="text" value="A" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có thực hiện các yêu cầu pháp lý liên quan tới hỗ trợ chăm sóc gia đình (ví dụ: chế độ nghỉ sinh, chế độ nghỉ chăm con đối với lao động nam, chế độ nghỉ chăm sóc con cái) không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0102"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0102"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">3</div>
+                                            <input type="text" value="B" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có công nghệ phù hợp áp dụng để cho phép người lao động tiếp cận được chế độ làm việc linh hoạt không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0103"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0103"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">4</div>
+                                            <input type="text" value="B" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có cơ sở vật chất dành cho nhân viên nuôi con bằng sữa mẹ, hoặc các dịch vụ hỗ trợ khác, ví dụ chăm sóc trẻ em tại chỗ hay đưa ra các trợ cấp cho việc chăm sóc trẻ không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0104"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0104"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">5</div>
+                                            <input type="text" value="C" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có tư vấn người lao động hoặc thực hiện các khảo sát người lao động nhằm tìm hiểu xem người lao động có tin tưởng rằng họ có thể tiếp cận được với cơ sở vật chất họ cần không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0105"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0105"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">6</div>
+                                            <input type="text" value="C" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Các lãnh đạo nam và nữ của công ty có thúc đẩy một cách rõ rệt hoặc sử dụng tích cực các cách thức làm việc linh hoạt tại công ty không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0106"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0106"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">7</div>
+                                            <input type="text" value="C" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có chương trình giữ liên hệ, tái hoà nhập hoặc bất kỳ cách thức tái hoà nhập nào cho nhân viên quay lại làm việc sau khi nghỉ dài không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0107"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0107"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">8</div>
+                                            <input type="text" value="C" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có đưa ra chế độ nghỉ chăm sóc con cái nhưng vẫn được nhận lương nào khác so với những quy định của luật pháp không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0108"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0108"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">9</div>
+                                            <input type="text" value="C" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có truyền thông các chính sách liên quan tới hỗ trợ chăm sóc gia đình tới toàn bộ nhân viên và thông báo cho họ nếu có bất kỳ thay đổi nào không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0109"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0109"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">10</div>
+                                            <input type="text" value="D" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Chế độ làm việc linh hoạt có được lồng ghép tại công ty, với việc thừa nhận kết quả đầu ra có giá trị hơn việc hiện diện tại nơi làm việc không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0110"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0110"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">11</div>
+                                            <input type="text" value="D" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có chương trình phát triển các cá nhân là cha mẹ tại nơi làm việc không? (ví dụ: tập huấn cho các lao động là cha mẹ trở lại công việc sau khi nghỉ chăm sóc con cái hoặc các hội thảo nuôi dạy con)</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0111"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0111"></input>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <input type="button" name="next" class="next action-button" th:value="#{form.button.next}" />
+                                    <input type="button" name="previous" class="previous action-button-previous float-left" th:value="#{form.button.back}" />
+                                </fieldset>
+                                <fieldset class="survey-area">
+                                    <div class="form-card">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h2 class="fs-title">Ngăn chặn và giải quyết tình trạng quấy rối và phân biệt đối xử dựa trên giới tính, quấy rối tình dục và bắt nạt, bạo lực gia đình</h2>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="fs-subtitle">Quấy rối và phân biệt đối xử dựa trên giới tính, quấy rối tình dục và bắt nạt tại nơi làm việc có tác động
+                                                                        tiêu cực đáng kể đến cả người lao động và doanh nghiệp. Nó có thể gây ảnh hưởng xấu đến sức khỏe, sự
+                                                                        hài lòng trong công việc, cam kết và năng suất của người lao động, đồng thời làm tăng sự vắng mặt và
+                                                                        tỷ lệ nghỉ việc, cũng như ảnh hưởng tiêu cực đến văn hóa nơi làm việc. Người sử dụng lao động cũng có
+                                                                        thể phải chịu trách nhiệm pháp lý đối với các hành vi quấy rối tình dục do nhân viên hoặc đại lý của họ
+                                                                        gây ra. Bạo lực gia đình là một vấn đề nghiêm trọng khác có thể dẫn đến hậu quả tương tự, mặc dù yếu
+                                                                        tố hành vi có thể nằm ngoài nơi làm việc và/hoặc người sử dụng bạo lực không phải là nhân viên của
+                                                                        công ty.
+                                                                        Do đó, việc một doanh nghiệp đào tạo người lao động về các quyền và nghĩa vụ của họ liên quan đến
+                                                                        quấy rối và phân biệt đối xử dựa trên giới tính, quấy rối tình dục, bắt nạt và bạo lực gia đình là vô cùng
+                                                                        quan trọng. Việc đào tạo sẽ giúp loại bỏ những vấn đề tiêu cực này tại nơi làm việc, thúc đẩy văn hóa hòa
+                                                                        nhập thông qua các hành động thiết thực và hỗ trợ kịp thời khi cần thiết.</p>
+                                            </div>
+                                        </div> 
+                                        <div class="row text-center font-weight-bold mb-2">
+                                            <div class="col-md-1 col-sm-2 col-2">#</div>
+                                            <!-- <div class="col-md-1 col-sm-2 col-2">Cấp độ</div> -->
+                                            <div class="col-md-9 col-sm-6 col-6">Câu hỏi</div>
+                                            <div class="col-md-1 col-sm-2 col-2">Có</div>
+                                            <div class="col-md-1 col-sm-2 col-2 text-nowrap">Không</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">1</div>
+                                            <input type="text" value="A" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có chính sách và/hoặc chiến lược về chống quấy rối và phân biệt đối xử dựa trên giới tính, chống quấy rối tình dục và bắt nạt với một quy trình khiếu nại chính thức không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0201"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0201"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">2</div>
+                                            <input type="text" value="A" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có chính sách hoặc chiến lược hỗ trợ người lao động là nạn nhân của bạo lực gia đình không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0202"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0202"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">3</div>
+                                            <input type="text" value="B" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có đào tạo cho người lao động về phòng chống quấy rối và phân biệt đối xử dựa trên giới tính, quấy rối tình dục và bắt nạt tại thời điểm họ mới vào công ty và ít nhất mỗi năm một lần không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0203"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0203"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">4</div>
+                                            <input type="text" value="B" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có truyền thông tới người lao động và các bên liên quan khác về lý do tại sao bạo lực gia đình là một vấn đề tại nơi làm việc không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0204"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0204"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">5</div>
+                                            <input type="text" value="B" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có ít nhất một trong các cơ chế sau đây không? Vui lòng chọn tất cả các phương án phù hợp.
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" name="cb0205" class="custom-control-input" id="cb0205_01" />
+                                                    <label class="custom-control-label" for="cb0205_01">Quy trình khiếu nại bí mật</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" name="cb0205" class="custom-control-input" id="cb0205_02" />
+                                                    <label class="custom-control-label" for="cb0205_02">Quy trình giải quyết</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" name="cb0205" class="custom-control-input" id="cb0205_03" />
+                                                    <label class="custom-control-label" for="cb0205_03">Cơ chế đo lường trách nhiệm</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" name="cb0205" class="custom-control-input" id="cb0205_04" />
+                                                    <label class="custom-control-label" for="cb0205_04">Cơ chế phòng ngừa trả đũa</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" value="1" name="optradio0205"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" value="0" name="optradio0205"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">6</div>
+                                            <input type="text" value="C" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Lãnh đạo công ty có chịu trách nhiệm về việc đảm bảo người lao động dưới quyền hoàn thành khóa đào tạo về quấy rối và phân biệt đối xử dựa trên giới tính, quấy rối tình dục và bắt nạt theo đúng chính sách không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0206"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0206"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">7</div>
+                                            <input type="text" value="D" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty đã từng tiến hành phân tích thông tin (được thu thập từ các cuộc tham vấn, khảo sát, v.v.) về sự quan ngại của người lao động đối với vấn đề quấy rối và phân biệt đối xử dựa trên giới tính, quấy rối tình dục và bắt nạt tại nơi làm việc chưa?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0207"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0207"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">8</div>
+                                            <input type="text" value="D" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Các dữ liệu từ việc thực hiện khảo sát, thảo luận nhóm và tham vấn khác của Công ty có xác nhận rằng người lao động nhận thấy các chính sách và thủ tục liên quan đến quấy rối và phân biệt đối xử dựa trên giới tính, quấy rối tình dục và bắt nạt là dễ tiếp cận và hiệu quả không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0208"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0208"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">9</div>
+                                            <input type="text" value="D" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Công ty có chế độ cho người lao động là nạn nhân của bạo lực gia đình được hưởng thêm ngày nghỉ phép có trả lương không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0209"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0209"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-2 col-2 text-center">10</div>
+                                            <input type="text" value="D" hidden="true"></input>
+                                            <div class="col-md-9 col-sm-6 col-6">Các chính sách của Công ty có hướng dẫn về cách giải quyết đối với hành vi của người lao động là thủ phạm của bạo lực gia đình không?</div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0210"></input>
+                                            </div>
+                                            <div class="col-md-1 col-sm-2 col-2">
+                                                <input type="radio" class="form-check-input" name="optradio0210"></input>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <input type="hidden" name="data" th:value="${data}"/>
+                                    <input type="button" name="next" class="next action-button finished-button" th:value="#{form.button.complete}" />
+                                    <input type="button" name="previous" class="previous action-button-previous float-left" th:value="#{form.button.back}" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class='embed-responsive' style='padding-bottom:150%'>
+                                            <iframe id="pdfView" th:action="@{/freemember/}" src="" width="100%" height="100%"/>
+    									</div>
+                                    </div>
+                                    <input type="button" id="btn-download" name="download" th:action="@{/freemember/downloadFileReport}" class="action-button" value="Tải file" />
+                                    <input type="button" id="register" name="register" th:action="@{/freemember/upgradeAccount}" class="action-button float-left w-25" value="Đăng ký thành viên" />
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script th:src="@{/static/js/free_member.js}"></script>
+    </div>
+</body>
+</html>

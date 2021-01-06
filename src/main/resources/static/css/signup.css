@@ -1,0 +1,57 @@
+label.error {
+    color: red;
+    font-weight: normal;
+}
+
+.active-page {
+    background: #524995;
+    color: white;
+}
+
+.login_wrapper {
+    right: 0;
+    margin: 0% auto 0;
+    max-width: 350px;
+    position: relative;
+}
+
+input{
+    color: black !important;
+    margin: 0px !important;
+}
+
+.pb-20{
+    padding-bottom: 20px;
+}
+
+button{
+    background: #453c9c;
+    border: 0;
+    font-weight: 700 !important;
+    color: #FFF;
+}
+
+.login_content form div a {
+    font-size: 14px;
+    font-weight: 700;
+    background: #f59b22;
+}
+
+.login {
+    background: #323188;
+}
+
+.card-header {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  font-family: Roboto,sans-serif; /*"Roboto Condensed";*/
+  color: #392f87;
+  font-size: 21px;
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.row {
+    margin-left: -15px;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dtsvn.vbcwe.dao.BenchmarkMapper">
+
+    <select id="findAllBenchmark" resultType="String">
+        SELECT 
+            INPUT_DATA  AS inputData
+        FROM
+            SUR_MEMBERSHIP_BENCHMARK
+    </select>
+    
+    <insert id="insertBenchmark" parameterType="com.dtsvn.vbcwe.entity.BenchmarkEntity">
+        INSERT INTO SUR_MEMBERSHIP_BENCHMARK
+        (
+            INPUT_DATA, 
+            CREATED_DATE, 
+            CREATED_BY, 
+            UPDATED_DATE, 
+            UPDATED_BY
+        )
+        VALUES
+        (
+            #{inputData},
+            now()::timestamp,
+            #{createdBy},
+            now()::timestamp,
+            #{createdBy}
+        )
+    </insert>
+    
+    <update id="updateBenchmark" parameterType="com.dtsvn.vbcwe.entity.BenchmarkEntity">
+        UPDATE SUR_MEMBERSHIP_BENCHMARK
+        SET
+            INPUT_DATA = #{inputData},
+            UPDATED_BY = #{updatedBy},
+            UPDATED_DATE = now()::timestamp
+    </update>
+</mapper>

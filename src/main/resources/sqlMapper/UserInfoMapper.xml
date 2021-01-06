@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dtsvn.vbcwe.dao.UserInfoMapper">
+    <select id="findAllUserInfo" parameterType="map" resultType="com.dtsvn.vbcwe.dto.SearchUserInfoResultDTO">
+        SELECT
+            U.USER_INFO_ID              AS memberId,
+            U.USER_ID                   AS email,
+            U.FULL_NAME                 AS fullName,
+            U.CREATED_DATE              AS registerDate,
+            U.USER_TYPE                 AS userType,
+            M1.CODE_NAME                AS userTypeName,
+            U.DELETE_FLG                AS status,
+            M2.CODE_NAME                AS statusName
+        FROM
+            USER_INFO U
+        LEFT JOIN CODE_MST M1 ON U.USER_TYPE = M1.CODE_VALUE
+                                AND M1.CODE_ID = 'CD_001'
+        LEFT JOIN CODE_MST M2 ON U.DELETE_FLG = M2.CODE_VALUE
+                                AND M2.CODE_ID = 'CD_002'
+        WHERE
+            1 = 1
+            <if test="searchUserInfoDTO.fullName != '' and searchUserInfoDTO.fullName != null">
+                AND U.FULL_NAME = #{searchUserInfoDTO.fullName}
+            </if>
+            <if test="searchUserInfoDTO.email != '' and searchUserInfoDTO.email != null">
+                AND U.USER_ID = #{searchUserInfoDTO.email}
+            </if>
+            <if test="searchUserInfoDTO.userType != '' and searchUserInfoDTO.userType != null">
+                AND U.USER_TYPE = #{searchUserInfoDTO.userType}
+            </if>
+            <![CDATA[AND U.USER_TYPE <> '00']]>
+        ORDER BY
+            U.FULL_NAME,
+            U.USER_ID,
+            U.CREATED_DATE
+        LIMIT #{pageable.pageSize}
+        OFFSET #{pageable.offset}
+    </select>
+    
+    <select id="countUserInfo" parameterType="com.dtsvn.vbcwe.dto.SearchReportDTO" resultType="Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            USER_INFO U
+        LEFT JOIN CODE_MST M1 ON U.USER_TYPE = M1.CODE_VALUE
+                                AND M1.CODE_ID = 'CD_001'
+        LEFT JOIN CODE_MST M2 ON U.DELETE_FLG = M2.CODE_VALUE
+                                AND M2.CODE_ID = 'CD_002'
+        WHERE
+            1 = 1
+            <if test="fullName != '' and fullName != null">
+                AND U.FULL_NAME = #{fullName}
+            </if>
+            <if test="email != '' and email != null">
+                AND U.USER_ID = #{email}
+            </if>
+            <if test="userType != '' and userType != null">
+                AND U.USER_TYPE = #{userType}
+            </if>
+            <![CDATA[AND U.USER_TYPE <> '00']]>
+    </select>
+    
+    <select id="findOneUserInfoById" parameterType="map" resultType="com.dtsvn.vbcwe.entity.UserInfoEntity">
+        SELECT
+            USER_ID                 AS userId,
+            FULL_NAME               AS fullName,
+            PHONE                   AS phone,
+            POSITION                AS position,
+            COMPANY_NAME            AS companyName,
+            COMPANY_NAME_ABBR       AS companyNameAbbr,
+            COMPANY_SCALE           AS companyScale,
+            COMPANY_BUSINESS        AS companyBusiness,
+            COMPANY_AREA            AS companyArea,
+            USER_TYPE               AS userType,
+            DELETE_FLG              AS deleteFlg
+        FROM
+            USER_INFO
+        WHERE
+            USER_ID = #{email}
+    </select>
+    
+    <update id="updateUserInfo" parameterType="com.dtsvn.vbcwe.entity.UserInfoEntity">
+        UPDATE
+            USER_INFO
+        SET
+            UPDATED_DATE = now()::timestamp
+            ,UPDATED_BY = #{updatedBy}
+            <if test="fullName != '' and fullName != null">
+                ,FULL_NAME = #{fullName}
+            </if> 
+            <if test="phone != '' and phone != null">
+                ,PHONE = #{phone}
+            </if> 
+            <if test="position != '' and position != null">
+                ,POSITION = #{position}
+            </if>
+            <if test="companyName != '' and companyName != null">
+                ,COMPANY_NAME = #{companyName}
+            </if>
+            <if test="companyNameAbbr != '' and companyNameAbbr != null">
+                ,COMPANY_NAME_ABBR = #{companyNameAbbr}
+            </if>
+            <if test="companyScale != '' and companyScale != null">
+                ,COMPANY_SCALE = #{companyScale}
+            </if>
+            <if test="companyBusiness != '' and companyBusiness != null">
+                ,COMPANY_BUSINESS = #{companyBusiness}
+            </if>
+            <if test="companyArea != '' and companyArea != null">
+                ,COMPANY_AREA = #{companyArea}
+            </if>
+            <if test="userType != '' and userType != null">
+                ,USER_TYPE = #{userType}
+            </if>
+            <if test="deleteFlg != '' and deleteFlg != null">
+                ,DELETE_FLG = #{deleteFlg}
+            </if>
+        WHERE
+            USER_ID = #{userId}
+    </update>
+    
+    <insert id="insertUserInfo" parameterType="com.dtsvn.vbcwe.entity.UserInfoEntity">
+        INSERT INTO
+        USER_INFO (
+            USER_ID,
+            FULL_NAME,
+            PHONE,
+            POSITION,
+            COMPANY_NAME,
+            COMPANY_NAME_ABBR,
+            COMPANY_SCALE,
+            COMPANY_BUSINESS,
+            COMPANY_AREA,
+            USER_TYPE,
+            CREATED_DATE,
+            CREATED_BY,
+            UPDATED_DATE,
+            UPDATED_BY
+        )
+        VALUES (
+            #{userId},
+            #{fullName},
+            #{phone},
+            #{position},
+            #{companyName},
+            #{companyNameAbbr},
+            #{companyScale},
+            #{companyBusiness},
+            #{companyArea},
+            #{userType},
+            now()::timestamp,
+            #{createdBy},
+            now()::timestamp,
+            #{createdBy}
+        )
+    </insert>
+</mapper>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="common/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title th:text="#{403.title}">403 Page</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    name="viewport" />
+<link rel="stylesheet"
+    th:href="@{/resources/lib/bootstrap/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/resources/lib/css/jquery-ui.css}" />
+<!-- Font Awesome -->
+<link rel="stylesheet"
+    th:href="@{/resources/lib/font-awesome/css/all.css}" type="text/css" />
+<!-- Theme style -->
+<link rel="stylesheet"
+    th:href="@{/resources/lib/css/skins/skin-blue.min.css}" />
+<link rel="stylesheet"
+    th:href="@{/resources/lib/css/skins/_all-skins.min.css}" />
+<link rel="stylesheet" th:href="@{/resources/lib/css/style.min.css}" />
+<link rel="stylesheet" th:href="@{/resources/css/common.css}" />
+<link rel="stylesheet" th:href="@{/resources/css/style-new.css}" />
+<link rel="stylesheet" th:href="@{/resources/css/error-page.css}" />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!-- Header -->
+        <header class="main-header"
+            th:replace="common/header :: header"></header>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper common-error-page">
+            <section class="content">
+                <div class="error-page">
+                    <h2 class="headline text-warning"
+                        th:text="#{403.page}">403</h2>
+
+                    <div class="error-content">
+                        <h3>
+                            <i
+                                class="fas fa-exclamation-triangle text-warning"></i>
+                            <span th:text="#{403.header}">Bạn
+                                không đủ quyền hạn truy cập trang này!</span>
+                        </h3>
+
+                        <p th:text="#{403.content}">Trang bạn yêu
+                            cầu có thể không tồn tại hoặc bạn không đủ
+                            quyền hạn truy cập!</p>
+                    </div>
+                    <!-- /.error-content -->
+                </div>
+                <!-- /.error-page -->
+            </section>
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer"
+            th:replace="common/footer :: footer"></footer>
+    </div>
+</body>
+</html>

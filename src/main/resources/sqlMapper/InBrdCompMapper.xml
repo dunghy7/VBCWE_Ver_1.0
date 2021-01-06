@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dtsvn.vbcwe.dao.InBrdCompMapper">
+
+    <select id="selectByUserId" resultType="com.dtsvn.vbcwe.dto.InCareerDTO">
+        SELECT 
+            U.USER_ID           AS userId,
+            U.INPUT_DATA        AS inputData,
+            U.STATUS            AS status
+        FROM
+            IN_BRD_COMP U
+        WHERE
+            U.USER_ID = #{userId}
+    </select>
+    
+    <update id="processInBrdCompByUserId" parameterType="com.dtsvn.vbcwe.entity.InBrdCompEntity">
+        INSERT INTO IN_BRD_COMP
+        (
+            USER_ID, 
+            INPUT_DATA, 
+            STATUS, 
+            CREATED_DATE, 
+            CREATED_BY, 
+            UPDATED_DATE, 
+            UPDATED_BY
+        )
+        VALUES
+        (
+            #{userId},
+            #{inputData},
+            #{status},
+            now()::timestamp,
+            #{userId},
+            now()::timestamp,
+            #{userId}
+        ) 
+        ON CONFLICT (USER_ID)
+        DO
+            UPDATE SET
+                INPUT_DATA = #{inputData},
+                STATUS = #{status},
+                UPDATED_DATE = now()::timestamp,
+                UPDATED_BY = #{userId}
+    </update>
+</mapper>

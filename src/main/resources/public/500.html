@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="common/layout">
+<body>
+    <div layout:fragment="content">
+        <!-- Content Wrapper -->
+        <div class="content-wrapper common-error-page">
+            <section class="content">
+                <div class="error-page">
+                    <h2 class="headline text-warning"
+                        th:text="#{500.page}">500</h2>
+                    <div class="error-content">
+                        <p th:text="${exception}"></p>
+                    </div>
+                    <!-- /.error-content -->
+                </div>
+                <!-- /.error-page -->
+            </section>
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+</body>
+</html>

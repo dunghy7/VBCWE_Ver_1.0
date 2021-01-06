@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="admin-common/layout">
+<body>
+    <div layout:fragment="content">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Danh sách tài khoản</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <section class="content-header">
+                        <div class="alert alert-success" th:if="${messageSuccess != null}">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h5><i class="icon fa fa-check"></i><span th:text="${messageSuccess}"></span></h5>
+                            </div>
+                            <div class="alert alert-error" th:if="${messageError != null}">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h5><i class="icon fa fa-check"></i><span th:text="${messageError}"></span></h5>
+                            </div>
+                    </section>
+                    <section class="content-header">
+                        <div class="row">
+                            <form id="search-form" th:object="${searchUserInfoForm}" th:action="@{/admin/doSearchUserInfo}" method="post" class="project-search-form" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <fieldset class="col-xs-12 col-lg-3 form-group form-item">
+                                            <label class="text-right  col-lg-4">Tên khách hàng</label>
+                                            <div class="col-xs-6 col-lg-8 input-group">
+                                                <input type="text" class="form-control" th:field="*{fullName}"></input>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="col-xs-12 col-lg-3 form-group form-item">
+                                            <label class="text-right col-xs-3 col-lg-6">Email</label>
+                                            <div class=" col-lg-6 input-group">
+                                                <input type="text" class="form-control" th:field="*{email}"></input>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="col-xs-6 col-lg-3 form-group">
+                                            <label class="text-right col-xs-6 col-lg-6">Loại tài khoản</label>
+                                            <div class="col-xs-6 col-lg-6">
+                                                <select class="form-control" th:field="*{userType}">
+                                                    <option value="" selected="selected">Tất Cả</option>
+                                                    <option value="02">Miễn phí</option>
+                                                    <option value="01">Có phí</option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-primary search-btn btn-success" style="margin-left: 15px;" value="Tìm Kiếm"></input>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    <div class="x_content">
+
+                        <div class="table-responsive">
+                            <table
+                                class="table table-striped jambo_table table-bordered">
+                                <thead>
+                                    <tr class="headings">
+                                        <th class="column-title">STT </th>
+                                        <th class="column-title">Họ tên </th>
+                                        <th class="column-title">Email </th>
+                                        <th class="column-title">Ngày đăng ký </th>
+                                        <th class="column-title">Lọai tài khoản </th>
+                                        <th class="column-title">Trạng thái </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="even pointer" th:each="member, idx : *{resultMember.content}">
+                                        <td class="text-center"><span th:text="${idx.count + (resultMember.number * resultMember.size)}"></span></td>
+                                        <td class=" ">
+                                            <a th:href="@{/admin/initUpdateMember(userId=${member.email})}">
+                                                <span th:text="${member.fullName}"></span>
+                                            </a>
+                                        </td>
+                                        <td class=""><span th:text="${member.email}"></span></td>
+                                        <td class=""><span th:text="${member.registerDate}" ></span></td>
+                                        <td class=""><span th:text="${member.userTypeName}"></span></td>
+                                        <td class=""><span th:text="${member.statusName}"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-right">
+                                <ul th:if="${resultMember.totalPages > 0}" class="pagination" th:each="pageNumber : ${pageNumbers}">
+                                    <li><input th:value="${pageNumber}" th:class="page" th:classappend="${pageNumber==resultMember.number + 1} ? active-page" type="submit"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+        <script th:src="@{/static/js/paging.js}"></script>
+    </div>
+</body>
+</html>

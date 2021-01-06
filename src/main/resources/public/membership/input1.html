@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="common/layout">
+<head>
+  <link rel="stylesheet" type="text/css" th:href="@{/static/css/inputPage.css}" />
+  <script type='text/javascript' th:src="@{/static/js/input1.js}"></script>
+</head>
+<body>
+<main layout:fragment="content">
+  <form th:object="${table1Form}" id="table1DataForm" method="post">
+    <div class="container minHeight">
+        <div class="row justify-content-center align-self-center mt-3">
+            <div class="card">
+                <div class="card-header">DỊCH CHUYỂN LAO ĐỘNG</div>
+                <div style="padding-left: 1.25rem; color: red" id="validateClientText" >
+                    <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
+                      <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped jambo_table table-bordered">
+                            <thead>
+                                <tr class="headings">
+                                    <th class="column-title text-center" style="width: 22%;">Cấp độ trách nhiệm</th>
+                                    <th class="column-title text-center" style="width: 13%;">Tổng số nhân viên đầu kỳ tham chiếu 12 tháng</th>
+                                    <th class="column-title text-center" style="width: 13%;">Tuyển dụng vào cấp độ này từ bên ngoài công ty</th>
+                                    <th class="column-title text-center" style="width: 13%;">Thăng chức lên cấp độ này trong nội bộ công ty</th>
+                                    <th class="column-title text-center" style="width: 13%;">Thăng chức từ cấp độ này lên cấp cao hơn</th>
+                                    <th class="column-title text-center" style="width: 13%;">Tổng số nhân viên nghỉ việc từ cấp độ này</th>
+                                    <th class="column-title text-center" style="width: 13%;">Tổng số nhân viên cuối kỳ tham chiếu 12 tháng </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="result, idx : *{dataTable1DtoList}">
+                                    <td class="pl-2">
+                                        <span th:if="${result.level=='5' and result.gender=='m'}">Nam giới giữ vị trí cấp 5</span>
+                                        <span th:if="${result.level=='5' and result.gender=='f'}">Nữ giới giữ vị trí cấp 5</span>
+                                        
+                                        <span th:if="${result.level=='4' and result.gender=='m'}">Nam giới giữ vị trí cấp 4</span>
+                                        <span th:if="${result.level=='4' and result.gender=='f'}">Nữ giới giữ vị trí cấp 4</span>
+                                        
+                                        <span th:if="${result.level=='3' and result.gender=='m'}">Nam giới giữ vị trí cấp 3</span>
+                                        <span th:if="${result.level=='3' and result.gender=='f'}">Nữ giới giữ vị trí cấp 3</span>
+                                        
+                                        <span th:if="${result.level=='2' and result.gender=='m'}">Nam giới giữ vị trí cấp 2</span>
+                                        <span th:if="${result.level=='2' and result.gender=='f'}">Nữ giới giữ vị trí cấp 2</span>
+                                        
+                                        <span th:if="${result.level=='1' and result.gender=='m'}">Nam giới giữ vị trí cấp 1</span>
+                                        <span th:if="${result.level=='1' and result.gender=='f'}">Nữ giới giữ vị trí cấp 1</span>
+                                        
+                                        <span th:if="${result.level=='0' and result.gender=='m'}">Tổng số lao động nam</span>
+                                        <span th:if="${result.level=='0' and result.gender=='f'}">Tổng số lao động nữ</span>
+                                        <span th:if="${result.level=='0' and result.gender=='mf'}">Tổng số lao động nam và nữ</span>
+                                    </td>
+                                    <td><input type="text" th:attr="rowTable1=__${idx.index}__,colTable1=${result.level!='0'} ? 'totalBegin12m' + ${result.gender} : ''" maxlength="7" class="changeAny validation" th:classappend="${result.level=='0'} ? bg-transparent : ''" th:readonly="${result.level=='0'}" th:field="*{dataTable1DtoList[__${idx.index}__].totalBegin12m}" /> </td>
+                                    <td><input type="text" th:attr="rowTable1=__${idx.index}__,colTable1=${result.level!='0'} ? 'recruitedOutside' + ${result.gender} : ''" maxlength="7" class="changeAny validation" th:classappend="${result.level=='0'} ? bg-transparent : '' " th:readonly="${result.level=='0'}" th:field="*{dataTable1DtoList[__${idx.index}__].recruitedOutside}" /> </td>
+                                    <td><input type="text" th:attr="rowTable1=__${idx.index}__,colTable1=${result.level!='0'} ? 'promotedToLvl' + ${result.gender} : ''"  maxlength="7" class="changeAny validation" th:classappend="${result.level=='0' or result.level == '1'} ? bg-transparent : '' " th:readonly="${result.level=='0' or result.level == '1'}" th:field="*{dataTable1DtoList[__${idx.index}__].promotedToLvl}" /> </td>
+                                    <td><input type="text" th:attr="rowSubTable1=__${idx.index}__" class="bg-transparent" th:readonly="true" th:field="*{dataTable1DtoList[__${idx.index}__].promotedFromLvl}" /> </td>
+                                    <td><input type="text" th:attr="rowSubTable1=__${idx.index}__,colTable1=${result.level!='0'} ? 'leftCompany' + ${result.gender} : ''" maxlength="7" class="changeAny validation" th:classappend="${result.level=='0'} ? bg-transparent : '' " th:readonly="${result.level=='0'}" th:field="*{dataTable1DtoList[__${idx.index}__].leftCompany}" /> </td>
+                                    <td><input type="text" class="bg-transparent" th:readonly="true" th:field="*{dataTable1DtoList[__${idx.index}__].totalEnd12m}" /> </td>
+                                    <td style="display: none">
+                                        <input type="hidden" th:readonly="true" th:field="*{dataTable1DtoList[__${idx.index}__].level}" />
+                                        <input type="hidden" th:readonly="true" th:field="*{dataTable1DtoList[__${idx.index}__].gender}" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-self-center">
+            <div class="col-12">
+                <a type="button" class="btn btn-back" th:href="@{/membership/}" th:text="#{form.button.back}"></a>
+                <th:block th:if="${session.reportStatus == null}">
+                    <input type="button" class="completeDataTable1 btn btn-send-contact float-right mx-sm-4" onclick="actionSubmitForm(this, './complete', '#table1DataForm');" th:value="#{form.button.complete}" />
+                    <input type="button" class="btn btn-send-contact float-right" onclick="actionSubmitForm(this, './save', '#table1DataForm');" th:value="#{form.button.save}" />
+                </th:block>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="autosaveInterval" th:value="${autosaveInterval}"/>
+    <input type="hidden" th:id="statusSave" th:name="status" th:value="${session.reportStatus}"/>
+    <input type="hidden" th:id="statusInEmplNvmt" th:name="statusInEmplNvmt" th:value="*{statusInEmplNvmt}"/>
+  </form>
+</main>
+</body>
+</html>

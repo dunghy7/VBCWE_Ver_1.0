@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="admin-common/layout">
+<body>
+    <div layout:fragment="content">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>BENCHMARK</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <form th:object="${benchmarkForm}" id="benchmarkForm" method="post" th:action="@{/benchmark/update}">
+	                    <section class="content-header">
+	                        <div class="alert alert-success" th:if="${messageSuccess != null}">
+	                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	                            <h5><i class="icon fa fa-check"></i><span th:text="${messageSuccess}"></span></h5>
+	                        </div>
+	                        <div class="alert alert-error" th:if="${messageError != null}">
+	                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	                            <h5><i class="icon fa fa-check"></i><span th:text="${messageError}"></span></h5>
+	                        </div>
+	                        <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
+	                            <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+	                        </ul>
+	                    </section>
+	                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+	                        <div class="table-responsive">
+	                            <table class="table table-striped jambo_table table-bordered">
+	                                <thead>
+	                                    <tr class="headings">
+	                                        <th class="column-title text-center">Cấp độ</th>
+	                                        <th class="column-title text-center">Tỷ lệ % nữ</th>
+	                                        <th class="column-title text-center">Min Diff</th>
+	                                        <th class="column-title text-center">Max Diff</th>
+	                                    </tr>
+	                                </thead>
+	                                <tbody class="table-input">
+	                                   <tr th:each="result, idx : *{benchmarkList}">
+	                                       <td class="text-center">
+	                                            <span th:if="${result.level=='0'}">Overall staff</span>
+		                                        <span th:if="${result.level=='1'}">Level 1</span>
+		                                        <span th:if="${result.level=='2'}">Level 2</span>
+		                                        <span th:if="${result.level=='3'}">Level 3</span>
+		                                        <span th:if="${result.level=='4'}">Level 4</span>
+		                                        <span th:if="${result.level=='5'}">Level 5</span>
+		                                        <input type="text" hidden="true" th:field="*{benchmarkList[__${idx.index}__].level}"/>
+	                                       </td>
+	                                       <td>
+                                                <input type="text" class="text-right" th:field="*{benchmarkList[__${idx.index}__].averageWomen}"/>
+                                            </td>
+                                           <td>
+                                                <input type="text" class="text-right" th:field="*{benchmarkList[__${idx.index}__].minDiff}"/>
+                                            </td>
+                                           <td>
+                                                <input type="text" class="text-right" th:field="*{benchmarkList[__${idx.index}__].maxDiff}"/>
+                                            </td>
+	                                   </tr>
+	                                </tbody>
+	                            </table>
+	                            <div class="text-right">
+	                                <input type="submit" class="btn btn-primary search-btn btn-success" style="margin-left: 15px;" value="Cập nhật"></input>
+	                            </div>
+	                        </div>
+	                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+    </div>
+</body>
+</html>

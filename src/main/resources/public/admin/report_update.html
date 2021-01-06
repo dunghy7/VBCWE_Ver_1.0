@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="admin-common/layout">
+<body>
+    <div layout:fragment="content">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="clearfix"></div>
+            <section class="content-header" th:if="${messageError != null}">
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="fa fa-times-circle"></i><span th:text="${messageError}"></span></h5>
+                </div>
+            </section>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_content">
+
+                    <form th:object="${reportForm}" enctype="multipart/form-data" th:action="@{/admin/doApproveReport}" method="post" class="form-horizontal form-label-left">
+
+                      <span class="section">Thông tin báo cáo</span>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Họ tên</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control col-md-7 col-xs-12" readonly="readonly" th:field="*{fullName}" />
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" class="form-control col-md-7 col-xs-12" readonly="readonly" th:field="*{userId}" />
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Ngày thực hiện</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control col-md-7 col-xs-12" readonly="readonly" th:field="*{createdDate}" />
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="position">File duyệt <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="file" class="form-control-file custom-file-input" accept=".ppt, .pptx" th:field="*{file}"/>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-9 text-right">
+                          <input type="submit" class="btn btn-danger" th:formaction="@{/admin/doRejectReport}" value="Xóa báo cáo" />
+                          <input type="submit" class="btn btn-success" value="Duyệt và gửi file" />
+                        </div>
+                      </div>
+                    </form>
+                      <!-- <div class="ln_solid"></div> -->
+                      <span class="section">File bằng chứng</span>
+                      <div class="table-responsive col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
+	                      <table class="table table-striped jambo_table table-bordered">
+	                        <thead>
+	                          <tr class="headings">
+	                            <th class="column-title text-center col-md-1 col-sm-1 col-xs-1">STT </th>
+	                            <th class="column-title text-center col-md-2 col-sm-2 col-xs-2">Lĩnh vực trọng điểm </th>
+	                            <th class="column-title text-center col-md-1 col-sm-1 col-xs-1">Câu hỏi </th>
+	                            <th class="column-title text-center col-md-4 col-sm-4 col-xs-4">Ghi chú </th>
+	                            <th class="column-title text-center col-md-4 col-sm-4 col-xs-4">File </th>
+	                          </tr>
+	                        </thead>
+	                        <tbody>
+	                            <tr class="even pointer" th:each="evidence, idx : ${listEvidence.content}">
+	                                <td class="text-center"><span th:text="${idx.count + (listEvidence.number * listEvidence.size)}"></span></td>
+	                                <td class=""><span th:text="${evidence.fa}"></span></td>
+	                                <td class=""><span th:text="${evidence.no}"></span></td>
+	                                <td class=""><span th:text="${evidence.note}"></span></td>
+	                                <td class="">
+	                                    <i th:if="${not #lists.isEmpty(evidence.file)}" class="fa fa-download"></i>
+	                                    <a th:href="@{/admin/downloadEvidence(fileName=${evidence.file})}" th:if="${not #lists.isEmpty(evidence.file)}">
+	                                        <span th:text="${#strings.arraySplit(evidence.file,'/')[1]}"></span>
+	                                    </a>
+	                                </td>
+	                            </tr>
+	                        </tbody>
+	                      </table>
+                        <div class="text-right">
+                            <ul th:if="${listEvidence.totalPages > 0}" class="pagination" th:each="pageNumber : ${pageNumbers}">
+                                <li><a th:href="@{/admin/initUpdateReport(userId=${reportForm.userId}, page=${pageNumber})}" th:text="${pageNumber}" th:class="page" th:classappend="${pageNumber==listEvidence.number + 1} ? active-page"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- /page content -->
+    </div>
+</body>
+</html>

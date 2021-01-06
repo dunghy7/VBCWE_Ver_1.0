@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+    <header>
+    <!-- top navigation -->
+    <div class="top_nav">
+        <div class="nav_menu">
+            <nav>
+                <div class="nav toggle">
+                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="color: white !important;"><img th:src="@{/static/images/img.jpg}" alt="" />
+                            <span th:text="${session.LOGIN_USER_SESSION_KEY != null ? session.LOGIN_USER_SESSION_KEY.fullName : ''}">User</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-usermenu pull-right">
+                            <li>
+                                <a th:href="@{/freemember/changepass}">Đổi mật khẩu</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/?logout}">
+                                    <i class="fa fa-sign-out pull-right"></i>Thoát
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- /top navigation -->
+    </header>
+</body>
+</html>

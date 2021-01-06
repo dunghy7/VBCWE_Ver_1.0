@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    layout:decorator="common/layout">
+<head>
+  <link rel="stylesheet" type="text/css" th:href="@{/static/css/inputPage.css}" />
+  <script type='text/javascript' th:src="@{/static/js/input4.3.js}"></script>
+</head>
+<body>
+    <main layout:fragment="content">
+      <form th:object="${table4Sub3Form}" id="table4Sub3DataForm" method="post">
+        <div class="container minHeight">
+            <div class="row justify-content-center align-self-center mt-3">
+                <div class="card">
+                    <div class="card-header">DANH MỤC NGHỀ NGHIỆP - KỸ THUẬT VIÊN VÀ TRỢ LÝ CHUYÊN GIA</div>
+                    <div style="padding-left: 1.25rem; color: red" id="validateClientText" >
+	                    <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
+	                      <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+	                    </ul>
+		            </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table table-bordered">
+                                <thead>
+                                    <tr class="headings">
+                                        <th class="column-title text-center header-col-title" rowspan="2">Chức danh trong công ty</th>
+                                        <th class="column-title text-center" colspan="4">Nam</th>
+										<th class="column-title text-center" colspan="4">Nữ</th>
+                                    </tr>
+                                    <tr class="headings">
+                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
+                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
+                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
+                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
+                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
+                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
+                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
+                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="result, idx : *{dataTable4DtoList}">
+                                        <td th:class="${result.parentLevel == null or result.parentLevel == ''} ? pl-2 : 'pl-5'">
+                                            <span th:if="${result.level=='31'}">Kỹ thuật viên khoa học và kỹ thuật</span>
+                                            <span th:if="${result.level=='31.1'}">Kỹ thuật viên khoa học vật lý và kỹ thuật</span>
+                                            <span th:if="${result.level=='31.2'}">Giám sát viên khai thác mỏ, chế biến và xây dựng</span>
+                                            <span th:if="${result.level=='31.3'}">Kỹ thuật viên điều khiển quy trình</span>
+                                            <span th:if="${result.level=='31.4'}">Kỹ thuật viên kiểm soát, vận hành và điều khiển quy trình</span>
+                                            <span th:if="${result.level=='31.5'}">Kỹ thuật viên và kiểm soát viên tàu thuỷ và phương tiện bay</span>
+                                            
+                                            <span th:if="${result.level=='32'}">Kỹ thuật viên sức khỏe</span>
+                                            <span th:if="${result.level=='32.1'}">Kỹ thuật viên y tế và dược</span>
+                                            <span th:if="${result.level=='32.2'}">Y tá, kỹ thuật viên chăm sóc bệnh nhân và hộ sinh</span>
+                                            <span th:if="${result.level=='32.3'}">Kỹ thuật viên y học cổ truyền và bổ trợ</span>
+                                            <span th:if="${result.level=='32.4'}">Kỹ thuật viên thú y và phụ tá</span>
+                                            <span th:if="${result.level=='32.5'}">Kỹ thuật viên sức khỏe khác</span>
+                                            
+                                            <span th:if="${result.level=='33'}">Kỹ thuật viên về kinh doanh và quản lý</span>
+                                            <span th:if="${result.level=='33.1'}">Kỹ thuật viên về toán ứng dụng và tài chính</span>
+                                            <span th:if="${result.level=='33.2'}">Nhà đại lý và môi giới bán hàng và mua, bán</span>
+                                            <span th:if="${result.level=='33.3'}">Nhân viên/đại lý dịch vụ kinh doanh</span>
+                                            <span th:if="${result.level=='33.4'}">Thư ký hành chính và nhân viên chuyên môn khác</span>
+                                            <span th:if="${result.level=='33.5'}">Kỹ thuật viên điều tiết của Chính phủ</span>
+                                            
+                                            <span th:if="${result.level=='34'}">Nhà chuyên môn cấp trung về luật pháp, văn hóa, xã hội</span>
+                                            <span th:if="${result.level=='34.1'}">Nhà chuyên môn cấp trung về luật pháp, xã hội và tôn giáo</span>
+                                            <span th:if="${result.level=='34.2'}">Người làm trong lĩnh vực thể thao và tập luyện</span>
+                                            <span th:if="${result.level=='34.3'}">Nhà chuyên môn cấp trung về mỹ thuật, văn hóa và nấu ăn</span>
+                                            
+                                            <span th:if="${result.level=='35'}">Kỹ thuật viên thông tin và truyền thông</span>
+                                            <span th:if="${result.level=='35.1'}">Kỹ thuật viên hỗ trợ người sử dụng và vận hành công nghệ thông tin và truyền thông</span>
+                                            <span th:if="${result.level=='35.2'}">Kỹ thuật viên viễn thông và truyền hình</span>
+                                        </td>
+                                        <td>
+                                            <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub3=male__${idx.index}__,colTable4Sub3=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'maleFullTimeIndefinite' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableMale.fullTimeIndefinite}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel == null or result.parentLevel == ''}" value="1"></input>
+                                        </td>
+                                        <td>
+                                            <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub3=male__${idx.index}__,colTable4Sub3=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'maleFullTimeFixedTerm' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableMale.fullTimeFixedTerm}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel == null or result.parentLevel == ''}" value="0"></input>
+                                        </td>
+                                        <td>
+                                            <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub3=male__${idx.index}__,colTable4Sub3=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'malePartTimeIndefinite' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableMale.partTimeIndefinite}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel == null or result.parentLevel == ''}" value="0"></input>
+                                        </td>
+                                        <td>
+                                            <input class="bg-transparent" type="text" th:attr="colTable4Sub3=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'maleTotalEnd12m' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableMale.totalEnd12m}" th:readonly="true" value="0"></input>
+                                        </td>
+
+                                        <td>
+                                            <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub3=female__${idx.index}__,colTable4Sub3=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'femaleFullTimeIndefinite' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableFemale.fullTimeIndefinite}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel==null or result.parentLevel == ''}" value="1"></input>
+                                        </td>
+                                        <td>
+                                            <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub3=female__${idx.index}__,colTable4Sub3=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'femaleFullTimeFixedTerm' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableFemale.fullTimeFixedTerm}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel==null or result.parentLevel == ''}" value="0"></input>
+                                        </td>
+                                        <td>
+                                            <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub3=female__${idx.index}__,colTable4Sub3=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'femalePartTimeIndefinite' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableFemale.partTimeIndefinite}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel==null or result.parentLevel == ''}" value="0"></input>
+                                        </td>
+                                        <td>
+                                            <input class="bg-transparent" type="text" th:attr="colTable4Sub3=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'femaleTotalEnd12m' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableFemale.totalEnd12m}" th:readonly="true" value="0"></input>
+                                        </td>
+                                        <td style="display: none">
+		                                    <input type="hidden" th:readonly="true" th:field="*{dataTable4DtoList[__${idx.index}__].level}" />
+		                                    <input type="hidden" th:readonly="true" th:field="*{dataTable4DtoList[__${idx.index}__].parentLevel}" />
+		                                </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center align-self-center">
+                <div class="col-12">
+                    <a type="button" class="btn btn-back" th:href="@{/membership/}" th:text="#{form.button.back}"></a>
+                    <th:block th:if="${session.reportStatus == null}">
+                        <input type="button" class="btn btn-send-contact float-right mx-sm-4" onclick="actionSubmitForm(this, './complete', '#table4Sub3DataForm');" th:value="#{form.button.complete}" />
+                        <input type="button" class="btn btn-send-contact float-right" onclick="actionSubmitForm(this, './save', '#table4Sub3DataForm');" th:value="#{form.button.save}" />
+                    </th:block>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="autosaveInterval" th:value="${autosaveInterval}"/>
+    	<input type="hidden" th:id="statusSave" th:name="status" th:value="${session.reportStatus}"/>
+    	<input type="hidden" th:id="statusInCarrer" th:name="statusInCarrer" th:value="*{statusInCarrer}"/>
+      </form>
+    </main>
+</body>
+</html>

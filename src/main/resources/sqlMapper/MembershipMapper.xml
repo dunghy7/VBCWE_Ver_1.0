@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dtsvn.vbcwe.dao.MembershipMapper">
+    <select id="findAllReports" parameterType="map" resultType="com.dtsvn.vbcwe.dto.SearchReportResultDTO">
+        SELECT
+            RPT.USER_ID         AS email,
+            U.FULL_NAME         AS fullName,
+            RPT.CREATED_DATE    AS registerDate,
+            RPT.STATUS          AS status,
+            M1.CODE_NAME        AS statusName,
+            RPT.OUTPUT_FILEPATH AS filePath
+        FROM
+            SUR_MEMBERSHIP_RPT RPT
+        INNER JOIN
+            USER_INFO U ON RPT.USER_ID = U.USER_ID
+                        AND U.DELETE_FLG = '0'
+        LEFT JOIN
+            CODE_MST M1 ON RPT.STATUS = M1.CODE_VALUE
+                        AND M1.CODE_ID = 'CD_003'
+        WHERE
+            1 = 1
+        <if
+            test="searchReportDTO.fullName != '' and searchReportDTO.fullName != null">
+            AND U.FULL_NAME = #{searchReportDTO.fullName}
+        </if>
+        <if
+            test="searchReportDTO.email != '' and searchReportDTO.email != null">
+            AND RPT.USER_ID = #{searchReportDTO.email}
+        </if>
+        <if
+            test="searchReportDTO.status != '' and searchReportDTO.status != null">
+            AND RPT.STATUS = #{searchReportDTO.status}
+        </if>
+        ORDER BY
+            U.FULL_NAME,
+            RPT.USER_ID,
+            RPT.CREATED_DATE
+        LIMIT #{pageable.pageSize}
+        OFFSET #{pageable.offset}
+    </select>
+
+    <select id="countReport" parameterType="com.dtsvn.vbcwe.dto.SearchReportDTO" resultType="Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            SUR_MEMBERSHIP_RPT RPT
+        INNER JOIN USER_INFO U ON RPT.USER_ID = U.USER_ID
+                               AND U.DELETE_FLG = '0'
+        WHERE
+            1 = 1
+        <if test="fullName != '' and fullName != null">
+            AND U.FULL_NAME = #{fullName}
+        </if>
+        <if test="email != '' and email != null">
+            AND RPT.USER_ID = #{email}
+        </if>
+        <if test="status != '' and status != null">
+            AND RPT.STATUS = #{status}
+        </if>
+    </select>
+
+    <select id="findOneReportById" parameterType="map" resultType="com.dtsvn.vbcwe.entity.ReportEntity">
+        SELECT
+          RPT.USER_ID           AS userId,
+          U.FULL_NAME           AS fullName,
+          SUR.INPUT_DATA        AS inputData,
+          RPT.OUTPUT_FILEPATH   AS filePath,
+          RPT.CREATED_DATE      AS createdDate,
+          RPT.STATUS            AS status
+        FROM
+          SUR_MEMBERSHIP_RPT RPT
+        INNER JOIN
+          SUR_MEMBERSHIP SUR ON RPT.USER_ID = SUR.USER_ID
+        INNER JOIN
+          USER_INFO U ON RPT.USER_ID = U.USER_ID
+        AND
+          U.DELETE_FLG = '0'
+        WHERE
+          RPT.USER_ID = #{email}
+    </select>
+
+    <insert id="updateReport" parameterType="com.dtsvn.vbcwe.entity.ReportEntity">
+        INSERT INTO
+        SUR_MEMBERSHIP_RPT (
+            USER_ID,
+            CREATED_DATE,
+            CREATED_BY,
+            STATUS,
+            UPDATEd_DATE,
+            UPDATED_BY
+        )
+        VALUES (
+            #{userId},
+            now()::timestamp,
+            #{userId},
+            #{status},
+            now()::timestamp,
+            #{userId}
+        )
+        ON
+            CONFLICT (USER_ID)
+        DO
+        UPDATE SET
+            UPDATED_DATE = now()::timestamp
+            ,UPDATED_BY = #{updatedBy}
+        <if test="filePath != '' and filePath != null">
+            ,OUTPUT_FILEPATH = #{filePath}
+        </if>
+        <if test="status != '' and status != null">
+            ,STATUS = #{status}
+        </if>
+    </insert>
+    
+    <delete id="deleteReport" parameterType="map">
+        DELETE
+        FROM
+            SUR_MEMBERSHIP_RPT
+        WHERE
+            USER_ID = #{email}
+    </delete>
+    
+    <insert id="insertSurveyInfo" parameterType="com.dtsvn.vbcwe.dto.MemberDTO">
+        INSERT INTO
+        SUR_MEMBERSHIP (
+            USER_ID,
+            INPUT_DATA,
+            CREATED_DATE,
+            CREATED_BY,
+            STATUS,
+            UPDATEd_DATE
+        )
+        VALUES (
+            #{userId},
+            #{inputData},
+            now()::timestamp,
+            #{userId},
+            #{status},
+            now()::timestamp
+        )
+        ON
+            CONFLICT (USER_ID)
+        DO
+        UPDATE SET
+            INPUT_DATA = #{inputData},
+            STATUS = #{status},
+            UPDATED_DATE = now()::timestamp,
+            UPDATED_BY = #{userId}
+    </insert>
+    <select id="loadSurveyInfo" resultType="com.dtsvn.vbcwe.dto.MemberDTO">
+        SELECT
+            MEM.USER_ID             AS userId,
+            MEM.INPUT_DATA          AS inputData,
+            RPT.OUTPUT_FILEPATH     AS outputFilePath,
+            MEM.STATUS              AS status
+        FROM
+            SUR_MEMBERSHIP MEM
+        LEFT JOIN
+            SUR_MEMBERSHIP_RPT RPT ON MEM.USER_ID = RPT.USER_ID
+        WHERE
+            MEM.USER_ID = #{userId}
+    </select>
+
+    <select id="getAllInputInfo" resultType="com.dtsvn.vbcwe.dto.AllInputInfoDTO">
+        SELECT CASE 
+                WHEN ICM_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS icmStatus
+            ,CASE 
+                WHEN ICE_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS iceStatus
+            ,CASE 
+                WHEN ICT_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS ictStatus
+            ,CASE 
+                WHEN ICO_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS icoStatus
+            ,CASE 
+                WHEN ICS_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS icsStatus
+            ,CASE 
+                WHEN ICA_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS icaStatus
+            ,CASE 
+                WHEN ICML_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS icmlStatus
+            ,CASE 
+                WHEN ICSA_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS icsaStatus
+            ,CASE 
+                WHEN ICSP_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS icspStatus
+            ,CASE 
+                WHEN SM_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS smStatus
+            ,CASE 
+                WHEN IEN_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS ienStatus
+            ,CASE 
+                WHEN IE_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS ieStatus
+            ,CASE 
+                WHEN IBC_STATUS = '1'
+                    THEN true
+                ELSE false
+                END AS ibcStatus
+        FROM (
+            SELECT (
+                    SELECT STATUS
+                    FROM IN_CAREER_MNG
+                    WHERE user_id = #{userId}
+                    ) AS ICM_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_CAREER_EXP
+                    WHERE user_id = #{userId}
+                    ) AS ICE_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_CAREER_TECH
+                    WHERE user_id = #{userId}
+                    ) AS ICT_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_CAREER_OFFICE
+                    WHERE user_id = #{userId}
+                    ) AS ICO_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_CAREER_SERVICE
+                    WHERE user_id = #{userId}
+                    ) AS ICS_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_CAREER_AGR
+                    WHERE user_id = #{userId}
+                    ) AS ICA_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_CAREER_MANUAL
+                    WHERE user_id = #{userId}
+                    ) AS ICML_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_CAREER_ASS
+                    WHERE user_id = #{userId}
+                    ) AS ICSA_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_CAREER_SIMPLE
+                    WHERE user_id = #{userId}
+                    ) AS ICSP_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM SUR_MEMBERSHIP
+                    WHERE user_id = #{userId}
+                    ) AS SM_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_EMPL_NVMT
+                    WHERE user_id = #{userId}
+                    ) AS IEN_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_EMPL
+                    WHERE user_id = #{userId}
+                    ) AS IE_STATUS
+                ,(
+                    SELECT STATUS
+                    FROM IN_BRD_COMP
+                    WHERE user_id = #{userId}
+                    ) AS IBC_STATUS
+            ) AS ALL_DATA
+    </select>
+</mapper>
