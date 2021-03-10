@@ -2,6 +2,8 @@ package com.dtsvn.vbcwe.form;
 
 import javax.validation.constraints.AssertTrue;
 
+import org.apache.poi.util.StringUtil;
+
 import com.dtsvn.vbcwe.common.Constant;
 import com.dtsvn.vbcwe.common.MessageConstants;
 import com.dtsvn.vbcwe.dto.AllInputInfoDTO;
@@ -134,7 +136,7 @@ public class AllInputInfoForm {
 
 			this.surveyStatus = Constant.MEMBER_REPORT_STATUS.REPORT_APPROVED.value.equals(reportDTO.getStatus()) ? true : false;
 
-            this.surveyPath = reportDTO.getFilePath().replace(".pptx", ".pdf");
+            this.surveyPath = reportDTO.getFilePath() != null ? reportDTO.getFilePath().replace(".pptx", ".pdf") : null;
 		}
 	}
 }
