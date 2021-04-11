@@ -71,7 +71,7 @@
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}"></span>
-                            <input type="text" class="form-control"  th:placeholder="#{label.companyName}"placeholder="Tên công ty" th:field="*{companyName}" />
+                            <input type="text" class="form-control" th:placeholder="#{label.companyName}" th:field="*{companyName}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('companyNameAbbr')}" th:errors="*{companyNameAbbr}"></span>
