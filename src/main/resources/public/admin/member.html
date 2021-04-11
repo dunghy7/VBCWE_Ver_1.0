@@ -10,7 +10,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Danh sách tài khoản</h2>
+                        <h2><span th:text="#{label.account.list}">Danh sách tài khoản</span></h2>
                         <div class="clearfix"></div>
                     </div>
                     <section class="content-header">
@@ -29,24 +29,24 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <fieldset class="col-xs-12 col-lg-3 form-group form-item">
-                                            <label class="text-right  col-lg-4">Tên khách hàng</label>
+                                            <label class="text-right  col-lg-4" th:text="#{label.customerName}">Tên khách hàng</label>
                                             <div class="col-xs-6 col-lg-8 input-group">
                                                 <input type="text" class="form-control" th:field="*{fullName}"></input>
                                             </div>
                                         </fieldset>
                                         <fieldset class="col-xs-12 col-lg-3 form-group form-item">
-                                            <label class="text-right col-xs-3 col-lg-6">Email</label>
+                                            <label class="text-right col-xs-3 col-lg-6" th:text="#{label.email}">Email</label>
                                             <div class=" col-lg-6 input-group">
                                                 <input type="text" class="form-control" th:field="*{email}"></input>
                                             </div>
                                         </fieldset>
                                         <fieldset class="col-xs-6 col-lg-3 form-group">
-                                            <label class="text-right col-xs-6 col-lg-6">Loại tài khoản</label>
+                                            <label class="text-right col-xs-6 col-lg-6" th:text="#{label.account.type}">Loại tài khoản</label>
                                             <div class="col-xs-6 col-lg-6">
                                                 <select class="form-control" th:field="*{userType}">
-                                                    <option value="" selected="selected">Tất Cả</option>
-                                                    <option value="02">Miễn phí</option>
-                                                    <option value="01">Có phí</option>
+                                                    <option value="" selected="selected" th:text="#{label.all}">Tất Cả</option>
+                                                    <option value="02" th:text="#{label.account.type.free}">Miễn phí</option>
+                                                    <option value="01" th:text="#{label.account.type.charged}">Có phí</option>
                                                 </select>
                                             </div>
                                         </fieldset>
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="submit" class="btn btn-primary search-btn btn-success" style="margin-left: 15px;" value="Tìm Kiếm"></input>
+                                        <input type="submit" class="btn btn-primary search-btn btn-success" style="margin-left: 15px;" th:value="#{label.search}"></input>
                                     </div>
                                 </div>
                             </form>
@@ -67,12 +67,12 @@
                                 class="table table-striped jambo_table table-bordered">
                                 <thead>
                                     <tr class="headings">
-                                        <th class="column-title">STT </th>
-                                        <th class="column-title">Họ tên </th>
-                                        <th class="column-title">Email </th>
-                                        <th class="column-title">Ngày đăng ký </th>
-                                        <th class="column-title">Lọai tài khoản </th>
-                                        <th class="column-title">Trạng thái </th>
+                                        <th class="column-title"><span th:text="#{label.number}">STT </span></th>
+                                        <th class="column-title"><span th:text="#{label.fullName}">Họ tên </span></th>
+                                        <th class="column-title"><span th:text="#{label.email}">Email </span></th>
+                                        <th class="column-title"><span th:text="#{label.registerDate}">Ngày đăng ký </span></th>
+                                        <th class="column-title"><span th:text="#{label.account.type}">Lọai tài khoản </span></th>
+                                        <th class="column-title"><span th:text="#{label.status}">Trạng thái </span></th>
                                     </tr>
                                 </thead>
                                 <tbody>

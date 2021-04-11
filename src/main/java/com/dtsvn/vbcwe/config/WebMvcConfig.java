@@ -31,10 +31,12 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
@@ -165,7 +167,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	@Bean(name = "messageSource")
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasenames("classpath:message", "classpath:validate-message");
+		messageSource.setBasenames("classpath:i18n/message");
 		messageSource.setUseCodeAsDefaultMessage(true);
 		messageSource.setDefaultEncoding(Constant.UTF_8_CHARSET);
 		messageSource.setCacheSeconds(0);
@@ -182,7 +184,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	public MessageSource validMessageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasenames("classpath:validate-message");
+		messageSource.setBasenames("classpath:i18n/validate-message");
 		messageSource.setDefaultEncoding(Constant.UTF_8_CHARSET);
 		messageSource.setCacheSeconds(0);
 		return messageSource;
@@ -200,4 +202,12 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		argumentResolvers.add(resolver);
 		super.addArgumentResolvers(argumentResolvers);
 	}
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        LocaleChangeInterceptor localeInterceptor = new LocaleChangeInterceptor();
+        localeInterceptor.setParamName("lang");
+
+        registry.addInterceptor(localeInterceptor).addPathPatterns("/*");
+    }
 }

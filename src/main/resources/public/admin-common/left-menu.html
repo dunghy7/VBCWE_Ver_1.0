@@ -16,16 +16,16 @@
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
                         <ul class="nav side-menu">
-                            <li><a th:href="@{/admin/initSearchReport}"><i class="fa fa-home"></i> Home </a></li>
-                            <li><a><i class="fa fa-user"></i>Quản lý tài khoản <span class="fa fa-chevron-down"></span></a>
+                            <li><a th:href="@{/admin/initSearchReport}"><i class="fa fa-home"></i><span th:text="#{label.home}"> Home </span></a></li>
+                            <li><a><i class="fa fa-user"></i><span th:text="#{label.account.management}">Quản lý tài khoản</span> <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a th:href="@{/admin/initSearchUserInfo}">Danh sách tài khoản</a></li>
-                                    <li><a th:href="@{/admin/initAddUserInfo}">Thêm mới tài khoản</a></li>
+                                    <li><a th:href="@{/admin/initSearchUserInfo}" th:text="#{label.account.list}">Danh sách tài khoản</a></li>
+                                    <li><a th:href="@{/admin/initAddUserInfo}" th:text="#{label.account.add}">Thêm mới tài khoản</a></li>
                                 </ul></li>
-                            <li><a><i class="fa fa-list-alt"></i>Quản lý báo cáo <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-list-alt"></i><span th:text="#{label.reportManagement}">Quản lý báo cáo </span><span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a th:href="@{/admin/initSearchReport}">Danh sách báo cáo</a></li>
-                                    <li><a th:href="@{/benchmark/}">Benchmaking</a></li>
+                                    <li><a th:href="@{/admin/initSearchReport}" th:text="#{label.reportList}">Danh sách báo cáo</a></li>
+                                    <li><a th:href="@{/benchmark/}" th:text="#{label.benchmaking}">Benchmaking</a></li>
                                 </ul>
                             </li>
                         </ul>

@@ -10,7 +10,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>BENCHMARK</h2>
+                        <h2><span th:text="#{admin.benchmark.subTitle}">BENCHMARK</span></h2>
                         <div class="clearfix"></div>
                     </div>
                     <form th:object="${benchmarkForm}" id="benchmarkForm" method="post" th:action="@{/benchmark/update}">
@@ -32,21 +32,21 @@
 	                            <table class="table table-striped jambo_table table-bordered">
 	                                <thead>
 	                                    <tr class="headings">
-	                                        <th class="column-title text-center">Cấp độ</th>
-	                                        <th class="column-title text-center">Tỷ lệ % nữ</th>
-	                                        <th class="column-title text-center">Min Diff</th>
-	                                        <th class="column-title text-center">Max Diff</th>
+	                                        <th class="column-title text-center"><span th:text="#{admin.benchmark.col01}">Cấp độ</span></th>
+	                                        <th class="column-title text-center"><span th:text="#{admin.benchmark.col02}">Tỷ lệ % nữ</span></th>
+	                                        <th class="column-title text-center"><span th:text="#{admin.benchmark.col03}">Min Diff</span></th>
+	                                        <th class="column-title text-center"><span th:text="#{admin.benchmark.col04}">Max Diff</span></th>
 	                                    </tr>
 	                                </thead>
 	                                <tbody class="table-input">
 	                                   <tr th:each="result, idx : *{benchmarkList}">
 	                                       <td class="text-center">
-	                                            <span th:if="${result.level=='0'}">Overall staff</span>
-		                                        <span th:if="${result.level=='1'}">Level 1</span>
-		                                        <span th:if="${result.level=='2'}">Level 2</span>
-		                                        <span th:if="${result.level=='3'}">Level 3</span>
-		                                        <span th:if="${result.level=='4'}">Level 4</span>
-		                                        <span th:if="${result.level=='5'}">Level 5</span>
+	                                            <span th:if="${result.level=='0'}" th:text="#{admin.benchmark.row01}">Overall staff</span>
+		                                        <span th:if="${result.level=='1'}" th:text="#{admin.benchmark.row02}">Level 1</span>
+		                                        <span th:if="${result.level=='2'}" th:text="#{admin.benchmark.row03}">Level 2</span>
+		                                        <span th:if="${result.level=='3'}" th:text="#{admin.benchmark.row04}">Level 3</span>
+		                                        <span th:if="${result.level=='4'}" th:text="#{admin.benchmark.row05}">Level 4</span>
+		                                        <span th:if="${result.level=='5'}" th:text="#{admin.benchmark.row06}">Level 5</span>
 		                                        <input type="text" hidden="true" th:field="*{benchmarkList[__${idx.index}__].level}"/>
 	                                       </td>
 	                                       <td>
@@ -62,7 +62,7 @@
 	                                </tbody>
 	                            </table>
 	                            <div class="text-right">
-	                                <input type="submit" class="btn btn-primary search-btn btn-success" style="margin-left: 15px;" value="Cập nhật"></input>
+	                                <input type="submit" class="btn btn-primary search-btn btn-success" style="margin-left: 15px;" th:value="#{form.button.update}"></input>
 	                            </div>
 	                        </div>
 	                    </div>

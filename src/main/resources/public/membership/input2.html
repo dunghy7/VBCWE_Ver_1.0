@@ -13,7 +13,7 @@
 	<div class="container minHeight">
 		<div class="row justify-content-center align-self-center mt-3">
 			<div class="card">
-				<div class="card-header">VIỆC LÀM</div>
+				<div class="card-header"><span th:text="#{membership.dataTable2.group.job}">VIỆC LÀM</span></div>
 				
 				<div style="padding-left: 1.25rem; color: red" id="validateClientText" >
                     <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
@@ -26,34 +26,34 @@
 						<table class="table table-striped jambo_table table-bordered">
                         <thead>
                           <tr class="headings">
-                            <th class="column-title text-center" style="width: 20%;">Cấp độ trách nhiệm</th>
-                            <th class="column-title text-center" style="width: 13%;">Nhân viên toàn thời gian, có hợp đồng không xác định thời hạn tại cuối kỳ tham chiếu</th>
-                            <th class="column-title text-center" style="width: 13%;">Nhân viên toàn thời gian, hợp đồng có xác định thời gian  tại cuối kỳ tham chiếu</th>
-                            <th class="column-title text-center" style="width: 13%;">Nhân viên làm việc bán thời gian  tại cuối kỳ tham chiếu</th>
-							<th class="column-title text-center" style="width: 13%;">Tổng số nhân viên tại cuối kỳ tham chiếu</th>
-							<th class="column-title text-center" style="width: 13%;">Kiểm tra dữ liệu</th>
+                            <th class="column-title text-center" style="width: 20%;"><label th:text="#{membership.dataTable2.table.col01}">Cấp độ trách nhiệm</label></th>
+                            <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable2.table.col02}">Nhân viên toàn thời gian, có hợp đồng không xác định thời hạn tại cuối kỳ tham chiếu</label></th>
+                            <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable2.table.col03}">Nhân viên toàn thời gian, hợp đồng có xác định thời gian  tại cuối kỳ tham chiếu</label></th>
+                            <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable2.table.col04}">Nhân viên làm việc bán thời gian  tại cuối kỳ tham chiếu</label></th>
+							<th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable2.table.col05}">Tổng số nhân viên tại cuối kỳ tham chiếu</label></th>
+							<th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable2.table.col06}">Kiểm tra dữ liệu</label></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr th:each="result, idx : *{dataTable2DtoList}">
                             <td class="pl-2">
-                                <span th:if="${result.level=='5' and result.gender=='m'}">Nam giới giữ vị trí cấp 5</span>
-                                <span th:if="${result.level=='5' and result.gender=='f'}">Nữ giới giữ vị trí cấp 5</span>
+                                <span th:if="${result.level=='5' and result.gender=='m'}" th:text="#{membership.dataTable2.table.row01}">Nam giới giữ vị trí cấp 5</span>
+                                <span th:if="${result.level=='5' and result.gender=='f'}" th:text="#{membership.dataTable2.table.row02}">Nữ giới giữ vị trí cấp 5</span>
                                 
-                                <span th:if="${result.level=='4' and result.gender=='m'}">Nam giới giữ vị trí cấp 4</span>
-                                <span th:if="${result.level=='4' and result.gender=='f'}">Nữ giới giữ vị trí cấp 4</span>
+                                <span th:if="${result.level=='4' and result.gender=='m'}" th:text="#{membership.dataTable2.table.row03}">Nam giới giữ vị trí cấp 4</span>
+                                <span th:if="${result.level=='4' and result.gender=='f'}" th:text="#{membership.dataTable2.table.row04}">Nữ giới giữ vị trí cấp 4</span>
                                 
-                                <span th:if="${result.level=='3' and result.gender=='m'}">Nam giới giữ vị trí cấp 3</span>
-                                <span th:if="${result.level=='3' and result.gender=='f'}">Nữ giới giữ vị trí cấp 3</span>
+                                <span th:if="${result.level=='3' and result.gender=='m'}" th:text="#{membership.dataTable2.table.row05}">Nam giới giữ vị trí cấp 3</span>
+                                <span th:if="${result.level=='3' and result.gender=='f'}" th:text="#{membership.dataTable2.table.row06}">Nữ giới giữ vị trí cấp 3</span>
                                 
-                                <span th:if="${result.level=='2' and result.gender=='m'}">Nam giới giữ vị trí cấp 2</span>
-                                <span th:if="${result.level=='2' and result.gender=='f'}">Nữ giới giữ vị trí cấp 2</span>
+                                <span th:if="${result.level=='2' and result.gender=='m'}" th:text="#{membership.dataTable2.table.row07}">Nam giới giữ vị trí cấp 2</span>
+                                <span th:if="${result.level=='2' and result.gender=='f'}" th:text="#{membership.dataTable2.table.row08}">Nữ giới giữ vị trí cấp 2</span>
                                 
-                                <span th:if="${result.level=='1' and result.gender=='m'}">Nam giới giữ vị trí cấp 1</span>
-                                <span th:if="${result.level=='1' and result.gender=='f'}">Nữ giới giữ vị trí cấp 1</span>
+                                <span th:if="${result.level=='1' and result.gender=='m'}" th:text="#{membership.dataTable2.table.row09}">Nam giới giữ vị trí cấp 1</span>
+                                <span th:if="${result.level=='1' and result.gender=='f'}" th:text="#{membership.dataTable2.table.row10}">Nữ giới giữ vị trí cấp 1</span>
                                 
-                                <span th:if="${result.level=='0' and result.gender=='m'}">Tổng số nam giới</span>
-                                <span th:if="${result.level=='0' and result.gender=='f'}">Tổng số nữ giới</span>
+                                <span th:if="${result.level=='0' and result.gender=='m'}" th:text="#{membership.dataTable2.table.row11}">Tổng số nam giới</span>
+                                <span th:if="${result.level=='0' and result.gender=='f'}" th:text="#{membership.dataTable2.table.row12}">Tổng số nữ giới</span>
                             </td>
                             <td>
 								<input type="text" th:attr="rowTable2=__${idx.index}__,colTable2=${result.level!='0'} ? 'indefinitelyContract' + ${result.gender} : ''" maxlength="7" class="changeAny validation" th:classappend="${result.level=='0'} ? bg-transparent : ''" th:readonly="${result.level=='0'}" th:field="*{dataTable2DtoList[__${idx.index}__].indefinitelyContract}" ></input>

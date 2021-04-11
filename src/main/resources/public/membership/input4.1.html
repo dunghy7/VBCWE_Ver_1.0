@@ -13,7 +13,7 @@
         <div class="container minHeight">
             <div class="row justify-content-center align-self-center mt-3">
                 <div class="card">
-                    <div class="card-header">DANH MỤC NGHỀ NGHIỆP - QUẢN LÝ</div>
+                    <div class="card-header"><span th:text="#{membership.dataTable4Sub1.group.subject}">DANH MỤC NGHỀ NGHIỆP - QUẢN LÝ</span></div>
                     
                     <div style="padding-left: 1.25rem; color: red" id="validateClientText" >
 	                    <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
@@ -26,42 +26,42 @@
                             <table class="table table-striped jambo_table table-bordered">
                                 <thead>
                                     <tr class="headings">
-                                        <th class="column-title text-center header-col-title" rowspan="2">Chức danh trong công ty</th>
-                                        <th class="column-title text-center" colspan="4">Nam</th>
-                                        <th class="column-title text-center" colspan="4">Nữ</th>
+                                        <th class="column-title text-center header-col-title" rowspan="2"><label th:text="#{membership.dataTable4Sub1.table.col01}">Chức danh trong công ty</label></th>
+                                        <th class="column-title text-center" colspan="4"><label th:text="#{membership.dataTable4Sub1.table.col02}">Nam</label></th>
+                                        <th class="column-title text-center" colspan="4"><label th:text="#{membership.dataTable4Sub1.table.col03}">Nữ</label></th>
                                     </tr>
                                     <tr class="headings">
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub1.table.col04}">Toàn thời gian, có xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub1.table.col05}">Toàn thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub1.table.col06}">Bán thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub1.table.col07}">Tổng số cuối kỳ 12 tháng</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub1.table.col08}">Toàn thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub1.table.col09}">Toàn thời gian, có xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub1.table.col10}">Bán thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub1.table.col11}">Tổng số cuối kỳ 12 tháng</label></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr th:each="result, idx : *{dataTable4DtoList}">
                                         <td th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? pl-2 : 'pl-5'">
-                                            <span th:if="${result.level=='11'}">Giám đốc điều hành, quan chức cấp cao và các nhà lập pháp</span>
-                                            <span th:if="${result.level=='11.1'}">Các nhà lập pháp và quan chức cấp cao</span>
-                                            <span th:if="${result.level=='11.2'}">Giám đốc điều hành</span>
+                                            <span th:if="${result.level=='11'}" th:text="#{membership.dataTable4Sub1.table.row01}">Giám đốc điều hành, quan chức cấp cao và các nhà lập pháp</span>
+                                            <span th:if="${result.level=='11.1'}" th:text="#{membership.dataTable4Sub1.table.row02}">Các nhà lập pháp và quan chức cấp cao</span>
+                                            <span th:if="${result.level=='11.2'}" th:text="#{membership.dataTable4Sub1.table.row03}">Giám đốc điều hành</span>
 
-                                            <span th:if="${result.level=='12'}">Giám đốc/Quản lý hành chính và thương mại</span>
-                                            <span th:if="${result.level=='12.1'}">Giám đốc/Quản lý phát triển dịch vụ kinh doanh và hành chính</span>
-                                            <span th:if="${result.level=='12.2'}">Giám đốc/Quản lý kinh doanh, marketing và phát triển</span>
+                                            <span th:if="${result.level=='12'}" th:text="#{membership.dataTable4Sub1.table.row04}">Giám đốc/Quản lý hành chính và thương mại</span>
+                                            <span th:if="${result.level=='12.1'}" th:text="#{membership.dataTable4Sub1.table.row05}">Giám đốc/Quản lý phát triển dịch vụ kinh doanh và hành chính</span>
+                                            <span th:if="${result.level=='12.2'}" th:text="#{membership.dataTable4Sub1.table.row06}">Giám đốc/Quản lý kinh doanh, marketing và phát triển</span>
 
-                                            <span th:if="${result.level=='13'}">Giám đốc/Quản lý sản xuất và các dịch vụ chuyên môn</span>
-                                            <span th:if="${result.level=='13.1'}">Giám đốc/Quản lý nông nghiệp, lâm nghiệp và thủy sản</span>
-                                            <span th:if="${result.level=='13.2'}">Giám đốc/Quản lý sản xuất, khai thác mỏ, xây dựng, và phân phối</span>
-                                            <span th:if="${result.level=='13.3'}">Giám đốc/Quản lý thông tin và truyền thông</span>
-                                            <span th:if="${result.level=='13.4'}">Giám đốc/Quản lý các dịch vụ chuyên nghiệp</span>
+                                            <span th:if="${result.level=='13'}" th:text="#{membership.dataTable4Sub1.table.row07}">Giám đốc/Quản lý sản xuất và các dịch vụ chuyên môn</span>
+                                            <span th:if="${result.level=='13.1'}" th:text="#{membership.dataTable4Sub1.table.row08}">Giám đốc/Quản lý nông nghiệp, lâm nghiệp và thủy sản</span>
+                                            <span th:if="${result.level=='13.2'}" th:text="#{membership.dataTable4Sub1.table.row09}">Giám đốc/Quản lý sản xuất, khai thác mỏ, xây dựng, và phân phối</span>
+                                            <span th:if="${result.level=='13.3'}" th:text="#{membership.dataTable4Sub1.table.row10}">Giám đốc/Quản lý thông tin và truyền thông</span>
+                                            <span th:if="${result.level=='13.4'}" th:text="#{membership.dataTable4Sub1.table.row11}">Giám đốc/Quản lý các dịch vụ chuyên nghiệp</span>
 
-                                            <span th:if="${result.level=='14'}">Giám đốc/Quản lý khách sạn, bán lẻ và dịch vụ khác</span>
-                                            <span th:if="${result.level=='14.1'}">Giám đốc/Quản lý khách sạn, nhà hàng</span>
-                                            <span th:if="${result.level=='14.2'}">Bán buôn, bán lẻ</span>
-                                            <span th:if="${result.level=='14.3'}">Các đơn vị sản xuất và dịch vụ còn lại chưa được phân vào đâu</span>
+                                            <span th:if="${result.level=='14'}" th:text="#{membership.dataTable4Sub1.table.row12}">Giám đốc/Quản lý khách sạn, bán lẻ và dịch vụ khác</span>
+                                            <span th:if="${result.level=='14.1'}" th:text="#{membership.dataTable4Sub1.table.row13}">Giám đốc/Quản lý khách sạn, nhà hàng</span>
+                                            <span th:if="${result.level=='14.2'}" th:text="#{membership.dataTable4Sub1.table.row14}">Bán buôn, bán lẻ</span>
+                                            <span th:if="${result.level=='14.3'}" th:text="#{membership.dataTable4Sub1.table.row15}">Các đơn vị sản xuất và dịch vụ còn lại chưa được phân vào đâu</span>
                                         </td>
                                         <td>
                                             <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub1=male__${idx.index}__,colTable4Sub1=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'maleFullTimeIndefinite' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableMale.fullTimeIndefinite}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel == null or result.parentLevel == ''}" value="1"></input>

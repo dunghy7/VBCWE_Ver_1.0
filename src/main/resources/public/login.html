@@ -6,7 +6,7 @@
 <meta charset="utf-8"></meta>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-<title>Đăng nhập</title>
+<title th:text="#{login.title}">Đăng nhập</title>
 <link rel="icon" th:href="@{/static/favicon.ico}" type="image/ico" />
 <!-- Bootstrap -->
 <link rel="stylesheet" th:href="@{/static/Administrator/vendors/bootstrap/dist/css/bootstrap.min.css}" />
@@ -25,21 +25,31 @@
                 <div class="header-logo">
                     <img th:src="@{/static/images/logo-light.png}" />
                     <img th:src="@{/static/images/logo-gears-light.png}" class="logo-gears"/>
+                    <div class="pull-right" style="display: flex;align-items: center;margin-right: 10px;">
+                      <a th:href="@{/?lang=vi}" style="display: flex; width: 28px; height: 28px; border: 1px solid #8e8e93; border-radius: 50%; align-items: center; justify-content: center;margin-right:3px">
+                      	<img th:src="@{/static/images/vn.png}" style="width: 28px; cursor: pointer; border: 2px solid #FFF; border-radius: 50%;" lang="vi" class="language"/>
+                      </a>
+                      <a th:href="@{/?lang=en}" style="display: flex; width: 28px; height: 28px; border: 1px solid #8e8e93; border-radius: 50%; align-items: center; justify-content: center;margin-right:6px">
+                      	<img th:src="@{/static/images/en.png}" style="width: 28px; cursor: pointer;  border: 2px solid #FFF; border-radius: 50%;" lang="en" class="language"/>
+                      </a>
+                    </div>
                 </div>
                 <div class="header-top"></div>
             </header>
         </div>
         <div class="row">
             <div class="d-none d-md-flex col-xl-8 col-lg-8 col-md-8 col-sm-12 about-gears">
-                <h2 class="about-title about-title-left">GEARS - CÔNG CỤ ĐÁNH GIÁ, <br/>KẾT QUẢ VÀ CHIẾN LƯỢC BÌNH ĐẲNG GIỚI</h2>
+                <h2 class="about-title about-title-left"><span th:text="#{login.label.overview.title01}">GEARS - CÔNG CỤ ĐÁNH GIÁ,</span> 
+                <br/>
+                <span th:text="#{login.label.overview.title02}">KẾT QUẢ VÀ CHIẾN LƯỢC BÌNH ĐẲNG GIỚI</span></h2>
                 <div class="about-top-main">
-                    <p>GEARS là công cụ được phát triển bởi VBCWE và Investing in Women giúp doanh nghiệp hiểu về những vấn đề, cơ hội và thế mạnh của chiến lược bình đẳng giới (BĐG) tại nơi làm việc của mình, từ đó cả thiện kết quả kinh doanh cho doanh nghiệp - bao gồm doanh thu, lợi nhuận đầu tư và giá trị công ty. Công cụ GEARS:</p>
+                    <p th:text="#{login.label.overview.content01}">GEARS là công cụ được phát triển bởi VBCWE và Investing in Women giúp doanh nghiệp hiểu về những vấn đề, cơ hội và thế mạnh của chiến lược bình đẳng giới (BĐG) tại nơi làm việc của mình, từ đó cả thiện kết quả kinh doanh cho doanh nghiệp - bao gồm doanh thu, lợi nhuận đầu tư và giá trị công ty. Công cụ GEARS:</p>
                     <ul>
-                        <li>Là bước đầu trong hành trình tiến tới BĐG tại nơi làm việc của doanh nghiệp - một đánh giá sơ bộ nhằm cung cấp thông tin cho tiến trình thực hiện chiến lược tổng thể về BĐG tại nơi làm việc.</li>
-                        <li>Dữ liệu phân tích sẽ giúp doanh nghiệp nhìn lại về sự cân bằng giới và xu hướng chuyển dịch lao động trong doanh nghiệp.</li>
-                        <li>Đánh giá chính sách và thực thi chính sách của doanh nghiệp so với thực tiễn tại các công ty hàng đầu khác.</li>
+                        <li><span th:text="#{login.label.overview.content02}">Là bước đầu trong hành trình tiến tới BĐG tại nơi làm việc của doanh nghiệp - một đánh giá sơ bộ nhằm cung cấp thông tin cho tiến trình thực hiện chiến lược tổng thể về BĐG tại nơi làm việc.</span></li>
+                        <li><span th:text="#{login.label.overview.content03}">Dữ liệu phân tích sẽ giúp doanh nghiệp nhìn lại về sự cân bằng giới và xu hướng chuyển dịch lao động trong doanh nghiệp.</span></li>
+                        <li><span th:text="#{login.label.overview.content04}">Đánh giá chính sách và thực thi chính sách của doanh nghiệp so với thực tiễn tại các công ty hàng đầu khác.</span></li>
                     </ul>
-                    <p>Quá trình đánh giá bao gồm việc trả lời các câu hỏi "Có" hoặc "Không" xuyên suốt 10 lĩnh vực trọng điểm về BĐG và số điểm tổng kết sẽ chỉ ra hiện trạng BĐG tại doanh nghiệp. GEARS cũng thu thập dữ liệu về nguồn nhân lực để đánh giá tác động của chiến lược và thực tiễn áp dụng BĐG lên sự tham gia của các giới trong doanh nghiệp. VBCWE hỗ trợ doanh nghiệp phân tích dữ liệu và viết báo cáo về kết quả đánh giá, đưa ra các đề xuất, khung thời gian và nguồn lực cần thiết để cải thiện hiện trạng BĐG tại doanh nghiệp.</p>
+                    <p><span th:text="#{login.label.overview.content05}">Quá trình đánh giá bao gồm việc trả lời các câu hỏi "Có" hoặc "Không" xuyên suốt 10 lĩnh vực trọng điểm về BĐG và số điểm tổng kết sẽ chỉ ra hiện trạng BĐG tại doanh nghiệp. GEARS cũng thu thập dữ liệu về nguồn nhân lực để đánh giá tác động của chiến lược và thực tiễn áp dụng BĐG lên sự tham gia của các giới trong doanh nghiệp. VBCWE hỗ trợ doanh nghiệp phân tích dữ liệu và viết báo cáo về kết quả đánh giá, đưa ra các đề xuất, khung thời gian và nguồn lực cần thiết để cải thiện hiện trạng BĐG tại doanh nghiệp.</span></p>
                 </div>
                 <div style="margin-top: 4%;">
                     <a href="https://vbcwe.com/" class="more-info" th:text="#{form.button.more.info}"></a>
@@ -57,23 +67,23 @@
                                 </div>
                                 <br />
                                 <div class="pb-20">
-                                    <input type="text" class="form-control" th:field="*{email}" placeholder="Email" />
+                                    <input type="text" class="form-control" th:field="*{email}" th:placeholder="#{label.email}" />
                                     <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></span>
                                 </div>
                                 <div class="pb-20">
-                                    <input type="password" class="form-control" th:field="*{password}" placeholder="Mật khẩu" />
+                                    <input type="password" class="form-control" th:field="*{password}" th:placeholder="#{label.password}" />
                                     <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error"></span>
                                 </div>
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn" id="btnLogin">Đăng nhập</button>
+                                    <button type="submit" class="btn" id="btnLogin" th:text="#{form.button.login}">Đăng nhập</button>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-12">
-                                    <a th:href="@{/freemember/signup}" class="text-right" >Đăng ký tài khoản</a>
+                                    <a th:href="@{/freemember/signup}" class="text-right" th:text="#{login.label.accountRegister}">Đăng ký tài khoản</a>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <a th:href="@{/forgot_password}" class="text-right" >Quên mật khẩu?</a>
+                                    <a th:href="@{/forgot_password}" class="text-right" th:text="#{login.label.forgotPassword}" >Quên mật khẩu?</a>
                                     <div class="clearfix"></div>
                                 </div>
                             </form>
@@ -89,8 +99,8 @@
                     <div class="row">
                         <div class="col-6 col-md-6 col-sm-12 footer_contact">
                             <div class="fb-item">
-                                <div class="fb-title">Về VBCWE</div>
-                                <div class="fb-text">Mạng lưới Doanh
+                                <div class="fb-title"><span th:text="#{login.label.about.vbcwe.title}">VỀ VBCWE</span></div>
+                                <div class="fb-text"><span th:text="#{login.label.about.vbcwe.content}">Mạng lưới Doanh
                                     nghiệp Việt Nam Hỗ trợ Phát triển Quyền
                                     năng Phụ nữ (Vietnam Business Coalition
                                     for Women's Empowerment - VBCWE) được
@@ -99,7 +109,7 @@
                                     lớn nhằm theo đuổi mục tiêu bình đẳng
                                     giới tại nơi làm việc và phát triển
                                     quyền kinh tế cho phụ nữ tại Việt
-                                    Nam.</div>
+                                    Nam.</span></div>
                             </div>
 	                        <div class="fb-logo-brand">
                                 <a href="https://www.dfat.gov.au/about-us/our-locations/missions/Pages/australian-embassy-vietnam" class="icon-australian-aid"></a>
@@ -108,18 +118,18 @@
                         </div>
                         <div class="col-6 col-md-6 col-sm-12">
                             <div class="fb-item">
-                                <div class="fb-title">LIÊN HỆ</div>
+                                <div class="fb-title"><span th:text="#{login.label.contact}">LIÊN HỆ</span></div>
                                 <div class="fb-main">
                                     <div class="fbm-item">
-                                        <i class="icon-location"></i> <span>Tầng
+                                        <i class="icon-location"></i> <span th:text="#{login.label.contact.address}">Tầng
                                             5, số 5-7, ngõ 92 Láng Hạ, Đống
                                             Đa, Hà Nội, Việt Nam</span>
                                     </div>
                                     <div class="fbm-item">
-                                        <i class="icon-website"></i> <span>director@vbcwe.com</span>
+                                        <i class="icon-website"></i> <span th:text="#{login.label.contact.email}">director@vbcwe.com</span>
                                     </div>
                                     <div class="fbm-item">
-                                        <i class="icon-phone"></i> <span>0243 2022 678</span>
+                                        <i class="icon-phone"></i> <span th:text="#{login.label.contact.phone}">0243 2022 678</span>
                                     </div>
                                     <div class="fbm-item">
                                         <a href="https://www.linkedin.com/company/vbcwe" class="icon-insta"></a>

@@ -13,22 +13,22 @@
         <div class="row justify-content-center align-self-center">
             <div class="col-11 text-center p-0 mt-3 mb-2">
                 <div class="card px-5 pt-4 pb-0 mt-3 mb-3">
-                    <h2 id="heading">XEM XÉT CÁC CHÍNH SÁCH BÌNH ĐẲNG GIỚI TẠI NƠI LÀM VIỆC</h2>
-                    <p class="fs-subtitle">Bảng câu hỏi này mất khoảng từ 2 đến 2,5 giờ để hoàn thành.</p>
+                    <h2 id="heading"><span th:text="#{membership.gears.page01.subject}">XEM XÉT CÁC CHÍNH SÁCH BÌNH ĐẲNG GIỚI TẠI NƠI LÀM VIỆC</span></h2>
+                    <p class="fs-subtitle"><span th:text="#{membership.gears.page01.time}">Bảng câu hỏi này mất khoảng từ 2 đến 2,5 giờ để hoàn thành.</span></p>
                     <form id="msform" th:action="@{/membership/savesurvey}">
                         <!-- progressbar -->
                         <ul id="progressbar">
-                            <li class="active" id="personal">Thông tin cá nhân</li>
-                            <li id="num1">Lĩnh vực 1</li>
-                            <li id="num2">Lĩnh vực 2</li>
-                            <li id="num3">Lĩnh vực 3</li>
-                            <li id="num4">Lĩnh vực 4</li>
-                            <li id="num5">Lĩnh vực 5</li>
-                            <li id="num6">Lĩnh vực 6</li>
-                            <li id="num7">Lĩnh vực 7</li>
-                            <li id="num8">Lĩnh vực 8</li>
-                            <li id="num9">Lĩnh vực 9</li>
-                            <li id="num10">Lĩnh vực 10</li>
+                            <li class="active" id="personal"><span th:text="#{membership.gears.page01.personalInfo}">Thông tin cá nhân</span></li>
+                            <li id="num1"><span th:text="#{membership.gears.page01.field01}">Lĩnh vực 1</span></li>
+                            <li id="num2"><span th:text="#{membership.gears.page01.field02}">Lĩnh vực 2</span></li>
+                            <li id="num3"><span th:text="#{membership.gears.page01.field03}">Lĩnh vực 3</span></li>
+                            <li id="num4"><span th:text="#{membership.gears.page01.field04}">Lĩnh vực 4</span></li>
+                            <li id="num5"><span th:text="#{membership.gears.page01.field05}">Lĩnh vực 5</span></li>
+                            <li id="num6"><span th:text="#{membership.gears.page01.field06}">Lĩnh vực 6</span></li>
+                            <li id="num7"><span th:text="#{membership.gears.page01.field07}">Lĩnh vực 7</span></li>
+                            <li id="num8"><span th:text="#{membership.gears.page01.field08}">Lĩnh vực 8</span></li>
+                            <li id="num9"><span th:text="#{membership.gears.page01.field09}">Lĩnh vực 9</span></li>
+                            <li id="num10"><span th:text="#{membership.gears.page01.field10}">Lĩnh vực 10</span></li>
                         </ul>
                         <div class="progress">
                             <div
@@ -41,66 +41,66 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">THÔNG TIN LIÊN HỆ</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page01.contactInfo}">THÔNG TIN LIÊN HỆ</span></h2>
                                     </div>
                                 </div>
                                 <div
                                     class="row justify-content-center col-md-7 col-sm-12 col-xs-12">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Tên công ty</label>
+                                            <label th:text="#{label.companyName}">Tên công ty</label>
                                             <input name="companyName" class="form-control" />
                                         </div>
                                         <div class="item form-group">
-                                            <label>Địa chỉ</label>
+                                            <label th:text="#{label.address}">Địa chỉ</label>
                                             <input name="address" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Quận</label>
+                                            <label th:text="#{label.district}">Quận</label>
                                             <input name="district" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-5 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Thành phố</label>
+                                            <label th:text="#{label.city}">Thành phố</label>
                                             <input name="city" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Họ tên</label>
+                                            <label th:text="#{label.fullName}">Họ tên</label>
                                             <input name="fullName" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-5 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Chức vụ</label>
+                                            <label th:text="#{label.position}">Chức vụ</label>
                                             <input name="position" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Số điện thoại bàn</label>
+                                            <label th:text="#{label.deskPhoneNum}">Số điện thoại bàn</label>
                                             <input name="phone" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-5 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Số di động</label>
+                                            <label th:text="#{label.cellNum}">Số di động</label>
                                             <input name="mobile" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Số fax</label>
+                                            <label th:text="#{label.faxNum}">Số fax</label>
                                             <input name="fax" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-5 col-sm-12 col-xs-12">
                                         <div class="item form-group">
-                                            <label>Địa chỉ email</label>
+                                            <label th:text="#{label.emailAddress}">Địa chỉ email</label>
                                             <input name="email" class="form-control" />
                                         </div>
                                     </div>
@@ -113,33 +113,33 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Chiến lược liên kết bình đẳng giới và các ưu tiên trong kinh doanh</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page02.subject}">Chiến lược liên kết bình đẳng giới và các ưu tiên trong kinh doanh</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Điều quan trọng là sự phát triển
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page02.description}">Điều quan trọng là sự phát triển
                                             của chiến lược bình đẳng giới trên toàn công ty hỗ trợ và phù
                                             hợp với chiến lược kinh doanh tổng thể của công ty. Điều này
                                             có nghĩa là mỗi chiến lược bình đẳng giới của mỗi công ty cần
                                             được điều chỉnh theo các nhu cầu kinh doanh khác nhau, dựa
                                             trên việc lấy khách hàng làm trọng tâm, phân khúc thị trường,
-                                            chiến lược hoạt động, địa lý và động lực của ngành</p>
+                                            chiến lược hoạt động, địa lý và động lực của ngành</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" name="fa1_level1" value="A" />
-                                    <div class="col-5">Công ty có chính sách cơ hội bình đẳng và không phân biệt đối xử bao gồm bình đẳng giới không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page02.question01}">Công ty có chính sách cơ hội bình đẳng và không phân biệt đối xử bao gồm bình đẳng giới không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" class="form-check-input" name="fa1_anwser1" value="1" />
                                     </div>
@@ -164,7 +164,7 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" name="fa1_level2" value="B" />
-                                    <div class="col-5">Hiện tại công ty có chiến lược bình đẳng giới không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page02.question02}">Hiện tại công ty có chiến lược bình đẳng giới không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" class="form-check-input" name="fa1_anwser2" value="1" />
                                     </div>
@@ -189,38 +189,38 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" name="fa1_level3" value="C" />
-                                    <div class="col-5">
+                                    <div class="col-5"><span th:text="#{membership.gears.page02.question03}">
                                         Công ty có áp dụng quan điểm bình đẳng giới khi thường xuyên
                                         tiến hành đánh giá chính sách về các quy trình quản lý con
                                         người khác nhau không? Vui lòng chọn tất cả các đáp án phù
                                         hợp.
-                                        <div class="custom-control custom-checkbox">
+                                        </span><div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="fa1_other3" class="custom-control-input" id="cb0103_01" />
-                                            <label class="custom-control-label" for="cb0103_01">tuyển dụng và lựa chọn</label>
+                                            <label class="custom-control-label" for="cb0103_01" th:text="#{membership.gears.page02.question03.select01}">tuyển dụng và lựa chọn</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="fa1_other3" class="custom-control-input" id="cb0103_02" />
-                                            <label class="custom-control-label" for="cb0103_02">quản trị hiệu quả làm việc</label>
+                                            <label class="custom-control-label" for="cb0103_02" th:text="#{membership.gears.page02.question03.select02}">quản trị hiệu quả làm việc</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="fa1_other3" class="custom-control-input" id="cb0103_03" />
-                                            <label class="custom-control-label" for="cb0103_03">khen thưởng</label>
+                                            <label class="custom-control-label" for="cb0103_03" th:text="#{membership.gears.page02.question03.select03}">khen thưởng</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="fa1_other3" class="custom-control-input" id="cb0103_04" />
-                                            <label class="custom-control-label" for="cb0103_04">đào tạo và phát triển</label>
+                                            <label class="custom-control-label" for="cb0103_04" th:text="#{membership.gears.page02.question03.select04}">đào tạo và phát triển</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="fa1_other3" class="custom-control-input" id="cb0103_05" />
-                                            <label class="custom-control-label" for="cb0103_05">Phát hiện nhân tài</label>
+                                            <label class="custom-control-label" for="cb0103_05" th:text="#{membership.gears.page02.question03.select05}">Phát hiện nhân tài</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="fa1_other3" class="custom-control-input" id="cb0103_06" />
-                                            <label class="custom-control-label" for="cb0103_06">Phát triển lãnh đạo</label>
+                                            <label class="custom-control-label" for="cb0103_06" th:text="#{membership.gears.page02.question03.select06}">Phát triển lãnh đạo</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="fa1_other3" class="custom-control-input" id="cb0103_07" />
-                                            <label class="custom-control-label" for="cb0103_07">kế hoạch kế nhiệm và cơ cấu nghề nghiệp</label>
+                                            <label class="custom-control-label" for="cb0103_07" th:text="#{membership.gears.page02.question03.select07}">kế hoạch kế nhiệm và cơ cấu nghề nghiệp</label>
                                         </div>
                                     </div>
                                     <div class="col-1">
@@ -247,9 +247,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" name="fa1_level4" value="C" />
-                                    <div class="col-5">Chiến lược bình đẳng giới của công ty
+                                    <div class="col-5"><span th:text="#{membership.gears.page02.question03.select04}">Chiến lược bình đẳng giới của công ty
                                         có được thiết kế đặc biệt để hỗ trợ việc đạt được các mục đích
-                                        và mục tiêu trong chiến lược kinh doanh tổng thể của công ty?</div>
+                                        và mục tiêu trong chiến lược kinh doanh tổng thể của công ty?</span></div>
                                     <div class="col-1">
                                         <input type="radio" class="form-check-input" name="fa1_anwser4" value="1" />
                                     </div>
@@ -274,9 +274,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">5</div>
                                     <input type="text" hidden="true" name="fa1_level5" value="C" />
-                                    <div class="col-5">Chiến lược bình đẳng giới của công ty
+                                    <div class="col-5"><span th:text="#{membership.gears.page02.question03.select05}">Chiến lược bình đẳng giới của công ty
                                         có được phân bổ nguồn lực tài chính và nhân lực chuyên dụng để
-                                        thực hiện không?</div>
+                                        thực hiện không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" class="form-check-input" name="fa1_anwser5" value="1" />
                                     </div>
@@ -301,9 +301,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">6</div>
                                     <input type="text" hidden="true" name="fa1_level6" value="D" />
-                                    <div class="col-5">Công ty có tiến hành giám sát và đánh
+                                    <div class="col-5"><span th:text="#{membership.gears.page02.question03.select06}">Công ty có tiến hành giám sát và đánh
                                         giá thường xuyên việc thực hiện vàhiệu quả của chiến lược bình
-                                        đẳng giới không?</div>
+                                        đẳng giới không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" class="form-check-input" name="fa1_anwser6" value="1" />
                                     </div>
@@ -328,9 +328,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">7</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có báo cáo công khai cho các
+                                    <div class="col-5"><span th:text="#{membership.gears.page02.question03.select07}">Công ty có báo cáo công khai cho các
                                         bên liên quan về kết quả của các mục tiêu bình đẳng giới có
-                                        thể đo lường được và có thời hạn thực hiện không?</div>
+                                        thể đo lường được và có thời hạn thực hiện không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input" name="optradio0107" />
                                     </div>
@@ -364,12 +364,12 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Lãnh đạo và trách nhiệm</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page03.subject}">Lãnh đạo và trách nhiệm</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Cam kết của các nhà lãnh đạo ở tất
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page03.description}">Cam kết của các nhà lãnh đạo ở tất
                                             cả các cấp là chìa khóa thực hiện bình đẳng giới thanh công
                                             trong mọi tổ chức. Bảng câu hỏi này không quy định cụ thể
                                             định nghĩa về lãnh đạo. Công ty sẽ tự xác định ai thuộc vị
@@ -380,24 +380,24 @@
                                             nói; cách chúng ta hành động; những gì chúng ta ưu tiên; và
                                             cách chúng ta đo lường; cùng nhau quyết định những gì sẽ được
                                             thực hiện.”1 Các nhà lãnh đạo cần đặt kỳ vọng rõ ràng để
-                                            những người khác có thể làm theo.</p>
+                                            những người khác có thể làm theo.</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Trách nhiệm của bình đẳng giới tại nơi
+                                    <div class="col-5"><span th:text="#{membership.gears.page03.question01}">Trách nhiệm của bình đẳng giới tại nơi
                                         làm việc có được phân chia rộng rãi cho tất cả các cấp lãnh
-                                        đạo?</div>
+                                        đạo?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input" name="optradio0201" />
                                     </div>
@@ -423,9 +423,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Các nhà lãnh đạo của công ty, bao gồm
+                                    <div class="col-5"><span th:text="#{membership.gears.page03.question02}">Các nhà lãnh đạo của công ty, bao gồm
                                         cả đội ngũ cao nhất, thường xuyên thể hiện cam kết của họ đối
-                                        với bình đẳng giới?</div>
+                                        với bình đẳng giới?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0202" />
@@ -454,9 +454,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Các nhà quản lý ở tất cả các cấp có
+                                    <div class="col-5"><span th:text="#{membership.gears.page03.question03}">Các nhà quản lý ở tất cả các cấp có
                                         chính thức chịu trách nhiệm về tiến trình và kết quả bình đẳng
-                                        giới?</div>
+                                        giới?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0203" />
@@ -486,9 +486,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Có phải mỗi nhà lãnh đạo đóng góp vào
+                                    <div class="col-5"><span th:text="#{membership.gears.page03.question04}">Có phải mỗi nhà lãnh đạo đóng góp vào
                                         kết quả bình đẳng giới thường xuyên được đánh giá và khen
-                                        thưởng?</div>
+                                        thưởng?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0204" />
@@ -527,37 +527,37 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Bình đẳng giới đối với lương thưởng</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page04.subject}">Bình đẳng giới đối với lương thưởng</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Bình đẳng giới đối với vấn đề lương
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page04.description}">Bình đẳng giới đối với vấn đề lương
                                             thưởng là khi nữ giới và nam giới có kết quả làm việc như
                                             nhau hoặc tạo ra các giá trị tương đương sẽ được trả lương
                                             như nhau. Người sử dụng lao động phải đảm bảo rằng họ tuân
                                             thủ tất cả những quy định về trả lương công bằng trên thị
                                             trường, trong đó họ thực hiện những điều luật của quốc
                                             gia/địa phương sở tại liên quan tới luật chống phân biệt đối
-                                            xử.</p>
+                                            xử.</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có chính sách đãi ngộ chính
+                                    <div class="col-5"><span th:text="#{membership.gears.page04.question01}">Công ty có chính sách đãi ngộ chính
                                         thức, hoặc một cam kết trong chính sách hợp tác rộng hơn, với
                                         các mục tiêu cụ thể liên quan tới bình đẳng giới trong vấn đề
-                                        lương thưởng không?</div>
+                                        lương thưởng không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0301" />
@@ -587,8 +587,8 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có thực hiện phân tích khoảng
-                                        cách về lương thưởng cho toàn bộ công ty thường xuyên không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page04.question02}">Công ty có thực hiện phân tích khoảng
+                                        cách về lương thưởng cho toàn bộ công ty thường xuyên không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0302" />
@@ -618,9 +618,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có từng thực hiện những hành
+                                    <div class="col-5"><span th:text="#{membership.gears.page04.question03}">Công ty có từng thực hiện những hành
                                         động cụ thể để giải quyết tất cả những trường hợp bất bình
-                                        đẳng giới về lương thưởng trong các vai trò tương tự không?</div>
+                                        đẳng giới về lương thưởng trong các vai trò tương tự không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0303" />
@@ -650,11 +650,11 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có đánh giá các phúc lợi tài
+                                    <div class="col-5"><span th:text="#{membership.gears.page04.question04}">Công ty có đánh giá các phúc lợi tài
                                         chính khác bao gồm bảo hiểm nhân thọ và bảo hiểm sức khoẻ, các
                                         khoản thưởng và đóng góp hưu trí khi xem xét các khoản lương
                                         thưởng như một phần của việc phân tích bình đẳng về lương
-                                        thưởng không?</div>
+                                        thưởng không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0304" />
@@ -685,25 +685,25 @@
                                     <div class="col-1 text-center">5</div>
                                     <input type="text" hidden="true" value="D" />
                                     <div class="col-5">
-                                        Công ty có truyền thông rõ ràng về việc thực hiện các chế độ
+                                        <span th:text="#{membership.gears.page04.question05}">Công ty có truyền thông rõ ràng về việc thực hiện các chế độ
                                         lương và đãi ngộ nói trên không? Vui lòng chọn các phương án
-                                        phù hợp:
+                                        phù hợp:</span>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox"  class="custom-control-input"
                                                 id="cb0305_01" name="cb0305_01" /> <label class="custom-control-label"
-                                                for="cb0305_01">truyền thông nội bộ (tới một số cấp
+                                                for="cb0305_01" th:text="#{membership.gears.page04.question05.select01}">truyền thông nội bộ (tới một số cấp
                                                 độ nhân sự cụ thể, ví dụ: nhóm lãnh đạo cao cấp)</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox"  class="custom-control-input"
                                                 id="cb0305_02" name="cb0305_01" /> <label class="custom-control-label"
-                                                for="cb0305_02">truyền thông nội bộ (tới tất cả các
+                                                for="cb0305_02" th:text="#{membership.gears.page04.question05.select02}">truyền thông nội bộ (tới tất cả các
                                                 nhân viên)</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="cb0305_01" class="custom-control-input"
                                                 id="cb0305_03" /> <label class="custom-control-label"
-                                                for="cb0305_03">truyền thông ra ngoài (ví dụ: báo
+                                                for="cb0305_03" th:text="#{membership.gears.page04.question05.select03}">truyền thông ra ngoài (ví dụ: báo
                                                 cáo thường niên, báo cáo phát triển bền vững)</label>
                                         </div>
                                     </div>
@@ -737,26 +737,26 @@
                                     <div class="col-1 text-center">6</div>
                                     <input type="text" hidden="true" value="D" />
                                     <div class="col-5">
-                                        Công ty có truyền thông rõ ràng về việc có khoảng cách về
+                                        <span th:text="#{membership.gears.page04.question06}">Công ty có truyền thông rõ ràng về việc có khoảng cách về
                                         lương thưởng liên quan tới giới và bất kỳ mục tiêu thu hẹp
                                         khoảng cách này nói chung không? Vui lòng chọn tất cả các
-                                        phương án phù hợp:
+                                        phương án phù hợp:</span>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input"
                                                 id="cb0306_01" name="cb0306_01" /> <label class="custom-control-label"
-                                                for="cb0306_01">truyền thông nội bộ (tới một số cấp
+                                                for="cb0306_01" th:text="#{membership.gears.page04.question06.select01}">truyền thông nội bộ (tới một số cấp
                                                 độ nhân sự cụ thể, ví dụ: nhóm lãnh đạo cao cấp)</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="cb0306_01" class="custom-control-input"
                                                 id="cb0306_02" /> <label class="custom-control-label"
-                                                for="cb0306_02">truyền thông nội bộ (tới tất cả các
+                                                for="cb0306_02" th:text="#{membership.gears.page04.question06.select02}">truyền thông nội bộ (tới tất cả các
                                                 nhân viên)</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="cb0306_01" class="custom-control-input"
                                                 id="cb0306_03" /> <label class="custom-control-label"
-                                                for="cb0306_03">truyền thông ra ngoài (ví dụ: báo
+                                                for="cb0306_03" th:text="#{membership.gears.page04.question06.select03}">truyền thông ra ngoài (ví dụ: báo
                                                 cáo thường niên, báo cáo phát triển bền vững)</label>
                                         </div>
                                     </div>
@@ -797,36 +797,36 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Thành phần giới trong lực lượng lao
-                                            động</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page05.subject}">Thành phần giới trong lực lượng lao
+                                            động</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Các tổ chức có sự cân bằng về giới
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page05.description}">Các tổ chức có sự cân bằng về giới
                                             thường có xu hướng có mức độ gắn kết và giữ chân nhân viên
                                             cao hơn và có khả năng thực hiện tốt hơn các tổ chức bị chi
                                             phối bởi một giới. Nghiên cứu cho thấy cân bằng giới ở cấp
                                             lãnh đạo, điều hành và hội đồng quản trị là rất quan trọng vì
                                             nó có thể cải thiện chất lượng của việc ra quyết định và đổi
-                                            mới chiến lược.</p>
+                                            mới chiến lược.</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có thu thập và phân tích dữ
+                                    <div class="col-5"><span th:text="#{membership.gears.page05.question01}">Công ty có thu thập và phân tích dữ
                                         liệu về thành phần giới (tỷ lệ nam và nữ) tại tất cả các cấp
-                                        độ không?</div>
+                                        độ không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0401" />
@@ -856,8 +856,8 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có theo dõi và phân tích
-                                        nguyên nhân của việc từ chức tính theo giới không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page05.question02}">Công ty có theo dõi và phân tích
+                                        nguyên nhân của việc từ chức tính theo giới không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0402" />
@@ -886,9 +886,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có thường xuyên theo dõi và
+                                    <div class="col-5"><span th:text="#{membership.gears.page05.question03}">Công ty có thường xuyên theo dõi và
                                         phân tích dữ liệu về chuyển dịch nhân sự (khích lệ và thăng
-                                        tiến trong công việc) liên quan tới giới không?</div>
+                                        tiến trong công việc) liên quan tới giới không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0403" />
@@ -918,10 +918,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có các mục tiêu có thể đo
+                                    <div class="col-5"><span th:text="#{membership.gears.page05.question04}">Công ty có các mục tiêu có thể đo
                                         lường được theo thời gian đối với sự cân bằng về giới trong
                                         Hội đồng quản trị, nhóm nhân sự cao cấp và toàn bộ các cấp độ
-                                        nhân viên không?</div>
+                                        nhân viên không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0404" />
@@ -951,9 +951,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">5</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Các mục tiêu về bình đẳng giới, thành
+                                    <div class="col-5"><span th:text="#{membership.gears.page05.question05}">Các mục tiêu về bình đẳng giới, thành
                                         phần giới và giữ chân nhân viên có là một phần mục tiêu thực
-                                        hiện của các lãnh đạo công ty không?</div>
+                                        hiện của các lãnh đạo công ty không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0405" />
@@ -983,10 +983,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">6</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có thường xuyên theo dõi dữ
+                                    <div class="col-5"><span th:text="#{membership.gears.page05.question06}">Công ty có thường xuyên theo dõi dữ
                                         liệu về cân bằng giới tại tất cả các cấp độ và sử dụng dữ liệu
                                         này như một công cụ lên kế hoạch chiến lược cho các giai đoạn
-                                        sắp tới không?</div>
+                                        sắp tới không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0406" />
@@ -1025,12 +1025,12 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Lồng ghép chế độ làm việc linh hoạt</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page06.subject}">Lồng ghép chế độ làm việc linh hoạt</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Lĩnh vực này liên quan tới việc
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page06.description}">Lĩnh vực này liên quan tới việc
                                             đánh giá sự bình đẳng đối với các cách thức làm việc linh
                                             hoạt, bao gồm hỗ trợ các trách nhiệm chăm sóc gia đình của
                                             người lao động nhằm tăng khả năng thu hút nhân tài và giữ
@@ -1044,23 +1044,23 @@
                                             nhau. Tất cả các tổ chức đều phải đảm bảo rằng ít nhất họ
                                             phải tuân thủ các luật lệ của địa phương sở tại để cung cấp
                                             cho một số người lao động cần có chế độ làm việc linh hoạt
-                                            trong một số hoàn cảnh cụ thể</p>
+                                            trong một số hoàn cảnh cụ thể</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có chính sách hoặc chiến lược
-                                        thực hiện chế độ làm việc linh hoạt không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question01}">Công ty có chính sách hoặc chiến lược
+                                        thực hiện chế độ làm việc linh hoạt không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0501" />
@@ -1090,10 +1090,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có thực hiện các yêu cầu pháp
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question02}">Công ty có thực hiện các yêu cầu pháp
                                         lý liên quan tới hỗ trợ chăm sóc gia đình (ví dụ: chế độ nghỉ
                                         sinh, chế độ nghỉ chăm con đối với lao động nam, chế độ nghỉ
-                                        chăm sóc con cái) không?</div>
+                                        chăm sóc con cái) không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0502" />
@@ -1123,9 +1123,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có công nghệ phù hợp áp dụng
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question03}">Công ty có công nghệ phù hợp áp dụng
                                         để cho phép người lao động tiếp cận được chế độ làm việc linh
-                                        hoạt không?</div>
+                                        hoạt không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0503" />
@@ -1155,10 +1155,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có cơ sở vật chất dành cho
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question04}">Công ty có cơ sở vật chất dành cho
                                         nhân viên nuôi con bằng sữa mẹ, hoặc các dịch vụ hỗ trợ khác,
                                         ví dụ chăm sóc trẻ em tại chỗ hay đưa ra các trợ cấp cho việc
-                                        chăm sóc trẻ không?</div>
+                                        chăm sóc trẻ không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0504" />
@@ -1188,10 +1188,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">5</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có tư vấn người lao động hoặc
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question05}">Công ty có tư vấn người lao động hoặc
                                         thực hiện các khảo sát người lao động nhằm tìm hiểu xem người
                                         lao động có tin tưởng rằng họ có thể tiếp cận được với cơ sở
-                                        vật chất họ cần không?</div>
+                                        vật chất họ cần không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0505" />
@@ -1221,9 +1221,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">6</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Các lãnh đạo nam và nữ của công ty có
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question06}">Các lãnh đạo nam và nữ của công ty có
                                         thúc đẩy một cách rõ rệt hoặc sử dụng tích cực các cách thức
-                                        làm việc linh hoạt tại công ty không?</div>
+                                        làm việc linh hoạt tại công ty không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0506" />
@@ -1253,9 +1253,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">7</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có chương trình giữ liên hệ,
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question07}">Công ty có chương trình giữ liên hệ,
                                         tái hoà nhập hoặc bất kỳ cách thức tái hoà nhập nào cho nhân
-                                        viên quay lại làm việc sau khi nghỉ dài không?</div>
+                                        viên quay lại làm việc sau khi nghỉ dài không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0507" />
@@ -1285,9 +1285,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">8</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có đưa ra chế độ nghỉ chăm sóc
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question08}">Công ty có đưa ra chế độ nghỉ chăm sóc
                                         con cái nhưng vẫn được nhận lương nào khác so với những quy
-                                        định của luật pháp không?</div>
+                                        định của luật pháp không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0508" />
@@ -1317,9 +1317,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">9</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có truyền thông các chính sách
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question09}">Công ty có truyền thông các chính sách
                                         liên quan tới hỗ trợ chăm sóc gia đình tới toàn bộ nhân viên
-                                        và thông báo cho họ nếu có bất kỳ thay đổi nào không?</div>
+                                        và thông báo cho họ nếu có bất kỳ thay đổi nào không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0509" />
@@ -1349,9 +1349,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">10</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Chế độ làm việc linh hoạt có được lồng
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question10}">Chế độ làm việc linh hoạt có được lồng
                                         ghép tại công ty, với việc thừa nhận kết quả đầu ra có giá trị
-                                        hơn việc hiện diện tại nơi làm việc không?</div>
+                                        hơn việc hiện diện tại nơi làm việc không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0510" />
@@ -1381,10 +1381,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">11</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có chương trình phát triển các
+                                    <div class="col-5"><span th:text="#{membership.gears.page06.question11}">Công ty có chương trình phát triển các
                                         cá nhân là cha mẹ tại nơi làm việc không? (ví dụ: tập huấn cho
                                         các lao động là cha mẹ trở lại công việc sau khi nghỉ chăm sóc
-                                        con cái hoặc các hội thảo nuôi dạy con)</div>
+                                        con cái hoặc các hội thảo nuôi dạy con)</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0511" />
@@ -1423,14 +1423,14 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Ngăn chặn và giải quyết tình trạng
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page07.subject}">Ngăn chặn và giải quyết tình trạng
                                             quấy rối và phân biệt đối xử dựa trên giới tính, quấy rối
-                                            tình dục và bắt nạt, bạo lực gia đình</h2>
+                                            tình dục và bắt nạt, bạo lực gia đình</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Quấy rối và phân biệt đối xử dựa
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page07.description}">Quấy rối và phân biệt đối xử dựa
                                             trên giới tính, quấy rối tình dục và bắt nạt tại nơi làm việc
                                             có tác động tiêu cực đáng kể đến cả người lao động và doanh
                                             nghiệp. Nó có thể gây ảnh hưởng xấu đến sức khỏe, sự hài lòng
@@ -1448,25 +1448,25 @@
                                             quấy rối tình dục, bắt nạt và bạo lực gia đình là vô cùng
                                             quan trọng. Việc đào tạo sẽ giúp loại bỏ những vấn đề tiêu
                                             cực này tại nơi làm việc, thúc đẩy văn hóa hòa nhập thông qua
-                                            các hành động thiết thực và hỗ trợ kịp thời khi cần thiết.</p>
+                                            các hành động thiết thực và hỗ trợ kịp thời khi cần thiết.</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có chính sách và/hoặc chiến
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question01}">Công ty có chính sách và/hoặc chiến
                                         lược về chống quấy rối và phân biệt đối xử dựa trên giới tính,
                                         chống quấy rối tình dục và bắt nạt với một quy trình khiếu nại
-                                        chính thức không?</div>
+                                        chính thức không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0601" />
@@ -1496,8 +1496,8 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có chính sách hoặc chiến lược
-                                        hỗ trợ người lao động là nạn nhân của bạo lực gia đình không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question02}">Công ty có chính sách hoặc chiến lược
+                                        hỗ trợ người lao động là nạn nhân của bạo lực gia đình không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0602" />
@@ -1527,10 +1527,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có đào tạo cho người lao
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question03}">Công ty có đào tạo cho người lao
                                         độngvề phòng chốngquấy rối và phân biệt đối xử dựa trên giới
                                         tính, quấy rối tình dục và bắt nạt tại thời điểm họ mới vào
-                                        công ty và ít nhất mỗi năm một lần không?</div>
+                                        công ty và ít nhất mỗi năm một lần không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0603" />
@@ -1560,9 +1560,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có truyền thông tới người lao
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question04}">Công ty có truyền thông tới người lao
                                         động và các bên liên quan khác về lý do tại sao bạo lực gia
-                                        đình là một vấn đề tại nơi làm việc không?</div>
+                                        đình là một vấn đề tại nơi làm việc không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0604" />
@@ -1593,27 +1593,27 @@
                                     <div class="col-1 text-center">5</div>
                                     <input type="text" hidden="true" value="B" />
                                     <div class="col-5">
-                                        Công ty có ít nhất một trong các cơ chế sau đây không? Vui
-                                        lòng chọn tất cả các phương án phù hợp.
+                                        <span th:text="#{membership.gears.page07.question05}">Công ty có ít nhất một trong các cơ chế sau đây không? Vui
+                                        lòng chọn tất cả các phương án phù hợp.</span>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input"
                                                 id="cb0605_01" name="cb0605_01" /> <label class="custom-control-label"
-                                                for="cb0605_01">Quy trình khiếu nại bí mật</label>
+                                                for="cb0605_01" th:text="#{membership.gears.page07.question05.select01}">Quy trình khiếu nại bí mật</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input"
                                                 id="cb0605_02" name="cb0605_01"/> <label class="custom-control-label"
-                                                for="cb0605_02">Quy trình giải quyết</label>
+                                                for="cb0605_02" th:text="#{membership.gears.page07.question05.select02}">Quy trình giải quyết</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input"
                                                 id="cb0605_03" name="cb0605_01"/> <label class="custom-control-label"
-                                                for="cb0605_03">Cơ chế đo lường trách nhiệm</label>
+                                                for="cb0605_03" th:text="#{membership.gears.page07.question05.select03}">Cơ chế đo lường trách nhiệm</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input"
                                                 id="cb0605_04" name="cb0605_01"/> <label class="custom-control-label"
-                                                for="cb0605_04">Cơ chế phòng ngừa trả đũa</label>
+                                                for="cb0605_04" th:text="#{membership.gears.page07.question05.select04}">Cơ chế phòng ngừa trả đũa</label>
                                         </div>
                                     </div>
                                     <div class="col-1">
@@ -1645,10 +1645,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">6</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Lãnh đạo công ty có chịu trách nhiệm
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question06}">Lãnh đạo công ty có chịu trách nhiệm
                                         về việc đảm bảo người lao động dưới quyền hoàn thành khóa đào
                                         tạo về quấy rối và phân biệt đối xử dựa trên giới tính, quấy
-                                        rối tình dục và bắt nạt theo đúng chính sách không?</div>
+                                        rối tình dục và bắt nạt theo đúng chính sách không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0606" />
@@ -1678,11 +1678,11 @@
                                 <div class="row">
                                     <div class="col-1 text-center">7</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty đã từng tiến hànhphân tích
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question07}">Công ty đã từng tiến hànhphân tích
                                         thông tin (được thu thập từ các cuộc tham vấn, khảo sát, v.v.)
                                         về sự quan ngại của người lao động đối với vấn đề quấy rối và
                                         phân biệt đối xử dựa trên giới tính, quấy rối tình dục và bắt
-                                        nạt tại nơi làm việc chưa?</div>
+                                        nạt tại nơi làm việc chưa?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0607" />
@@ -1712,11 +1712,11 @@
                                 <div class="row">
                                     <div class="col-1 text-center">8</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Các dữ liệu từ việc thực hiện khảo
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question08}">Các dữ liệu từ việc thực hiện khảo
                                         sát, thảo luận nhóm và tham vấn khác của Công ty có xác nhận
                                         rằng người lao động nhận thấy các chính sách và thủ tục liên
                                         quan đến quấy rối và phân biệt đối xử dựa trên giới tính, quấy
-                                        rối tình dục và bắt nạt là dễ tiếp cận và hiệu quả không?</div>
+                                        rối tình dục và bắt nạt là dễ tiếp cận và hiệu quả không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0608" />
@@ -1746,9 +1746,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">9</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có chế độ cho người lao động
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question09}">Công ty có chế độ cho người lao động
                                         là nạn nhân của bạo lực gia đình được hưởng thêm ngày nghỉ
-                                        phép có trả lương không?</div>
+                                        phép có trả lương không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0609" />
@@ -1778,9 +1778,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">10</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Các chính sách của Công ty có hướng
+                                    <div class="col-5"><span th:text="#{membership.gears.page07.question10}">Các chính sách của Công ty có hướng
                                         dẫn về cách giải quyếtđối với hành vi của người lao động là
-                                        thủ phạm của bạo lực gia đình không?</div>
+                                        thủ phạm của bạo lực gia đình không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0610" />
@@ -1819,34 +1819,34 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Phát triển chuyên môn, cố vấn, tài
-                                            trợ</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page08.subject}">Phát triển chuyên môn, cố vấn, tài
+                                            trợ</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Các chính sách về phát triển chuyên
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page08.description}">Các chính sách về phát triển chuyên
                                             môn, bao gồm kết nối mở rộng quan hệ, cố vấn và tài trợ đều
                                             rất quan trọng đối với việc thúc đẩy cân bằng giới trong một
                                             tổ chức. Bằng chứng cho thấy rằng nếu Công ty không có sự tập
                                             trung có chủ đích cần thiết, những cơ hội này có thể bị phân
-                                            chia một cách thiên vị, thiếu bình đẳng về giới.</p>
+                                            chia một cách thiên vị, thiếu bình đẳng về giới.</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có một chiến lược chính thức
-                                        về học tập và phát triển chuyên môn không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page08.question01}">Công ty có một chiến lược chính thức
+                                        về học tập và phát triển chuyên môn không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0701" />
@@ -1876,8 +1876,8 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có các chương trình tư vấn và
-                                        huấn luyện chính thức cho nam và nữ không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page08.question02}">Công ty có các chương trình tư vấn và
+                                        huấn luyện chính thức cho nam và nữ không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0702" />
@@ -1906,8 +1906,8 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có các chương trình tài trợ
-                                        chính thức cho nam và nữ không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page08.question03}">Công ty có các chương trình tài trợ
+                                        chính thức cho nam và nữ không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0703" />
@@ -1936,10 +1936,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có biện pháp để đảm bảo rằng
+                                    <div class="col-5"><span th:text="#{membership.gears.page08.question04}">Công ty có biện pháp để đảm bảo rằng
                                         phụ nữ và nam giới có quyền tiếp cận như nhau đến các nhiệm vụ
                                         quan trọng đối với việc phát triển sự nghiệp hoặc các công
-                                        việc hấp dẫn hay không?</div>
+                                        việc hấp dẫn hay không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0704" />
@@ -1969,9 +1969,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">5</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có kiểm soát và phân tích số
+                                    <div class="col-5"><span th:text="#{membership.gears.page08.question05}">Công ty có kiểm soát và phân tích số
                                         lượng nhân viên trong các chương trình phát triển chuyên môn
-                                        theo giới tính không?</div>
+                                        theo giới tính không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0705" />
@@ -2001,9 +2001,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">6</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có tiến hành đo lường mức độ
+                                    <div class="col-5"><span th:text="#{membership.gears.page08.question06}">Công ty có tiến hành đo lường mức độ
                                         hiệu quả của các chương trình phát triển chuyên môn chính thức
-                                        so với mục tiêu đảm bảo sự thăng tiến trong nghề nghiệp không?</div>
+                                        so với mục tiêu đảm bảo sự thăng tiến trong nghề nghiệp không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0706" />
@@ -2033,10 +2033,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">7</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có xác định và hỗ trợ các nhóm
+                                    <div class="col-5"><span th:text="#{membership.gears.page08.question07}">Công ty có xác định và hỗ trợ các nhóm
                                         yếu thế cụ thể (VD: phụ nữ, lao động bán thời gian, người
                                         khuyết tật, v.v.) trong các cơ hội phát triển nghề nghiệp
-                                        không?</div>
+                                        không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0707" />
@@ -2066,10 +2066,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">8</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Các chương trình cố vấn, huấn luyện và
+                                    <div class="col-5"><span th:text="#{membership.gears.page08.question08}">Các chương trình cố vấn, huấn luyện và
                                         tài trợ có nằm trong số những kỳ vọng trọng điểm của lãnh đạo
                                         công ty không? Và lãnh đạo công ty có được khen thưởng cho kết
-                                        quả của các chương trình này không?</div>
+                                        quả của các chương trình này không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0708" />
@@ -2108,35 +2108,35 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Tuyển dụng, lựa chọn và thăng tiến</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page09.subject}">Tuyển dụng, lựa chọn và thăng tiến</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Quá trình tuyển dụng, lựa chọn và
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page09.description}">Quá trình tuyển dụng, lựa chọn và
                                             thăng tiến dựa trên cân bằng giới tính đóng một vai trò quan
                                             trọng trong bình đẳng và hòa nhập ở nơi làm việc. Phân tích
                                             dữ liệu mạnh mẽ và thực hành nghiêm ngặt trong lĩnh vực này
                                             có thể giúp xác định và ngăn cản thiên vị mà có thể làm tổn
-                                            hại đến kết quả cân bằng giới tính.</p>
+                                            hại đến kết quả cân bằng giới tính.</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có chính sách hoặc cam kết nào
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question01}">Công ty có chính sách hoặc cam kết nào
                                         tuân thủ các yêu cầu quy định quốc gia về không phân biệt đối
                                         xử và trao cơ hội bình đẳng, tập trung cụ thể vào giới tính,
-                                        trong các quy trình tuyển dụng, lựa chọn và thăng tiến?</div>
+                                        trong các quy trình tuyển dụng, lựa chọn và thăng tiến?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0801" />
@@ -2166,10 +2166,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có một hoặc nhiều chương
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question02}">Công ty có một hoặc nhiều chương
                                         trình, hoặc hành động để đảm bảo cân bằng giới tính, ví dụ,
                                         tập trung vào danh sách tuyển dụng cân bằng giới tính hoặc
-                                        giải quyết sự thiên vị trong nhận diện tài năng?</div>
+                                        giải quyết sự thiên vị trong nhận diện tài năng?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0802" />
@@ -2199,9 +2199,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có giám sát và phân tích dữ
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question03}">Công ty có giám sát và phân tích dữ
                                         liệu về kết quả tuyển dụng và thăng tiến, từ chức và thôi việc
-                                        không tự nguyện theo tiêu chí giới tính không?</div>
+                                        không tự nguyện theo tiêu chí giới tính không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0803" />
@@ -2231,9 +2231,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có sử dụng ngôn ngữ và hình
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question04}">Công ty có sử dụng ngôn ngữ và hình
                                         minh họa nhạy cảm về giới tính trong quảng cáo việc làm,
-                                        thương hiệu việc làm hoặc tài liệu tuyển dụng không?</div>
+                                        thương hiệu việc làm hoặc tài liệu tuyển dụng không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0804" />
@@ -2263,10 +2263,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">5</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có tiến hành đào tạo nâng cao
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question05}">Công ty có tiến hành đào tạo nâng cao
                                         nhận thức về cách xác định và ngăn cản các thiên vị có thể ảnh
                                         hưởng đến cân bằng giới trong tuyển dụng, đánh giá hiệu suất
-                                        và quyết định thăng tiến không?</div>
+                                        và quyết định thăng tiến không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0805" />
@@ -2296,9 +2296,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">6</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có đảm bảo rằng các đơn xin
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question06}">Công ty có đảm bảo rằng các đơn xin
                                         việc cho tất cả các vị trí được xem xét và đánh giá bởi các
-                                        bảng cân bằng giới tính không?</div>
+                                        bảng cân bằng giới tính không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0806" />
@@ -2328,10 +2328,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">7</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có giám sát, phân tích và hành
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question07}">Công ty có giám sát, phân tích và hành
                                         động về dữ liệu từ mọi giai đoạn tuyển dụng (danh sách ứng
                                         viên, danh sách thu gọn, phỏng vấn, gửi thư mời, bắt đầu làm
-                                        việc) theo giới tính không?</div>
+                                        việc) theo giới tính không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0807" />
@@ -2361,9 +2361,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">8</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có yêu cầu đối với nhóm ứng
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question08}">Công ty có yêu cầu đối với nhóm ứng
                                         viên cân bằng giới tính (ở danh sách rút gọn và/ hoặc giai
-                                        đoạn danh sách phỏng vấn) cho tất cả các vị trí không?</div>
+                                        đoạn danh sách phỏng vấn) cho tất cả các vị trí không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0808" />
@@ -2393,10 +2393,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">9</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có thực hành thăng tiến linh
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question09}">Công ty có thực hành thăng tiến linh
                                         hoạt bao gồm các điều kiện riêng biệt như nhịp điệu thăng tiến
                                         linh hoạt, không yêu cầu di chuyển theo địa lý và cho phép xin
-                                        nghỉ tạm thời?</div>
+                                        nghỉ tạm thời?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0809" />
@@ -2426,9 +2426,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">10</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có truyền đạt rõ ràng và công
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question10}">Công ty có truyền đạt rõ ràng và công
                                         khai quy trình và tiêu chí thăng tiến của mình cho nhân viên
-                                        các cấp không?</div>
+                                        các cấp không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0810" />
@@ -2458,8 +2458,8 @@
                                 <div class="row">
                                     <div class="col-1 text-center">11</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có sử dụng các phương pháp
-                                        tuyển dụng thu hút nhân tài từ nhiều lai lịch khác nhau không?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question11}">Công ty có sử dụng các phương pháp
+                                        tuyển dụng thu hút nhân tài từ nhiều lai lịch khác nhau không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0811" />
@@ -2488,9 +2488,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">12</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Lãnh đạo trong Công ty có làm gương,
+                                    <div class="col-5"><span th:text="#{membership.gears.page09.question12}">Lãnh đạo trong Công ty có làm gương,
                                         thúc đẩy và khuyến khích tuyển dụng từ nhóm nhân tài đa dạng
-                                        một cách tích cực và cởi mở không?</div>
+                                        một cách tích cực và cởi mở không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0812" />
@@ -2529,13 +2529,13 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Quản lý tài năng và kế hoạch kế
-                                            nhiệm</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page10.subject}">Quản lý tài năng và kế hoạch kế
+                                            nhiệm</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Một lộ trình hướng tới vị trí lãnh
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page10.description}">Một lộ trình hướng tới vị trí lãnh
                                             đạo mạnh mẽ bao gồm tất cả các bước từ xác định, thu hút,
                                             phát triển, sử dụng triệt để và giữ chân nhân tài trên cơ sở
                                             cân bằng giới tính ở tất cả các cấp. Lộ trình này được áp
@@ -2545,24 +2545,24 @@
                                             bằng sẽ đảm bảo các Công ty thiết lập và duy trì cân bằng
                                             giới trong lãnh đạo, điều này được chứng minh là hiệu quả hơn
                                             về mặt tạo ra kết quả kinh doanh có lợi nhuận và các kết quả
-                                            kinh doanh khác.</p>
+                                            kinh doanh khác.</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có chính sách và/ hoặc chiến
+                                    <div class="col-5"><span th:text="#{membership.gears.page10.question01}">Công ty có chính sách và/ hoặc chiến
                                         lược chính thức để quản lý tài năng và lập kế hoạch kế nhiệm
-                                        cho tất cả các cấp quản lý không?</div>
+                                        cho tất cả các cấp quản lý không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0901" />
@@ -2592,9 +2592,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có giám sát, phân tích và so
+                                    <div class="col-5"><span th:text="#{membership.gears.page10.question02}">Công ty có giám sát, phân tích và so
                                         sánh kết quả đánh giá hiệu suất và đánh giá tài năng, theo
-                                        giới tính không?</div>
+                                        giới tính không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0902" />
@@ -2624,9 +2624,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có kế hoạch kế nhiệm chính
+                                    <div class="col-5"><span th:text="#{membership.gears.page10.question03}">Công ty có kế hoạch kế nhiệm chính
                                         thức cho tất cả các vai trò quan trọng tập trung vào việc đảm
-                                        bảo danh sách kế vị cân bằng giới tính không?</div>
+                                        bảo danh sách kế vị cân bằng giới tính không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0903" />
@@ -2656,9 +2656,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Công ty có các chương trình phát triển
+                                    <div class="col-5"><span th:text="#{membership.gears.page10.question04}">Công ty có các chương trình phát triển
                                         lãnh đạo để trang bị cho những tài năng mục tiêu khả năng sẵn
-                                        sàng kế thừa các vai trò quan trọng không?</div>
+                                        sàng kế thừa các vai trò quan trọng không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0904" />
@@ -2688,9 +2688,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">5</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có đặt mục tiêu cân bằng giới
+                                    <div class="col-5"><span th:text="#{membership.gears.page10.question05}">Công ty có đặt mục tiêu cân bằng giới
                                         tính cho các danh sách tài năng, kế hoạch kế nhiệm, phát triển
-                                        nghề nghiệp và các chương trình lãnh đạo không?</div>
+                                        nghề nghiệp và các chương trình lãnh đạo không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0905" />
@@ -2720,9 +2720,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">6</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Công ty có giám sát và phân tích hiệu
+                                    <div class="col-5"><span th:text="#{membership.gears.page10.question06}">Công ty có giám sát và phân tích hiệu
                                         suất của các nhân viên được cung cấp biệt phái, cơ hội dự án
-                                        và nhiệm vụ trong nước/ nước ngoài không?</div>
+                                        và nhiệm vụ trong nước/ nước ngoài không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0906" />
@@ -2752,9 +2752,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">7</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có sử dụng các ví dụ cân bằng
+                                    <div class="col-5"><span th:text="#{membership.gears.page10.question07}">Công ty có sử dụng các ví dụ cân bằng
                                         giới tính của nhân viên khi biểu dương thành công nghề nghiệp
-                                        cho các nhân viên khác không?</div>
+                                        cho các nhân viên khác không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0907" />
@@ -2784,9 +2784,9 @@
                                 <div class="row">
                                     <div class="col-1 text-center">8</div>
                                     <input type="text" hidden="true" value="D" />
-                                    <div class="col-5">Công ty có hỗ trợ các Công ty khác
+                                    <div class="col-5"><span th:text="#{membership.gears.page10.question08}">Công ty có hỗ trợ các Công ty khác
                                         (khách hàng, nhà cung cấp) đạt được kết quả cân bằng giới tính
-                                        trong việc nhận diện nhân tài và kế nhiệm không?</div>
+                                        trong việc nhận diện nhân tài và kế nhiệm không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio0908" />
@@ -2825,12 +2825,12 @@
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="fs-title">Đào tạo về Bình Đẳng Giới Tại Nơi Làm Việc</h2>
+                                        <h2 class="fs-title"><span th:text="#{membership.gears.page11.subject}">Đào tạo về Bình Đẳng Giới Tại Nơi Làm Việc</span></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p class="fs-subtitle">Đào tạo về Bình Đẳng Giới Tại Nơi
+                                        <p class="fs-subtitle"><span th:text="#{membership.gears.page11.description}">Đào tạo về Bình Đẳng Giới Tại Nơi
                                             Làm Việc là một cách hiệu quả để giúp nhân viên làm quen với
                                             ý nghĩa của bình đẳng giới, ảnh hưởng của nó đến các cá nhân
                                             và doanh nghiệp, và sự khác biệt về cân bằng giới tính ở nơi
@@ -2839,25 +2839,25 @@
                                             nghiệp. Nhận biết các dấu hiệu bất bình đẳng tại nơi làm việc
                                             cũng có thể giúp các nhà lãnh đạo và nhân viên khác ủng hộ
                                             thay đổi tích cực, mang lại lợi ích lâu dài cho nhân viên,
-                                            khách hàng và tổ chức.</p>
+                                            khách hàng và tổ chức.</span></p>
                                     </div>
                                 </div>
                                 <div class="row text-center font-weight-bold mb-2">
                                     <div class="col-1">#</div>
                                     <!-- <div class="col-1">Cấp độ</div> -->
-                                    <div class="col-5">Câu hỏi</div>
-                                    <div class="col-1">Có</div>
-                                    <div class="col-1">Không</div>
-                                    <div class="col-2">Ghi chú</div>
-                                    <div class="col-2">File</div>
+                                    <div class="col-5"><span th:text="#{label.question}">Câu hỏi</span></div>
+                                    <div class="col-1"><span th:text="#{label.yes}">Có</span></div>
+                                    <div class="col-1"><span th:text="#{label.no}">Không</span></div>
+                                    <div class="col-2"><span th:text="#{label.note}">Ghi chú</span></div>
+                                    <div class="col-2"><span th:text="#{label.file}">File</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 text-center">1</div>
                                     <input type="text" hidden="true" value="A" />
-                                    <div class="col-5">Công ty có cung cấp cho nhân viên các
+                                    <div class="col-5"><span th:text="#{membership.gears.page11.question01}">Công ty có cung cấp cho nhân viên các
                                         khóa đào tạo bình đẳng giới tập trung vào nhận thức về bình
                                         đẳng giới, tuân thủ và hành động thực tế mà nhân viên có thể
-                                        thực hiện để giúp đạt được và thúc đẩy bình đẳng giới không?</div>
+                                        thực hiện để giúp đạt được và thúc đẩy bình đẳng giới không?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio1001" />
@@ -2887,10 +2887,10 @@
                                 <div class="row">
                                     <div class="col-1 text-center">2</div>
                                     <input type="text" hidden="true" value="B" />
-                                    <div class="col-5">Cách tiếp cận đối với đào tạo bình
+                                    <div class="col-5"><span th:text="#{membership.gears.page11.question02}">Cách tiếp cận đối với đào tạo bình
                                         đẳng giới có thúc đẩy nhận thức về bình đẳng giới và nhấn mạnh
                                         lợi ích (kết quả thương mại, tăng năng suất, văn hóa hòa nhập,
-                                        v.v.) ngoài việc tuân thủ?</div>
+                                        v.v.) ngoài việc tuân thủ?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio1002" />
@@ -2920,8 +2920,8 @@
                                 <div class="row">
                                     <div class="col-1 text-center">3</div>
                                     <input type="text" hidden="true" value="C" />
-                                    <div class="col-5">Việc hoàn thành đào tạo bình đẳng giới
-                                        của Công ty bạn là bắt buộc cho tất cả các nhà lãnh đạo?</div>
+                                    <div class="col-5"><span th:text="#{membership.gears.page11.question03}">Việc hoàn thành đào tạo bình đẳng giới
+                                        của Công ty bạn là bắt buộc cho tất cả các nhà lãnh đạo?</span></div>
                                     <div class="col-1">
                                         <input type="radio" value="1" class="form-check-input"
                                             name="optradio1003" />
@@ -2951,24 +2951,24 @@
                                     <div class="col-1 text-center">4</div>
                                     <input type="text" hidden="true" value="D" />
                                     <div class="col-5">
-                                        Liệu bình đẳng giới có được tích hợp vào các kiểu đào tạo sau
+                                        <span th:text="#{membership.gears.page11.question04}">Liệu bình đẳng giới có được tích hợp vào các kiểu đào tạo sau
                                         đây cho tất cả nhân viên ở tất cả các cấp hay không? Vui lòng
-                                        chọn hết những lựa chọn bạn đồng ý:
+                                        chọn hết những lựa chọn bạn đồng ý:</span>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input"
                                                 id="cb1004_01" name="cb1004_01"/> <label class="custom-control-label"
-                                                for="cb1004_01">Đào tạo cho nhân sự mới về khách
+                                                for="cb1004_01" th:text="#{membership.gears.page11.question04.select01}">Đào tạo cho nhân sự mới về khách
                                                 hang/ sản phẩm</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input"
                                                 id="cb1004_02" name="cb1004_01"/> <label class="custom-control-label"
-                                                for="cb1004_02">Các hoạt động tiếp nhận nhân sự mới</label>
+                                                for="cb1004_02" th:text="#{membership.gears.page11.question04.select02}">Các hoạt động tiếp nhận nhân sự mới</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input"
                                                 id="cb1004_03" name="cb1004_01"/> <label class="custom-control-label"
-                                                for="cb1004_03">Đào tạo phát triển lãnh đạo (bao gồm
+                                                for="cb1004_03" th:text="#{membership.gears.page11.question04.select03}">Đào tạo phát triển lãnh đạo (bao gồm
                                                 lãnh đạo chiến lược và cá nhân)</label>
                                         </div>
                                     </div>
@@ -3027,7 +3027,7 @@
                                 <br /> <br />
                                 <div class="row justify-content-center">
                                     <div class="col-7 text-center">
-                                        <a th:href="@{/membership/}" class="btn btn-back-home" role="button" aria-pressed="true">Về trang chủ</a>
+                                        <a th:href="@{/membership/}" class="btn btn-back-home" role="button" aria-pressed="true" th:text="#{label.gotoHomePage}">Về trang chủ</a>
                                     </div>
                                 </div>
                             </div>

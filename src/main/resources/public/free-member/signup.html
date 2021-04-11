@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 <link rel="icon" th:href="@{/static/favicon.ico}" type="image/ico" />
-<title>Đăng ký tài khoản</title>
+<title th:text="#{freemember.signup.title}">Đăng ký tài khoản</title>
 <!-- Bootstrap -->
 <link rel="stylesheet" th:href="@{/static/Administrator/vendors/bootstrap/dist/css/bootstrap.min.css}" />
 <!-- Font Awesome -->
@@ -47,60 +47,60 @@
                         <br />
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-                            <input type="text" class="form-control" placeholder="Email" th:field="*{email}" />
+                            <input type="text" class="form-control"  th:placeholder="#{label.email}" th:field="*{email}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
-                            <input type="password" class="form-control" placeholder="Mật khẩu" th:field="*{password}" />
+                            <input type="password" class="form-control"  th:placeholder="#{label.password}" th:field="*{password}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('rePassword')}" th:errors="*{rePassword}"></span>
-                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" th:field="*{rePassword}" />
+                            <input type="password" class="form-control"  th:placeholder="#{label.confirmPassword}" th:field="*{rePassword}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></span>
-                            <input type="text" class="form-control" placeholder="Họ tên" th:field="*{fullName}" />
+                            <input type="text" class="form-control"  th:placeholder="#{label.fullName}" th:field="*{fullName}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
-                            <input type="text" class="form-control" placeholder="Số điện thoại" th:field="*{phone}" />
+                            <input type="text" class="form-control"  th:placeholder="#{label.phoneNum}" th:field="*{phone}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('position')}" th:errors="*{position}"></span>
-                            <input type="text" class="form-control" placeholder="Chức vụ" th:field="*{position}" />
+                            <input type="text" class="form-control"  th:placeholder="#{label.position}" th:field="*{position}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}"></span>
-                            <input type="text" class="form-control" placeholder="Tên công ty" th:field="*{companyName}" />
+                            <input type="text" class="form-control"  th:placeholder="#{label.companyName}"placeholder="Tên công ty" th:field="*{companyName}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('companyNameAbbr')}" th:errors="*{companyNameAbbr}"></span>
-                            <input type="text" class="form-control" placeholder="Tên công ty viết tắt" th:field="*{companyNameAbbr}" />
+                            <input type="text" class="form-control"  th:placeholder="#{label.companyNameAbbr}" th:field="*{companyNameAbbr}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('companyScale')}" th:errors="*{companyScale}"></span>
                             <select class="form-control" th:field="*{companyScale}">
-                                <option value="">Chọn quy mô công ty</option>
-                                <option value="0">0 - 200 người</option>
-                                <option value="200">200 - 500 người</option>
-                                <option value="500">500 - 1000 người</option>
-                                <option value="1000">1000 - 5000 người</option>
-                                <option value="5000">Trên 5000 người</option>
+                                <option value="" th:text="#{label.company.selectSize}">Chọn quy mô công ty</option>
+                                <option value="0" th:text="#{label.company.size.0.200}">0 - 200 người</option>
+                                <option value="200" th:text="#{label.company.size.200.500}">200 - 500 người</option>
+                                <option value="500" th:text="#{label.company.size.500.1000}">500 - 1000 người</option>
+                                <option value="1000" th:text="#{label.company.size.1000.5000}">1000 - 5000 người</option>
+                                <option value="5000" th:text="#{label.company.size.greaterThan5000}">Trên 5000 người</option>
                             </select>
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('companyBusiness')}" th:errors="*{companyBusiness}"></span>
-                            <input type="text" class="form-control" placeholder="Ngành" th:field="*{companyBusiness}" />
+                            <input type="text" class="form-control" th:placeholder="#{label.companyBusiness}" th:field="*{companyBusiness}" />
                         </div>
                         <div class="pb-20">
                             <span th:if="${#fields.hasErrors('companyArea')}" th:errors="*{companyArea}"></span>
                             <select class="form-control" th:field="*{companyArea}">
-                                <option value="" >Chọn khu vực</option>
-                                <option value="HN">Hà Nội</option>
-                                <option value="HCM">TP Hồ Chí Minh</option>
-                                <option value="MB">Miền Bắc</option>
-                                <option value="MT">Miền Trung</option>
-                                <option value="MN">Miền Nam</option>
+                                <option value="" th:text="#{label.company.selectArea}">Chọn khu vực</option>
+                                <option value="HN" th:text="#{label.area.hanoi}">Hà Nội</option>
+                                <option value="HCM" th:text="#{label.area.hcm}">TP Hồ Chí Minh</option>
+                                <option value="MB" th:text="#{label.area.northern}">Miền Bắc</option>
+                                <option value="MT" th:text="#{label.area.central}">Miền Trung</option>
+                                <option value="MN" th:text="#{label.area.sourth}">Miền Nam</option>
                             </select>
                         </div>
                         <div class="col-md-12">

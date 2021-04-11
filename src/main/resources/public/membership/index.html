@@ -24,7 +24,7 @@
             <div class="row justify-content-center align-self-center">
                 <div class="col-11 p-0 mt-3 mb-2">
                     <div class="card border-card mt-3">
-                        <div class="card-header">BẢNG CÂU HỎI ĐÁNH GIÁ</div>
+                        <div class="card-header"><span th:text="#{membership.index.group.questionJudge}">BẢNG CÂU HỎI ĐÁNH GIÁ</span></div>
                         <div class="card-body">
 <!--                             <div class="link-input"> -->
 <!--                                 <span class="input-group-addon"><i th:class="*{smStatus == true} ? 'far fa-check-circle colorCheck' : 'far fa-circle colorUnCheck'"></i></span> -->
@@ -35,7 +35,7 @@
                                 <tbody>
                                     <tr>
 		                                <td class="card-table-col-4">
-		                                    <a th:href="@{/membership/gears}">Điền thông tin đánh giá GEARS tại đây</a>
+		                                    <a th:href="@{/membership/gears}" th:text="#{membership.index.group.questionJudge.label01}">Điền thông tin đánh giá GEARS tại đây</a>
 		                                    <br/><span th:if="${#fields.hasErrors('smStatus')}" th:errors="*{smStatus}" style="color: red"></span>
 		                                </td>
 		                                <td class="card-table-col-1">
@@ -53,20 +53,20 @@
             <div class="row justify-content-center align-self-center">
                 <div class="col-11 p-0 mt-3 mb-2">
                     <div class="card border-card mt-3">
-                        <div class="card-header">THÔNG TIN ĐẦU VÀO</div>
+                        <div class="card-header"><span th:text="#{membership.index.group.inputInfo}">THÔNG TIN ĐẦU VÀO</span></div>
                         <div class="card-body">
                             <table class="card-table table table-striped">
                                 <tbody>
                                   <tr>
                                     <td class="card-table-col-4">
-                                        <a th:href="@{/dataTable1/}">Bảng 1: Dịch chuyển lao động</a>
+                                        <a th:href="@{/dataTable1/}" th:text="#{membership.index.group.inputInfo.label01}">Bảng 1: Dịch chuyển lao động</a>
                                         <br/><span th:if="${#fields.hasErrors('ienStatus')}" th:errors="*{ienStatus}" style="color: red"></span>
                                     </td>
                                     <td class="card-table-col-1">
                                         <span class="input-group-addon"><i th:class="*{ienStatus == true} ? 'far fa-check-circle colorCheck' : 'far fa-circle colorUnCheck'"></i></span>
                                     </td>
                                     <td class="card-table-col-4">
-                                        <a th:href="@{/dataTable4Sub4/}">Bảng 4.4: Nhân viên trợ lý văn phòng</a>
+                                        <a th:href="@{/dataTable4Sub4/}" th:text="#{membership.index.group.inputInfo.label07}">Bảng 4.4: Nhân viên trợ lý văn phòng</a>
                                         <br/><span th:if="${#fields.hasErrors('icoStatus')}" th:errors="*{icoStatus}" style="color: red"></span>
                                     </td>
                                     <td class="card-table-col-1">
@@ -75,14 +75,14 @@
                                   </tr>
                                   <tr>
                                     <td>
-                                        <a th:href="@{/dataTable2/}">Bảng 2: Việc làm</a>
+                                        <a th:href="@{/dataTable2/}" th:text="#{membership.index.group.inputInfo.label02}">Bảng 2: Việc làm</a>
                                         <br/><span th:if="${#fields.hasErrors('ieStatus')}" th:errors="*{ieStatus}" style="color: red"></span>
                                     </td>
                                     <td>
                                         <span class="input-group-addon"><i th:class="*{ieStatus == true} ? 'far fa-check-circle colorCheck' : 'far fa-circle colorUnCheck'"></i></span>
                                     </td>
                                     <td>
-                                        <a th:href="@{/dataTable4Sub5/}">Bảng 4.5: Nhân viên dịch vụ và bán hàng</a>
+                                        <a th:href="@{/dataTable4Sub5/}" th:text="#{membership.index.group.inputInfo.label08}">Bảng 4.5: Nhân viên dịch vụ và bán hàng</a>
                                         <br/><span th:if="${#fields.hasErrors('icsStatus')}" th:errors="*{icsStatus}" style="color: red"></span>
                                     </td>
                                     <td>
@@ -91,14 +91,14 @@
                                   </tr>
                                   <tr>
                                     <td>
-                                        <a th:href="@{/dataTable3/}">Bảng 3: Ban lãnh đạo</a>
+                                        <a th:href="@{/dataTable3/}" th:text="#{membership.index.group.inputInfo.label03}">Bảng 3: Ban lãnh đạo</a>
                                         <br/><span th:if="${#fields.hasErrors('ibcStatus')}" th:errors="*{ibcStatus}" style="color: red"></span>
                                     </td>
                                     <td>
                                         <span class="input-group-addon"><i th:class="*{ibcStatus == true} ? 'far fa-check-circle colorCheck' : 'far fa-circle colorUnCheck'"></i></span>
                                     </td>
                                     <td>
-                                        <a th:href="@{/dataTable4Sub6/}">Bảng 4.6: Lao động có kỹ năng trong nông nghiệp, lâm nghiệp và thủy sản</a>
+                                        <a th:href="@{/dataTable4Sub6/}" th:text="#{membership.index.group.inputInfo.label09}">Bảng 4.6: Lao động có kỹ năng trong nông nghiệp, lâm nghiệp và thủy sản</a>
                                         <br/><span th:if="${#fields.hasErrors('icaStatus')}" th:errors="*{icaStatus}" style="color: red"></span>
                                     </td>
                                     <td>
@@ -107,14 +107,14 @@
                                   </tr>
                                   <tr>
                                     <td>
-                                        <a th:href="@{/dataTable4Sub1/}">Bảng 4.1: Quản lý</a>
+                                        <a th:href="@{/dataTable4Sub1/}" th:text="#{membership.index.group.inputInfo.label04}">Bảng 4.1: Quản lý</a>
                                         <br/><span th:if="${#fields.hasErrors('icmStatus')}" th:errors="*{icmStatus}" style="color: red"></span>
                                     </td>
                                     <td>
                                         <span class="input-group-addon"><i th:class="*{icmStatus == true} ? 'far fa-check-circle colorCheck' : 'far fa-circle colorUnCheck'"></i></span>
                                     </td>
                                     <td>
-                                        <a th:href="@{/dataTable4Sub7/}">Bảng 4.7: Lao động thủ công và các nghề nghiệp có liên quan khác</a>
+                                        <a th:href="@{/dataTable4Sub7/}" th:text="#{membership.index.group.inputInfo.label10}">Bảng 4.7: Lao động thủ công và các nghề nghiệp có liên quan khác</a>
                                         <br/><span th:if="${#fields.hasErrors('icmlStatus')}" th:errors="*{icmlStatus}" style="color: red"></span>
                                     </td>
                                     <td>
@@ -123,14 +123,14 @@
                                   </tr>
                                   <tr>
                                     <td>
-                                        <a th:href="@{/dataTable4Sub2/}">Bảng 4.2: Chuyên gia</a>
+                                        <a th:href="@{/dataTable4Sub2/}" th:text="#{membership.index.group.inputInfo.label05}">Bảng 4.2: Chuyên gia</a>
                                         <br/><span th:if="${#fields.hasErrors('iceStatus')}" th:errors="*{iceStatus}" style="color: red"></span>
                                     </td>
                                     <td>
                                         <span class="input-group-addon"><i th:class="*{iceStatus == true} ? 'far fa-check-circle colorCheck' : 'far fa-circle colorUnCheck'"></i></span>
                                     </td>
                                     <td>
-                                        <a th:href="@{/dataTable4Sub8/}">Bảng 4.8: Thợ lắp ráp và vận hành máy móc, thiết bị</a>
+                                        <a th:href="@{/dataTable4Sub8/}" th:text="#{membership.index.group.inputInfo.label11}">Bảng 4.8: Thợ lắp ráp và vận hành máy móc, thiết bị</a>
                                         <br/><span th:if="${#fields.hasErrors('icsaStatus')}" th:errors="*{icsaStatus}" style="color: red"></span>
                                     </td>
                                     <td>
@@ -139,14 +139,14 @@
                                   </tr>
                                   <tr>
                                     <td>
-                                        <a th:href="@{/dataTable4Sub3/}">Bảng 4.3: Kỹ thuật viên và trợ lý chuyên gia</a>
+                                        <a th:href="@{/dataTable4Sub3/}" th:text="#{membership.index.group.inputInfo.label06}">Bảng 4.3: Kỹ thuật viên và trợ lý chuyên gia</a>
                                         <br/><span th:if="${#fields.hasErrors('ictStatus')}" th:errors="*{ictStatus}" style="color: red"></span>
                                     </td>
                                     <td>
                                         <span class="input-group-addon"><i th:class="*{ictStatus == true} ? 'far fa-check-circle colorCheck' : 'far fa-circle colorUnCheck'"></i></span>
                                     </td>
                                     <td>
-                                        <a th:href="@{/dataTable4Sub9/}">Bảng 4.9: Lao động giản đơn</a>
+                                        <a th:href="@{/dataTable4Sub9/}" th:text="#{membership.index.group.inputInfo.label12}">Bảng 4.9: Lao động giản đơn</a>
                                         <br/><span th:if="${#fields.hasErrors('icspStatus')}" th:errors="*{icspStatus}" style="color: red"></span>
                                     </td>
                                     <td>
@@ -162,9 +162,9 @@
             <div class="row justify-content-center align-self-center">
                 <div class="col-11 p-0 mt-3 mb-2">
                     <div class="card border-card mt-3">
-                        <div class="card-header">TẢI FILE THÔNG TIN ĐẦU VÀO</div>
+                        <div class="card-header"><span th:text="#{membership.index.group.download}">TẢI FILE THÔNG TIN ĐẦU VÀO</span></div>
                         <div class="card-body">
-                            <div class="card-title">Hãy tải file về, điền thông tin và tải lên.</div>
+                            <div class="card-title"><span th:text="#{membership.index.group.download.label01}">Hãy tải file về, điền thông tin và tải lên.</span></div>
                             <div>
                                 <div class="link-input">
                                     <span class="input-group-addon"><i class="fa fa-download"></i></span> <!-- fa-check-circle colorCheck -->
@@ -178,7 +178,7 @@
                             </div>
                             <th:block th:if="${session.reportStatus == null}">
                                 <div class="text-center">
-                                    <button type="button" id="uploadFileGearsInput" class="btn btn-send-contact font-weight-bold">Tải lên</button>
+                                    <button type="button" id="uploadFileGearsInput" class="btn btn-send-contact font-weight-bold" th:text="#{form.button.upload}">Tải lên</button>
                                 </div>
                             </th:block>
                         </div>
@@ -188,7 +188,7 @@
             <div class="row justify-content-center align-self-center">
                 <div class="col-11 p-0 mt-3 mb-2">
                     <div class="card  border-card mt-3 mb-3">
-                        <div class="card-header">KẾT QUẢ BÁO CÁO</div>
+                        <div class="card-header"><span th:text="#{membership.index.group.reportResult}">KẾT QUẢ BÁO CÁO</span></div>
                         <div class="card-body">
                             <div th:if="${inputinfo.surveyStatus}" class="link-input">
                                 <input type="hidden" name="surveyPath" id="surveyPath" />

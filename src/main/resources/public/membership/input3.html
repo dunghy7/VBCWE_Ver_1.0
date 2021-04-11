@@ -13,7 +13,7 @@
 			<div class="container minHeight">
 				<div class="row justify-content-center align-self-center mt-3">
 					<div class="col-12 card">
-						<div class="card-header">BAN LÃNH ĐẠO</div>
+						<div class="card-header"><span th:text="#{membership.dataTable3.group.job}">BAN LÃNH ĐẠO</span></div>
 						<div style="padding-left: 1.25rem; color: red" id="validateClientText" >
 		                    <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
 		                      <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
@@ -26,7 +26,7 @@
 		                        <thead>
 		                          <tr class="headings">
 		                            <th class="column-title text-center" style="width: 40%;"></th>
-		                            <th class="column-title text-center" style="width: 30%;">Số người</th>
+		                            <th class="column-title text-center" style="width: 30%;"><label th:text="#{membership.dataTable3.table.col01}">Số người</label></th>
 		                            <th class="column-title text-center" style="width: 30%;">%</th>
 		                            
 		                          </tr>
@@ -34,9 +34,9 @@
 		                        <tbody>
 		                          <tr th:each="result, idx : *{dataTable3DtoList}">
 		                            <td class="pl-2">
-		                                <span th:if="${result.gender=='m'}">Thành viên ban lãnh đạo là nam giới</span>
-                                        <span th:if="${result.gender=='f'}">Thành viên ban lãnh đạo là nữ giới</span>
-                                        <span th:if="${result.gender!='m' and result.gender!='f'}">Tổng cộng</span>
+		                                <span th:if="${result.gender=='m'}" th:text="#{membership.dataTable3.table.row01}">Thành viên ban lãnh đạo là nam giới</span>
+                                        <span th:if="${result.gender=='f'}" th:text="#{membership.dataTable3.table.row02}">Thành viên ban lãnh đạo là nữ giới</span>
+                                        <span th:if="${result.gender!='m' and result.gender!='f'}" th:text="#{membership.dataTable3.table.row03}">Tổng cộng</span>
 		                            </td>
 		                            <td>
 										<input class="changeAny validation" type="text" maxlength="7" th:attr="colTable3=${result.gender=='m' or result.gender=='f'} ? 'numPeople' : ''" th:classappend="${result.gender!='m' and result.gender!='f'} ? bg-transparent : ''" th:readonly="${result.gender!='m' and result.gender!='f'}" th:field="*{dataTable3DtoList[__${idx.index}__].total}"></input>

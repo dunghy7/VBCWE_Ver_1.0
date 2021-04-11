@@ -1,3 +1,21 @@
+$(document).ready(function () {
+    $('.language').on('click', function() { 
+	    var value = $(this).attr("lang");
+	    var posi = window.location.href.indexOf("?");
+	    if (posi == -1) {
+	       window.location.href = window.location.href + "?lang="+value;
+	    } else {
+	        var pos = window.location.href.indexOf("lang=");
+	        if (pos == -1) {
+	           window.location.href = window.location.href + "&lang="+value;
+	        } else {
+	            var url = window.location.href.split('lang=');
+	            window.location.href =url[0]+ "lang="+value;
+	        }
+	    }
+	})
+});
+
 //set cấu hình validate cho form cứng
 function setValidationForInfoForm(elm) {
     return elm.validate({

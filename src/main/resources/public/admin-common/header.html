@@ -13,22 +13,33 @@
                     <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="">
-                        <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="color: white !important;"><img th:src="@{/static/images/img.jpg}" alt="" />
-                            <span th:text="${session.LOGIN_USER_SESSION_KEY != null ? session.LOGIN_USER_SESSION_KEY.fullName : ''}">User</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-usermenu pull-right">
-                            <li>
-                                <a th:href="@{/freemember/changepass}">Đổi mật khẩu</a>
-                            </li>
-                            <li>
-                                <a th:href="@{/?logout}">
-                                    <i class="fa fa-sign-out pull-right"></i>Thoát
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                  <li class="">
+                    <div style="display: flex!important;;align-items: center;margin-right: 10px; padding:16px 0px 16px 20px;">
+                      <a th:href="@{/?lang=vi}" style="display: flex; width: 28px; height: 28px; border: 1px solid #8e8e93; border-radius: 50%; align-items: center; justify-content: center; margin-right:3px">
+                        <img th:src="@{/static/images/vn.png}" style="width: 28px; cursor: pointer; border: 2px solid #FFF; border-radius: 50%;" lang="vi" class="language"/>
+                      </a>
+                      <a th:href="@{/?lang=en}" style="display: flex; width: 28px; height: 28px; border: 1px solid #8e8e93; border-radius: 50%; align-items: center; justify-content: center; margin-right:20px">
+                        <img th:src="@{/static/images/en.png}" style="width: 28px; cursor: pointer;  border: 2px solid #FFF; border-radius: 50%;" lang="en" class="language"/>
+                      </a>
+                      <input type="hidden" id="languageCurrent"  th:value="${#locale}"></input>
+                      
+                      <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="color: white !important;"><img th:src="@{/static/images/img.jpg}" alt="" />
+                          <span th:text="${session.LOGIN_USER_SESSION_KEY != null ? session.LOGIN_USER_SESSION_KEY.fullName : ''}">User</span>
+                      </a>
+                      <ul class="dropdown-menu dropdown-usermenu pull-right">
+                          <li>
+                              <a th:href="@{/freemember/changepass}" th:text="#{label.changePassword}">Đổi mật khẩu</a>
+                          </li>
+                          <li>
+                              <a th:href="@{/?logout}">
+                                  <i class="fa fa-sign-out pull-right"></i><span th:text="#{label.logout}">Thoát</span>
+                              </a>
+                          </li>
+                      </ul>
+                    </div>
+                  </li>
                 </ul>
+	            
             </nav>
         </div>
     </div>

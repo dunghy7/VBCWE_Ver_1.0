@@ -6,7 +6,7 @@
 <meta charset="utf-8"></meta>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-<title>Đăng nhập</title>
+<title><span th:text="#{freemember.sign.success.title}">Đăng nhập</span></title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
     th:href="@{/static/Administrator/vendors/bootstrap/dist/css/bootstrap.min.css}" />
@@ -34,11 +34,13 @@
                     </div>
                     <br />
                     <div class="pb-20" style="color: white;">
-                        Bạn đã đăng ký tài khoản thành công. <br/>Vui lòng kiểm tra hòm thư điện tử để kích hoạt tài khoản.
+                        <span th:text="#{freemember.sign.success.message01}">Bạn đã đăng ký tài khoản thành công. </span>
+                        <br/>
+                        <span th:text="#{freemember.sign.success.message02}">Vui lòng kiểm tra hòm thư điện tử để kích hoạt tài khoản.</span>
                     </div>
                     <div class="col-md-12">
                         <div class="text-center">
-                            <a class="btn btn-success" th:href="@{/}">Đăng nhập</a>
+                            <a class="btn btn-success" th:href="@{/}" th:text="#{form.button.login}">Đăng nhập</a>
                         </div>
                     </div>
                     <div class="clearfix"></div>

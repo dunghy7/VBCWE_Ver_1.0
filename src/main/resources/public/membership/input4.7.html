@@ -13,7 +13,7 @@
         <div class="container minHeight">
             <div class="row justify-content-center align-self-center mt-3">
                 <div class="card">
-                    <div class="card-header">DANH MỤC NGHỀ NGHIỆP - LAO ĐỘNG THỦ CÔNG VÀ CÁC NGHỀ NGHIỆP CÓ LIÊN QUAN KHÁC</div>
+                    <div class="card-header"><span th:text="#{membership.dataTable4Sub7.group.subject}">DANH MỤC NGHỀ NGHIỆP - LAO ĐỘNG THỦ CÔNG VÀ CÁC NGHỀ NGHIỆP CÓ LIÊN QUAN KHÁC</span></div>
                     <div style="padding-left: 1.25rem; color: red" id="validateClientText" >
 	                    <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
 	                      <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
@@ -24,47 +24,47 @@
                             <table class="table table-striped jambo_table table-bordered">
                                 <thead>
                                     <tr class="headings">
-                                        <th class="column-title text-center header-col-title" rowspan="2">Chức danh trong công ty</th>
-                                        <th class="column-title text-center" colspan="4">Nam</th>
-                                        <th class="column-title text-center" colspan="4">Nữ</th>
+                                        <th class="column-title text-center header-col-title" rowspan="2"><label th:text="#{membership.dataTable4Sub7.table.col01}">Chức danh trong công ty</label></th>
+                                        <th class="column-title text-center" colspan="4"><label th:text="#{membership.dataTable4Sub7.table.col02}">Nam</label></th>
+                                        <th class="column-title text-center" colspan="4"><label th:text="#{membership.dataTable4Sub7.table.col03}">Nữ</label></th>
                                     </tr>
                                     <tr class="headings">
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub7.table.col04}">Toàn thời gian, có xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub7.table.col05}">Toàn thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub7.table.col06}">Bán thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub7.table.col07}">Tổng số cuối kỳ 12 tháng</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub7.table.col08}">Toàn thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub7.table.col09}">Toàn thời gian, có xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub7.table.col10}">Bán thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub7.table.col11}">Tổng số cuối kỳ 12 tháng</label></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr th:each="result, idx : *{dataTable4DtoList}">
                                         <td th:class="${result.parentLevel == null or result.parentLevel == ''} ? pl-2 : 'pl-5'">
-                                            <span th:if="${result.level=='71'}">Lao động xây dựng và lao động các ngành nghề có liên quan, không bao gồm thợ điện </span>
-                                            <span th:if="${result.level=='71.1'}">Thợ xây dựng khung nhà và lao động có liên quan</span>
-                                            <span th:if="${result.level=='71.2'}">Thợ hoàn thiện và lao động có liên quan</span>
-                                            <span th:if="${result.level=='71.3'}">Thợ sơn, người lau dọn tòa nhà và lao động có liên quan</span>
+                                            <span th:if="${result.level=='71'}" th:text="#{membership.dataTable4Sub7.table.row01}">Lao động xây dựng và lao động các ngành nghề có liên quan, không bao gồm thợ điện </span>
+                                            <span th:if="${result.level=='71.1'}" th:text="#{membership.dataTable4Sub7.table.row02}">Thợ xây dựng khung nhà và lao động có liên quan</span>
+                                            <span th:if="${result.level=='71.2'}" th:text="#{membership.dataTable4Sub7.table.row03}">Thợ hoàn thiện và lao động có liên quan</span>
+                                            <span th:if="${result.level=='71.3'}" th:text="#{membership.dataTable4Sub7.table.row04}">Thợ sơn, người lau dọn tòa nhà và lao động có liên quan</span>
                                             
-                                            <span th:if="${result.level=='72'}">Thợ kim loại, thợ máy và thợ có liên quan</span>
-                                            <span th:if="${result.level=='72.1'}">Thợ dát kim loại, thợ đúc và thợ hàn và thợ có liên quan</span>
-                                            <span th:if="${result.level=='72.2'}">Thợ rèn, thợ chế tạo các dụng cụ và thợ có liên quan</span>
-                                            <span th:if="${result.level=='72.3'}">Thợ cơ khí và sửa chữa máy móc</span>
+                                            <span th:if="${result.level=='72'}" th:text="#{membership.dataTable4Sub7.table.row05}">Thợ kim loại, thợ máy và thợ có liên quan</span>
+                                            <span th:if="${result.level=='72.1'}" th:text="#{membership.dataTable4Sub7.table.row06}">Thợ dát kim loại, thợ đúc và thợ hàn và thợ có liên quan</span>
+                                            <span th:if="${result.level=='72.2'}" th:text="#{membership.dataTable4Sub7.table.row07}">Thợ rèn, thợ chế tạo các dụng cụ và thợ có liên quan</span>
+                                            <span th:if="${result.level=='72.3'}" th:text="#{membership.dataTable4Sub7.table.row08}">Thợ cơ khí và sửa chữa máy móc</span>
                                             
-                                            <span th:if="${result.level=='73'}">Thợ thủ công và thợ liên quan đến in ấn</span>
-                                            <span th:if="${result.level=='73.1'}">Thợ thủ công</span>
-                                            <span th:if="${result.level=='73.2'}">Thợ liên quan đến in</span>
+                                            <span th:if="${result.level=='73'}" th:text="#{membership.dataTable4Sub7.table.row09}">Thợ thủ công và thợ liên quan đến in ấn</span>
+                                            <span th:if="${result.level=='73.1'}" th:text="#{membership.dataTable4Sub7.table.row10}">Thợ thủ công</span>
+                                            <span th:if="${result.level=='73.2'}" th:text="#{membership.dataTable4Sub7.table.row11}">Thợ liên quan đến in</span>
                                             
-                                            <span th:if="${result.level=='74'}">Thợ điện và thợ điện tử</span>
-                                            <span th:if="${result.level=='74.1'}">Thợ lắp đặt và sửa chữa thiết bị điện</span>
-                                            <span th:if="${result.level=='74.2'}">Thợ lắp đặt và thợ sửa chữa điện tử viễn thông</span>
+                                            <span th:if="${result.level=='74'}" th:text="#{membership.dataTable4Sub7.table.row12}">Thợ điện và thợ điện tử</span>
+                                            <span th:if="${result.level=='74.1'}" th:text="#{membership.dataTable4Sub7.table.row13}">Thợ lắp đặt và sửa chữa thiết bị điện</span>
+                                            <span th:if="${result.level=='74.2'}" th:text="#{membership.dataTable4Sub7.table.row14}">Thợ lắp đặt và thợ sửa chữa điện tử viễn thông</span>
                                             
-                                            <span th:if="${result.level=='75'}">Thợ chế biến thực phẩm, công việc đồ gỗ, may mặc và nghề thủ công khác và thợ khác có liên quan</span>
-                                            <span th:if="${result.level=='75.1'}">Thợ chế biến thực phẩm và các thợ khác có liên quan</span>
-                                            <span th:if="${result.level=='75.2'}">Thợ xử lý gỗ, thợ sản xuất đồ gỗ và các thợ có liên quan</span>
-                                            <span th:if="${result.level=='75.3'}">Thợ may mặc và các thợ có liên quan</span>
-                                            <span th:if="${result.level=='75.4'}">Thợ thủ công khác và các thợ có liên quan</span>
+                                            <span th:if="${result.level=='75'}" th:text="#{membership.dataTable4Sub7.table.row15}">Thợ chế biến thực phẩm, công việc đồ gỗ, may mặc và nghề thủ công khác và thợ khác có liên quan</span>
+                                            <span th:if="${result.level=='75.1'}" th:text="#{membership.dataTable4Sub7.table.row16}">Thợ chế biến thực phẩm và các thợ khác có liên quan</span>
+                                            <span th:if="${result.level=='75.2'}" th:text="#{membership.dataTable4Sub7.table.row17}">Thợ xử lý gỗ, thợ sản xuất đồ gỗ và các thợ có liên quan</span>
+                                            <span th:if="${result.level=='75.3'}" th:text="#{membership.dataTable4Sub7.table.row18}">Thợ may mặc và các thợ có liên quan</span>
+                                            <span th:if="${result.level=='75.4'}" th:text="#{membership.dataTable4Sub7.table.row19}">Thợ thủ công khác và các thợ có liên quan</span>
                                         </td>
                                         <td>
                                             <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub7=male__${idx.index}__,colTable4Sub7=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'maleFullTimeIndefinite' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableMale.fullTimeIndefinite}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel == null or result.parentLevel == ''}" value="1"></input>

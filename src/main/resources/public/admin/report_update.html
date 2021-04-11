@@ -21,50 +21,50 @@
 
                     <form th:object="${reportForm}" enctype="multipart/form-data" th:action="@{/admin/doApproveReport}" method="post" class="form-horizontal form-label-left">
 
-                      <span class="section">Thông tin báo cáo</span>
+                      <span class="section" th:text="#{label.reportInfo}">Thông tin báo cáo</span>
 
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Họ tên</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.fullName}">Họ tên</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" readonly="readonly" th:field="*{fullName}" />
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.email}">Email</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="email" class="form-control col-md-7 col-xs-12" readonly="readonly" th:field="*{userId}" />
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Ngày thực hiện</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.implementationDate}">Ngày thực hiện</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" readonly="readonly" th:field="*{createdDate}" />
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="position">File duyệt <span class="required">*</span></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="position" th:text="#{label.fileApproved}">File duyệt <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="file" class="form-control-file custom-file-input" accept=".ppt, .pptx" th:field="*{file}"/>
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-md-9 text-right">
-                          <input type="submit" class="btn btn-danger" th:formaction="@{/admin/doRejectReport}" value="Xóa báo cáo" />
-                          <input type="submit" class="btn btn-success" value="Duyệt và gửi file" />
+                          <input type="submit" class="btn btn-danger" th:formaction="@{/admin/doRejectReport}" th:value="#{label.deleteReport}" />
+                          <input type="submit" class="btn btn-success" th:value="#{label.approvedAndSendFile}" />
                         </div>
                       </div>
                     </form>
                       <!-- <div class="ln_solid"></div> -->
-                      <span class="section">File bằng chứng</span>
+                      <span class="section" th:text="#{label.evidenceFile}">File bằng chứng</span>
                       <div class="table-responsive col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
 	                      <table class="table table-striped jambo_table table-bordered">
 	                        <thead>
 	                          <tr class="headings">
-	                            <th class="column-title text-center col-md-1 col-sm-1 col-xs-1">STT </th>
-	                            <th class="column-title text-center col-md-2 col-sm-2 col-xs-2">Lĩnh vực trọng điểm </th>
-	                            <th class="column-title text-center col-md-1 col-sm-1 col-xs-1">Câu hỏi </th>
-	                            <th class="column-title text-center col-md-4 col-sm-4 col-xs-4">Ghi chú </th>
-	                            <th class="column-title text-center col-md-4 col-sm-4 col-xs-4">File </th>
+	                            <th class="column-title text-center col-md-1 col-sm-1 col-xs-1"><span th:text="#{label.number}">STT </span></th>
+	                            <th class="column-title text-center col-md-2 col-sm-2 col-xs-2"><span th:text="#{label.keyAreas}">Lĩnh vực trọng điểm </span></th>
+	                            <th class="column-title text-center col-md-1 col-sm-1 col-xs-1"><span th:text="#{label.question}">Câu hỏi </span></th>
+	                            <th class="column-title text-center col-md-4 col-sm-4 col-xs-4"><span th:text="#{label.note}">Ghi chú </span></th>
+	                            <th class="column-title text-center col-md-4 col-sm-4 col-xs-4"><span th:text="#{label.file}">File </span></th>
 	                          </tr>
 	                        </thead>
 	                        <tbody>

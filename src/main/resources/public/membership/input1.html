@@ -13,7 +13,7 @@
     <div class="container minHeight">
         <div class="row justify-content-center align-self-center mt-3">
             <div class="card">
-                <div class="card-header">DỊCH CHUYỂN LAO ĐỘNG</div>
+                <div class="card-header"><span th:text="#{membership.dataTable1.group.laborTransfers}">DỊCH CHUYỂN LAO ĐỘNG</span></div>
                 <div style="padding-left: 1.25rem; color: red" id="validateClientText" >
                     <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
                       <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
@@ -24,36 +24,36 @@
                         <table class="table table-striped jambo_table table-bordered">
                             <thead>
                                 <tr class="headings">
-                                    <th class="column-title text-center" style="width: 22%;">Cấp độ trách nhiệm</th>
-                                    <th class="column-title text-center" style="width: 13%;">Tổng số nhân viên đầu kỳ tham chiếu 12 tháng</th>
-                                    <th class="column-title text-center" style="width: 13%;">Tuyển dụng vào cấp độ này từ bên ngoài công ty</th>
-                                    <th class="column-title text-center" style="width: 13%;">Thăng chức lên cấp độ này trong nội bộ công ty</th>
-                                    <th class="column-title text-center" style="width: 13%;">Thăng chức từ cấp độ này lên cấp cao hơn</th>
-                                    <th class="column-title text-center" style="width: 13%;">Tổng số nhân viên nghỉ việc từ cấp độ này</th>
-                                    <th class="column-title text-center" style="width: 13%;">Tổng số nhân viên cuối kỳ tham chiếu 12 tháng </th>
+                                    <th class="column-title text-center" style="width: 22%;"><label th:text="#{membership.dataTable1.table.col01}">Cấp độ trách nhiệm</label></th>
+                                    <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable1.table.col02}">Tổng số nhân viên đầu kỳ tham chiếu 12 tháng</label></th>
+                                    <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable1.table.col03}">Tuyển dụng vào cấp độ này từ bên ngoài công ty</label></th>
+                                    <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable1.table.col04}">Thăng chức lên cấp độ này trong nội bộ công ty</label></th>
+                                    <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable1.table.col05}">Thăng chức từ cấp độ này lên cấp cao hơn</label></th>
+                                    <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable1.table.col06}">Tổng số nhân viên nghỉ việc từ cấp độ này</label></th>
+                                    <th class="column-title text-center" style="width: 13%;"><label th:text="#{membership.dataTable1.table.col07}">Tổng số nhân viên cuối kỳ tham chiếu 12 tháng</label></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr th:each="result, idx : *{dataTable1DtoList}">
                                     <td class="pl-2">
-                                        <span th:if="${result.level=='5' and result.gender=='m'}">Nam giới giữ vị trí cấp 5</span>
-                                        <span th:if="${result.level=='5' and result.gender=='f'}">Nữ giới giữ vị trí cấp 5</span>
+                                        <span th:if="${result.level=='5' and result.gender=='m'}" th:text="#{membership.dataTable1.table.row01}">Nam giới giữ vị trí cấp 5</span>
+                                        <span th:if="${result.level=='5' and result.gender=='f'}" th:text="#{membership.dataTable1.table.row02}">Nữ giới giữ vị trí cấp 5</span>
                                         
-                                        <span th:if="${result.level=='4' and result.gender=='m'}">Nam giới giữ vị trí cấp 4</span>
-                                        <span th:if="${result.level=='4' and result.gender=='f'}">Nữ giới giữ vị trí cấp 4</span>
+                                        <span th:if="${result.level=='4' and result.gender=='m'}" th:text="#{membership.dataTable1.table.row03}">Nam giới giữ vị trí cấp 4</span>
+                                        <span th:if="${result.level=='4' and result.gender=='f'}" th:text="#{membership.dataTable1.table.row04}">Nữ giới giữ vị trí cấp 4</span>
                                         
-                                        <span th:if="${result.level=='3' and result.gender=='m'}">Nam giới giữ vị trí cấp 3</span>
-                                        <span th:if="${result.level=='3' and result.gender=='f'}">Nữ giới giữ vị trí cấp 3</span>
+                                        <span th:if="${result.level=='3' and result.gender=='m'}" th:text="#{membership.dataTable1.table.row05}">Nam giới giữ vị trí cấp 3</span>
+                                        <span th:if="${result.level=='3' and result.gender=='f'}" th:text="#{membership.dataTable1.table.row06}">Nữ giới giữ vị trí cấp 3</span>
                                         
-                                        <span th:if="${result.level=='2' and result.gender=='m'}">Nam giới giữ vị trí cấp 2</span>
-                                        <span th:if="${result.level=='2' and result.gender=='f'}">Nữ giới giữ vị trí cấp 2</span>
+                                        <span th:if="${result.level=='2' and result.gender=='m'}" th:text="#{membership.dataTable1.table.row07}">Nam giới giữ vị trí cấp 2</span>
+                                        <span th:if="${result.level=='2' and result.gender=='f'}" th:text="#{membership.dataTable1.table.row08}">Nữ giới giữ vị trí cấp 2</span>
                                         
-                                        <span th:if="${result.level=='1' and result.gender=='m'}">Nam giới giữ vị trí cấp 1</span>
-                                        <span th:if="${result.level=='1' and result.gender=='f'}">Nữ giới giữ vị trí cấp 1</span>
+                                        <span th:if="${result.level=='1' and result.gender=='m'}" th:text="#{membership.dataTable1.table.row09}">Nam giới giữ vị trí cấp 1</span>
+                                        <span th:if="${result.level=='1' and result.gender=='f'}" th:text="#{membership.dataTable1.table.row10}">Nữ giới giữ vị trí cấp 1</span>
                                         
-                                        <span th:if="${result.level=='0' and result.gender=='m'}">Tổng số lao động nam</span>
-                                        <span th:if="${result.level=='0' and result.gender=='f'}">Tổng số lao động nữ</span>
-                                        <span th:if="${result.level=='0' and result.gender=='mf'}">Tổng số lao động nam và nữ</span>
+                                        <span th:if="${result.level=='0' and result.gender=='m'}" th:text="#{membership.dataTable1.table.row11}">Tổng số lao động nam</span>
+                                        <span th:if="${result.level=='0' and result.gender=='f'}" th:text="#{membership.dataTable1.table.row12}">Tổng số lao động nữ</span>
+                                        <span th:if="${result.level=='0' and result.gender=='mf'}" th:text="#{membership.dataTable1.table.row13}">Tổng số lao động nam và nữ</span>
                                     </td>
                                     <td><input type="text" th:attr="rowTable1=__${idx.index}__,colTable1=${result.level!='0'} ? 'totalBegin12m' + ${result.gender} : ''" maxlength="7" class="changeAny validation" th:classappend="${result.level=='0'} ? bg-transparent : ''" th:readonly="${result.level=='0'}" th:field="*{dataTable1DtoList[__${idx.index}__].totalBegin12m}" /> </td>
                                     <td><input type="text" th:attr="rowTable1=__${idx.index}__,colTable1=${result.level!='0'} ? 'recruitedOutside' + ${result.gender} : ''" maxlength="7" class="changeAny validation" th:classappend="${result.level=='0'} ? bg-transparent : '' " th:readonly="${result.level=='0'}" th:field="*{dataTable1DtoList[__${idx.index}__].recruitedOutside}" /> </td>

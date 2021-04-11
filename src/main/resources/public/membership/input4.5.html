@@ -13,7 +13,7 @@
         <div class="container minHeight">
             <div class="row justify-content-center align-self-center mt-3">
                 <div class="card">
-                    <div class="card-header">DANH MỤC NGHỀ NGHIỆP - NHÂN VIÊN DỊCH VỤ VÀ BÁN HÀNG</div>
+                    <div class="card-header"><span th:text="#{membership.dataTable4Sub5.group.subject}">DANH MỤC NGHỀ NGHIỆP - NHÂN VIÊN DỊCH VỤ VÀ BÁN HÀNG</span></div>
                     <div style="padding-left: 1.25rem; color: red" id="validateClientText" >
 	                    <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
 	                      <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
@@ -24,44 +24,44 @@
                             <table class="table table-striped jambo_table table-bordered">
                                 <thead>
                                     <tr class="headings">
-                                        <th class="column-title text-center header-col-title" rowspan="2">Chức danh trong công ty</th>
-                                        <th class="column-title text-center" colspan="4">Nam</th>
-                                        <th class="column-title text-center" colspan="4">Nữ</th>
+                                        <th class="column-title text-center header-col-title" rowspan="2"><label th:text="#{membership.dataTable4Sub5.table.col01}">Chức danh trong công ty</label></th>
+                                        <th class="column-title text-center" colspan="4"><label th:text="#{membership.dataTable4Sub5.table.col02}">Nam</label></th>
+                                        <th class="column-title text-center" colspan="4"><label th:text="#{membership.dataTable4Sub5.table.col03}">Nữ</label></th>
                                     </tr>
                                     <tr class="headings">
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub5.table.col04}">Toàn thời gian, có xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub5.table.col05}">Toàn thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub5.table.col06}">Bán thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub5.table.col07}">Tổng số cuối kỳ 12 tháng</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub5.table.col08}">Toàn thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub5.table.col09}">Toàn thời gian, có xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub5.table.col10}">Bán thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub5.table.col11}">Tổng số cuối kỳ 12 tháng</label></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr th:each="result, idx : *{dataTable4DtoList}">
                                         <td th:class="${result.parentLevel == null or result.parentLevel == ''} ? pl-2 : 'pl-5'">
-                                            <span th:if="${result.level=='51'}">Nhân viên dịch vụ cá nhân</span>
-                                            <span th:if="${result.level=='51.1'}">Nhân viên hướng dẫn, tổ chức khách du lịch</span>
-                                            <span th:if="${result.level=='51.2'}">Nhân viên đầu bếp</span>
-                                            <span th:if="${result.level=='51.3'}">Người bồi bàn, người phục vụ ở các quầy rượu</span>
-                                            <span th:if="${result.level=='51.4'}">Thợ làm đầu, nhân viên làm đẹp</span>
-                                            <span th:if="${result.level=='51.5'}">Người giám sát tòa nhà, quản gia</span>
-                                            <span th:if="${result.level=='51.6'}">Nhân viên dịch vụ cá nhân khác</span>
+                                            <span th:if="${result.level=='51'}" th:text="#{membership..dataTable4Sub5.table.row01}">Nhân viên dịch vụ cá nhân</span>
+                                            <span th:if="${result.level=='51.1'}" th:text="#{membership.dataTable4Sub5.table.row02}">Nhân viên hướng dẫn, tổ chức khách du lịch</span>
+                                            <span th:if="${result.level=='51.2'}" th:text="#{membership.dataTable4Sub5.table.row03}">Nhân viên đầu bếp</span>
+                                            <span th:if="${result.level=='51.3'}" th:text="#{membership.dataTable4Sub5.table.row04}">Người bồi bàn, người phục vụ ở các quầy rượu</span>
+                                            <span th:if="${result.level=='51.4'}" th:text="#{membership.dataTable4Sub5.table.row05}">Thợ làm đầu, nhân viên làm đẹp</span>
+                                            <span th:if="${result.level=='51.5'}" th:text="#{membership.dataTable4Sub5.table.row06}">Người giám sát tòa nhà, quản gia</span>
+                                            <span th:if="${result.level=='51.6'}" th:text="#{membership.dataTable4Sub5.table.row07}">Nhân viên dịch vụ cá nhân khác</span>
                                             
-                                            <span th:if="${result.level=='52'}">Nhân viên bán hàng</span>
-                                            <span th:if="${result.level=='52.1'}">Người bán hàng trên đường phố và tại chợ</span>
-                                            <span th:if="${result.level=='52.2'}">Nhân viên bán hàng trong cửa hàng</span>
-                                            <span th:if="${result.level=='52.3'}">Thủ quỹ và nhân viên thu tiền và bán vé</span>
-                                            <span th:if="${result.level=='52.4'}">Nhân viên bán hàng khác</span>
+                                            <span th:if="${result.level=='52'}" th:text="#{membership.dataTable4Sub5.table.row08}">Nhân viên bán hàng</span>
+                                            <span th:if="${result.level=='52.1'}" th:text="#{membership.dataTable4Sub5.table.row09}">Người bán hàng trên đường phố và tại chợ</span>
+                                            <span th:if="${result.level=='52.2'}" th:text="#{membership.dataTable4Sub5.table.row10}">Nhân viên bán hàng trong cửa hàng</span>
+                                            <span th:if="${result.level=='52.3'}" th:text="#{membership.dataTable4Sub5.table.row11}">Thủ quỹ và nhân viên thu tiền và bán vé</span>
+                                            <span th:if="${result.level=='52.4'}" th:text="#{membership.dataTable4Sub5.table.row12}">Nhân viên bán hàng khác</span>
                                             
-                                            <span th:if="${result.level=='53'}">Nhân viên chăm sóc cá nhân</span>
-                                            <span th:if="${result.level=='53.1'}">Nhân viên chăm sóc trẻ em và người phụ tá cho giáo viên</span>
-                                            <span th:if="${result.level=='53.2'}">Hộ lý và nhân viên chăm sóc cá nhân trong các dịch vụ về sức khỏe</span>
+                                            <span th:if="${result.level=='53'}" th:text="#{membership.dataTable4Sub5.table.row13}">Nhân viên chăm sóc cá nhân</span>
+                                            <span th:if="${result.level=='53.1'}" th:text="#{membership.dataTable4Sub5.table.row14}">Nhân viên chăm sóc trẻ em và người phụ tá cho giáo viên</span>
+                                            <span th:if="${result.level=='53.2'}" th:text="#{membership.dataTable4Sub5.table.row15}">Hộ lý và nhân viên chăm sóc cá nhân trong các dịch vụ về sức khỏe</span>
                                             
-                                            <span th:if="${result.level=='54'}">Nhân viên dịch vụ bảo vệ</span>
-                                            <span th:if="${result.level=='54.1'}">Nhân viên dịch vụ bảo vệ</span>
+                                            <span th:if="${result.level=='54'}" th:text="#{membership.dataTable4Sub5.table.row16}">Nhân viên dịch vụ bảo vệ</span>
+                                            <span th:if="${result.level=='54.1'}" th:text="#{membership.dataTable4Sub5.table.row17}">Nhân viên dịch vụ bảo vệ</span>
                                         </td>
                                         <td>
                                             <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub5=male__${idx.index}__,colTable4Sub5=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'maleFullTimeIndefinite' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableMale.fullTimeIndefinite}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel == null or result.parentLevel == ''}" value="1"></input>

@@ -13,13 +13,13 @@
 				            <div class="form-card">
 				                <div class="row">
 				                    <div class="col-12">
-				                        <h2 class="fs-title">Cảm ơn bạn đã gửi thông tin cho chúng tôi.</h2>
-				                        <h2 class="fs-title">Báo cáo sẽ được tự động gửi vào mail của bạn trong 7 đến 10 ngày tới đây.</h2>
+				                        <h2 class="fs-title"><span th:text="#{submit.success.thanks}">Cảm ơn bạn đã gửi thông tin cho chúng tôi.</span></h2>
+				                        <h2 class="fs-title"><span th:text="#{submit.success.reportSend}">Báo cáo sẽ được tự động gửi vào mail của bạn trong 7 đến 10 ngày tới đây.</span></h2>
 				                    </div>
 				                </div>
 				                <br /> <br />
 				                <h2 class="purple-text text-center">
-				                    <strong>HOÀN THÀNH !</strong>
+				                    <strong th:text="#{submit.success.complete}">HOÀN THÀNH !</strong>
 				                </h2>
 				                <br />
 				                <div class="row justify-content-center">
@@ -30,7 +30,7 @@
 				                <br /> <br />
 				                <div class="row justify-content-center">
 				                    <div class="col-7 text-center">
-				                        <a th:href="@{/membership/}" class="btn btn-back-home" role="button" aria-pressed="true">Về trang chủ</a>
+				                        <a th:href="@{/membership/}" class="btn btn-back-home" role="button" aria-pressed="true" th:text="#{label.gotoHomePage}">Về trang chủ</a>
 				                    </div>
 				                </div>
 				            </div>

@@ -13,7 +13,7 @@
         <div class="container minHeight">
             <div class="row justify-content-center align-self-center mt-3">
                 <div class="card">
-                    <div class="card-header">DANH MỤC NGHỀ NGHIỆP - CHUYÊN GIA</div>
+                    <div class="card-header"><span th:text="#{membership.dataTable4Sub2.group.subject}">DANH MỤC NGHỀ NGHIỆP - CHUYÊN GIA</span></div>
 
                     <div style="padding-left: 1.25rem; color: red" id="validateClientText" >
 	                    <ul th:if="${#fields.hasErrors('*')}" class="error-list" style="color: red" >
@@ -26,62 +26,62 @@
                             <table class="table table-striped jambo_table table-bordered">
                                 <thead>
                                     <tr class="headings">
-                                        <th class="column-title text-center header-col-title" rowspan="2">Chức danh trong công ty</th>
-                                        <th class="column-title text-center" colspan="4">Nam</th>
-										<th class="column-title text-center" colspan="4">Nữ</th>
+                                        <th class="column-title text-center header-col-title" rowspan="2"><label th:text="#{membership.dataTable4Sub2.table.col01}">Chức danh trong công ty</label></th>
+                                        <th class="column-title text-center" colspan="4"><label th:text="#{membership.dataTable4Sub2.table.col02}">Nam</label></th>
+										<th class="column-title text-center" colspan="4"><label th:text="#{membership.dataTable4Sub2.table.col03}">Nữ</label></th>
                                     </tr>
                                     <tr class="headings">
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Toàn thời gian, có xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Bán thời gian, không xác định thời hạn</th>
-                                        <th class="column-title text-center header-col-time">Tổng số cuối kỳ 12 tháng</th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub2.table.col04}">Toàn thời gian, có xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub2.table.col05}">Toàn thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub2.table.col06}">Bán thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub2.table.col07}">Tổng số cuối kỳ 12 tháng</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub2.table.col08}">Toàn thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub2.table.col09}">Toàn thời gian, có xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub2.table.col10}">Bán thời gian, không xác định thời hạn</label></th>
+                                        <th class="column-title text-center header-col-time"><label th:text="#{membership.dataTable4Sub2.table.col11}">Tổng số cuối kỳ 12 tháng</label></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr th:each="result, idx : *{dataTable4DtoList}">
                                         <td th:class="${result.parentLevel == null or result.parentLevel == ''} ? pl-2 : 'pl-5'">
-                                            <span th:if="${result.level=='21'}">Nhà chuyên môn trong lĩnh vực khoa học và kỹ thuật</span>
-                                            <span th:if="${result.level=='21.1'}">Nhà chuyên môn về khoa học trái đất và vật lý</span>
-                                            <span th:if="${result.level=='21.2'}">Nhà toán học và thống kê học</span>
-                                            <span th:if="${result.level=='21.3'}">Nhà chuyên môn về khoa học sự sống</span>
-                                            <span th:if="${result.level=='21.4'}">Nhà chuyên môn về kỹ thuật (trừ kỹ thuật điện)</span>
-                                            <span th:if="${result.level=='21.5'}">Kỹ sư kỹ thuật điện</span>
-                                            <span th:if="${result.level=='21.6'}">Kiến trúc sư, nhà lập quy hoạch, kiểm soát viên và nhà thiết kế</span>
+                                            <span th:if="${result.level=='21'}" th:text="#{membership.dataTable4Sub2.table.row01}">Nhà chuyên môn trong lĩnh vực khoa học và kỹ thuật</span>
+                                            <span th:if="${result.level=='21.1'}" th:text="#{membership.dataTable4Sub2.table.row02}">Nhà chuyên môn về khoa học trái đất và vật lý</span>
+                                            <span th:if="${result.level=='21.2'}" th:text="#{membership.dataTable4Sub2.table.row03}">Nhà toán học và thống kê học</span>
+                                            <span th:if="${result.level=='21.3'}" th:text="#{membership.dataTable4Sub2.table.row04}">Nhà chuyên môn về khoa học sự sống</span>
+                                            <span th:if="${result.level=='21.4'}" th:text="#{membership.dataTable4Sub2.table.row05}">Nhà chuyên môn về kỹ thuật (trừ kỹ thuật điện)</span>
+                                            <span th:if="${result.level=='21.5'}" th:text="#{membership.dataTable4Sub2.table.row06}">Kỹ sư kỹ thuật điện</span>
+                                            <span th:if="${result.level=='21.6'}" th:text="#{membership.dataTable4Sub2.table.row07}">Kiến trúc sư, nhà lập quy hoạch, kiểm soát viên và nhà thiết kế</span>
 
-                                            <span th:if="${result.level=='22'}">Nhà chuyên môn về sức khỏe</span>
-                                            <span th:if="${result.level=='22.1'}">Bác sỹ y khoa</span>
-                                            <span th:if="${result.level=='22.2'}">Y tá và hộ sinh</span>
-                                            <span th:if="${result.level=='22.3'}">Nhà chuyên môn về thuốc cổ truyền và thuốc bổ trợ</span>
-                                            <span th:if="${result.level=='22.4'}">Bác sỹ phụ tá</span>
-                                            <span th:if="${result.level=='22.5'}">Bác sỹ thú y</span>
-                                            <span th:if="${result.level=='22.6'}">Nhà chuyên môn về sức khỏe khác</span>
+                                            <span th:if="${result.level=='22'}" th:text="#{membership.dataTable4Sub2.table.row08}">Nhà chuyên môn về sức khỏe</span>
+                                            <span th:if="${result.level=='22.1'}" th:text="#{membership.dataTable4Sub2.table.row09}">Bác sỹ y khoa</span>
+                                            <span th:if="${result.level=='22.2'}" th:text="#{membership.dataTable4Sub2.table.row10}">Y tá và hộ sinh</span>
+                                            <span th:if="${result.level=='22.3'}" th:text="#{membership.dataTable4Sub2.table.row11}">Nhà chuyên môn về thuốc cổ truyền và thuốc bổ trợ</span>
+                                            <span th:if="${result.level=='22.4'}" th:text="#{membership.dataTable4Sub2.table.row12}">Bác sỹ phụ tá</span>
+                                            <span th:if="${result.level=='22.5'}" th:text="#{membership.dataTable4Sub2.table.row13}">Bác sỹ thú y</span>
+                                            <span th:if="${result.level=='22.6'}" th:text="#{membership.dataTable4Sub2.table.row14}">Nhà chuyên môn về sức khỏe khác</span>
 
-                                            <span th:if="${result.level=='23'}">Nhà chuyên môn về giáo dục</span>
-                                            <span th:if="${result.level=='23.1'}">Giáo viên cao đẳng, đại học và cao học</span>
-                                            <span th:if="${result.level=='23.2'}">Giáo viên dạy nghề</span>
-                                            <span th:if="${result.level=='23.3'}">Giáo viên trung học</span>
-                                            <span th:if="${result.level=='23.4'}">Giáo viên tiểu học và mầm non</span>
-                                            <span th:if="${result.level=='23.5'}">Nhà chuyên môn giáo dục khác chưa được phân loại</span>
+                                            <span th:if="${result.level=='23'}" th:text="#{membership.dataTable4Sub2.table.row15}">Nhà chuyên môn về giáo dục</span>
+                                            <span th:if="${result.level=='23.1'}" th:text="#{membership.dataTable4Sub2.table.row16}">Giáo viên cao đẳng, đại học và cao học</span>
+                                            <span th:if="${result.level=='23.2'}" th:text="#{membership.dataTable4Sub2.table.row17}">Giáo viên dạy nghề</span>
+                                            <span th:if="${result.level=='23.3'}" th:text="#{membership.dataTable4Sub2.table.row18}">Giáo viên trung học</span>
+                                            <span th:if="${result.level=='23.4'}" th:text="#{membership.dataTable4Sub2.table.row19}">Giáo viên tiểu học và mầm non</span>
+                                            <span th:if="${result.level=='23.5'}" th:text="#{membership.dataTable4Sub2.table.row20}">Nhà chuyên môn giáo dục khác chưa được phân loại</span>
 
-                                            <span th:if="${result.level=='24'}">Nhà chuyên môn về kinh doanh và quản lý</span>
-                                            <span th:if="${result.level=='24.1'}">Nhà chuyên môn về tài chính</span>
-                                            <span th:if="${result.level=='24.2'}">Nhà chuyên môn về quản trị</span>
-                                            <span th:if="${result.level=='24.3'}">Nhà chuyên môn về bán hàng, marketing và quan hệ công chúng</span>
+                                            <span th:if="${result.level=='24'}" th:text="#{membership.dataTable4Sub2.table.row21}">Nhà chuyên môn về kinh doanh và quản lý</span>
+                                            <span th:if="${result.level=='24.1'}" th:text="#{membership.dataTable4Sub2.table.row22}">Nhà chuyên môn về tài chính</span>
+                                            <span th:if="${result.level=='24.2'}" th:text="#{membership.dataTable4Sub2.table.row23}">Nhà chuyên môn về quản trị</span>
+                                            <span th:if="${result.level=='24.3'}" th:text="#{membership.dataTable4Sub2.table.row24}">Nhà chuyên môn về bán hàng, marketing và quan hệ công chúng</span>
 
-                                            <span th:if="${result.level=='25'}">Nhà chuyên môn trong lĩnh vực CNTT và truyền thông</span>
-                                            <span th:if="${result.level=='25.1'}">Nhà chuyên môn về phân tích và phát triển phần mềm và các ứng dụng</span>
-                                            <span th:if="${result.level=='25.2'}">Nhà chuyên môn về cơ sở dữ liệu và mạng</span>
+                                            <span th:if="${result.level=='25'}" th:text="#{membership.dataTable4Sub2.table.row25}">Nhà chuyên môn trong lĩnh vực CNTT và truyền thông</span>
+                                            <span th:if="${result.level=='25.1'}" th:text="#{membership.dataTable4Sub2.table.row26}">Nhà chuyên môn về phân tích và phát triển phần mềm và các ứng dụng</span>
+                                            <span th:if="${result.level=='25.2'}" th:text="#{membership.dataTable4Sub2.table.row27}">Nhà chuyên môn về cơ sở dữ liệu và mạng</span>
 
-                                            <span th:if="${result.level=='26'}">Nhà chuyên môn về luật pháp, văn hóa, xã hội</span>
-                                            <span th:if="${result.level=='26.1'}">Nhà chuyên môn về luật</span>
-                                            <span th:if="${result.level=='26.2'}">Thủ thư, chuyên viên lưu trữ văn thư và người quản lý</span>
-                                            <span th:if="${result.level=='26.3'}">Nhà chuyên môn về xã hội và tôn giáo</span>
-                                            <span th:if="${result.level=='26.4'}">Nhà văn, nhà báo và nhà ngôn ngữ học</span>
-                                            <span th:if="${result.level=='26.5'}">Nghệ sỹ sáng tạo và trình diễn</span>
+                                            <span th:if="${result.level=='26'}" th:text="#{membership.dataTable4Sub2.table.row28}">Nhà chuyên môn về luật pháp, văn hóa, xã hội</span>
+                                            <span th:if="${result.level=='26.1'}" th:text="#{membership.dataTable4Sub2.table.row29}">Nhà chuyên môn về luật</span>
+                                            <span th:if="${result.level=='26.2'}" th:text="#{membership.dataTable4Sub2.table.row30}">Thủ thư, chuyên viên lưu trữ văn thư và người quản lý</span>
+                                            <span th:if="${result.level=='26.3'}" th:text="#{membership.dataTable4Sub2.table.row31}">Nhà chuyên môn về xã hội và tôn giáo</span>
+                                            <span th:if="${result.level=='26.4'}" th:text="#{membership.dataTable4Sub2.table.row32}">Nhà văn, nhà báo và nhà ngôn ngữ học</span>
+                                            <span th:if="${result.level=='26.5'}" th:text="#{membership.dataTable4Sub2.table.row33}">Nghệ sỹ sáng tạo và trình diễn</span>
                                         </td>
                                         <td>
                                             <input class="changeAny" maxlength="7" type="text" th:attr="rowTable4Sub2=male__${idx.index}__,colTable4Sub2=${result.parentLevel == null or result.parentLevel == ''} ? '' : 'maleFullTimeIndefinite' + ${result.parentLevel}" th:field="*{dataTable4DtoList[__${idx.index}__].tableMale.fullTimeIndefinite}" th:classappend="${result.parentLevel == null or result.parentLevel == ''} ? bg-transparent : validation" th:readonly="${result.parentLevel == null or result.parentLevel == ''}" value="1"></input>

@@ -25,9 +25,9 @@
                 <div class="x_panel">
                   <div class="x_content">
                     <form id="memberAddForm" th:object="${userInfoForm}" th:action="@{/admin/doAddUserInfo}" method="post" class="form-horizontal form-label-left">
-                      <span class="section">Thông tin tài khoản</span>
+                      <span class="section" th:text="#{label.account.info}">Thông tin tài khoản</span>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Họ tên <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.fullName}">Họ tên <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" th:field="*{fullName}"/>
@@ -35,7 +35,7 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.email}">Email <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" th:field="*{userId}"/>
@@ -43,7 +43,7 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Số điện thoại <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.phoneNum}">Số điện thoại <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" th:field="*{phone}"/>
@@ -51,7 +51,7 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Chức vụ <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.position}">Chức vụ <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" th:field="*{position}"/>
@@ -59,7 +59,7 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tên công ty <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.companyName}">Tên công ty <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" th:field="*{companyName}"/>
@@ -67,7 +67,7 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tên công ty viết tắt<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.companyNameAbbr}">Tên công ty viết tắt<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" th:field="*{companyNameAbbr}"/>
@@ -75,57 +75,57 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Quy mô công ty <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.companySize}">Quy mô công ty <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select class="form-control" th:field="*{companyScale}">
-                            <option value="0">0 - 200 người</option>
-                            <option value="200">200 - 500 người</option>
-                            <option value="500">500 - 1000 người</option>
-                            <option value="1000">1000 - 5000 người</option>
-                            <option value="5000">Trên 5000 người</option>
+                            <option value="0" th:text="#{label.company.size.0.200}">0 - 200 người</option>
+                            <option value="200" th:text="#{label.company.size.200.500}">200 - 500 người</option>
+                            <option value="500" th:text="#{label.company.size.500.1000}">500 - 1000 người</option>
+                            <option value="1000" th:text="#{label.company.size.1000.5000}">1000 - 5000 người</option>
+                            <option value="5000" th:text="#{label.company.size.greaterThan5000}">Trên 5000 người</option>
                           </select>
                           <span th:if="${#fields.hasErrors('companyScale')}" th:errors="*{companyScale}" style="color: red"></span>
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3">Ngành </label>
+                        <label class="control-label col-md-3" th:text="#{label.companyBusiness}">Ngành </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control col-md-7 col-xs-12" th:field="*{companyBusiness}"/>
                           <span th:if="${#fields.hasErrors('companyBusiness')}" th:errors="*{companyBusiness}" style="color: red"></span>
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Khu vực <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.area}">Khu vực <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select class="form-control" th:field="*{companyArea}">
-                            <option value="HN">Hà Nội</option>
-                            <option value="HCM">TP Hồ Chí Minh</option>
-                            <option value="MB">Miền Bắc</option>
-                            <option value="MT">Miền Trung</option>
-                            <option value="MN">Miền Nam</option>
+                            <option value="HN" th:text="#{label.area.hanoi}">Hà Nội</option>
+                            <option value="HCM" th:text="#{label.area.hcm}">TP Hồ Chí Minh</option>
+                            <option value="MB" th:text="#{label.area.northern}">Miền Bắc</option>
+                            <option value="MT" th:text="#{label.area.central}">Miền Trung</option>
+                            <option value="MN" th:text="#{label.area.sourth}">Miền Nam</option>
                           </select>
                           <span th:if="${#fields.hasErrors('companyArea')}" th:errors="*{companyArea}" style="color: red"></span>
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Loại tài khoản <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" th:text="#{label.account.type}">Loại tài khoản <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <div class="radio">
                             <label>
-                              <input type="radio" checked="checked" value="02" th:field="*{userType}"/> Miễn phí
+                              <input type="radio" checked="checked" value="02" th:field="*{userType}"/><span th:text="#{label.account.type.free}"> Miễn phí</span>
                             </label>
                           </div>
                           <div class="radio">
                             <label>
-                              <input type="radio" value="01" th:field="*{userType}"/> Trả phí
+                              <input type="radio" value="01" th:field="*{userType}"/><span th:text="#{label.account.type.charged}">Trả phí</span>
                             </label>
                           </div>
                           <div class="radio">
                             <label>
-                              <input type="radio" value="00" th:field="*{userType}"/> Administrator
+                              <input type="radio" value="00" th:field="*{userType}"/><span th:text="#{label.account.type.administrator}"> Administrator</span>
                             </label>
                           </div>
                           <br />
@@ -136,7 +136,7 @@
                       <div class="form-group">
                         <div class="col-md-9 text-right">
                           <input type="submit" class="btn btn-success" value="Thêm"/>
-                          <a type="button" class="btn btn-warning btn-cancel" th:href="@{/admin/initSearchUserInfo}">Hủy</a>
+                          <a type="button" class="btn btn-warning btn-cancel" th:href="@{/admin/initSearchUserInfo}" th:text="#{label.cancel}">Hủy</a>
                         </div>
                       </div>
                     </form>
