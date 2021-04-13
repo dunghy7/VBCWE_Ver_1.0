@@ -13,48 +13,48 @@ import lombok.Data;
 @Data
 public class MemberForm {
 	
-    @NotBlank(message = "Tên công ty không được để trống.")
-	@Max(value = 200, message = "Không được vượt quá {0} kí tự.")
+    @NotBlank(message = "{msg_error_empty_company}")
+	@Max(value = 200, message = "{msg_error_maxlength}")
 	private String companyName;
 	
-    @NotBlank(message = "Địa chỉ không được để trống.")
-	@Max(value = 500, message = "Không được vượt quá {0} kí tự.")
+    @NotBlank(message = "{msg_error_empty_address}")
+	@Max(value = 500, message = "{msg_error_maxlength}")
 	private String address;
 	
-    @NotBlank(message = "Quận không được để trống.")
-	@Max(value = 50, message = "Không được vượt quá {0} kí tự.")
+    @NotBlank(message = "{msg_error_empty_district}")
+	@Max(value = 50, message = "{msg_error_maxlength}")
 	private String district;
 	
-    @NotBlank(message = "Thành phố không được để trống.")
-	@Max(value = 50, message = "Không được vượt quá {0} kí tự.")
+    @NotBlank(message = "{msg_error_empty_city}")
+	@Max(value = 50, message = "{msg_error_maxlength}")
 	private String city;
 	
-    @NotBlank(message = "Họ tên không được để trống.")
-	@Max(value = 100, message = "Không được vượt quá {0} kí tự.")
+    @NotBlank(message = "{msg_error_empty_fullname}")
+	@Max(value = 100, message = "{msg_error_maxlength}")
 	private String fullName;
 	
-    @NotBlank(message = "Chức vụ không được để trống.")
-	@Max(value = 200, message = "Không được vượt quá {0} kí tự.")
+    @NotBlank(message = "{msg_error_empty_position}")
+	@Max(value = 200, message = "{msg_error_maxlength}")
 	private String position;
 	
-    @NotBlank(message = "Số điện thoại bàn không được để trống.")
-	@Max(value = 15, message = "Không được vượt quá {0} kí tự.")
-    @Pattern(regexp = "[0-9]+", message = "Chỉ được điền số.")
+    @NotBlank(message = "{msg_error_empty_desk_phone}")
+	@Max(value = 15, message = "{msg_error_maxlength}")
+    @Pattern(regexp = "[0-9]+", message = "{msg_error_number}")
 	private String phone;
 	
-    @NotBlank(message = "Số di động không được để trống.")
-	@Max(value = 15, message = "Không được vượt quá {0} kí tự.")
-    @Pattern(regexp = "[0-9]+", message = "Chỉ được điền số.")
+    @NotBlank(message = "{msg_error_empty_cell_phone}")
+	@Max(value = 15, message = "{msg_error_maxlength}")
+    @Pattern(regexp = "[0-9]+", message = "{msg_error_number}")
 	private String mobile;
 	
-    @NotBlank(message = "Số fax không được để trống.")
-	@Max(value = 15, message = "Không được vượt quá {0} kí tự.")
-    @Pattern(regexp = "[0-9]+", message = "Chỉ được điền số.")
+    @NotBlank(message = "{msg_error_empty_fax}")
+	@Max(value = 15, message = "{msg_error_maxlength}")
+    @Pattern(regexp = "[0-9]+", message = "{msg_error_number}")
 	private String fax;
 	
-    @NotBlank(message = "Email không được để trống.")
-	@Max(value = 50, message = "Không được vượt quá {0} kí tự.")
-	@Email(message = "Email không hợp lệ.")
+    @NotBlank(message = "{msg_error_empty_email}")
+	@Max(value = 50, message = "{msg_error_maxlength}")
+	@Email(message = "{msg_error_email_struct_invalid}")
 	private String email;
 
 	private List<SurveyForm> survey;

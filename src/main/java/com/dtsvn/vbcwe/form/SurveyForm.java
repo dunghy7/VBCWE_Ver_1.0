@@ -13,7 +13,7 @@ public class SurveyForm {
 	private String note;
 	
 	
-	@NotBlank(message = "Thông tin không được để trống")
+	@NotBlank(message = "{msg_error_common_empty}")
 	private String answer;
 	private String other;
 }

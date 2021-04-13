@@ -2,6 +2,7 @@ package com.dtsvn.vbcwe.common;
 
 public class MessageConstants {
 
+	public static final String MSG_ERROR_COMMON_EMPTY = "msg_error_common_empty";
 	public static final String MSG_ERROR_EMPTY = "msg_error_empty";
 	public static final String MSG_ERROR_MAX_LENGTH = "msg_error_maxlength";
 	public static final String MSG_ERROR_NUMBER = "msg_error_number";

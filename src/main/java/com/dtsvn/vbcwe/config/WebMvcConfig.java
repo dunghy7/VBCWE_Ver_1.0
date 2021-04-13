@@ -167,7 +167,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	@Bean(name = "messageSource")
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasenames("classpath:i18n/message");
+		messageSource.setBasenames("classpath:i18n/message", "classpath:i18n/validate-message");
 		messageSource.setUseCodeAsDefaultMessage(true);
 		messageSource.setDefaultEncoding(Constant.UTF_8_CHARSET);
 		messageSource.setCacheSeconds(0);
@@ -208,6 +208,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         LocaleChangeInterceptor localeInterceptor = new LocaleChangeInterceptor();
         localeInterceptor.setParamName("lang");
 
-        registry.addInterceptor(localeInterceptor).addPathPatterns("/*");
+        registry.addInterceptor(localeInterceptor).addPathPatterns("/**");
     }
 }

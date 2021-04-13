@@ -201,7 +201,7 @@ function setValidationForInfoForm(elm) {
                 required: messageError.required,
                 minlength: messageError.minLength.format("8"),
                 maxlength: messageError.maxLength.format("50"),
-                equalTo: messageError.notEqual.format("Nhập lại mật khẩu", "mật khẩu")
+                equalTo: messageError.notEqual.format(messageError.inputPassword, messageError.password)
             },
             "passwordOld": {
                 required: messageError.required,
@@ -217,7 +217,7 @@ function setValidationForInfoForm(elm) {
                 required: messageError.required,
                 minlength: messageError.minLength.format("8"),
                 maxlength: messageError.maxLength.format("50"),
-                equalTo: messageError.notEqual.format("Nhập lại mật khẩu mới", "mật khẩu mới")
+                equalTo: messageError.notEqual.format(messageError.inputNewPassword, messageError.newPassword)
             }
         }
     });

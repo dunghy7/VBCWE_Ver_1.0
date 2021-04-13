@@ -10,7 +10,7 @@ public class SurveyDTO {
 	private String no;
 	private String level;
 	
-	@NotEmpty(message = "Thông tin không được để trống")
+	@NotEmpty(message = "{msg_error_common_empty}")
 	private String answer;
 	private String other;
 }

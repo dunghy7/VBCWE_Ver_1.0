@@ -20,7 +20,7 @@
 <script type='text/javascript' th:src="@{/static/js/bootstrap_js/bootstrap.min.js}"></script>
 <script type='text/javascript' th:src="@{/static/js/common.js}"></script>
 <script type='text/javascript' th:src="@{/static/js/utilities.js}"></script>
-<script type='text/javascript' th:src="@{/static/js/message.js}"></script>
+<script th:src="@{__${#locale}__ == 'en' ? '/static/js/message_en.js' : '/static/js/message.js'}"></script>
 <script type='text/javascript' th:src="@{/static/js/jquery.validate.min.js}"></script>
 </head>
 </html>
