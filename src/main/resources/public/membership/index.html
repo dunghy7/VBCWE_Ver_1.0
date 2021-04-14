@@ -11,7 +11,7 @@
 <body>
     <main layout:fragment="content">
     	<!-- Loader -->
-  		<div class="loader loader-default is-active" style="display:none;" data-blink="true" data-text="Đang xử lý file "></div>
+  		<div class="loader loader-default is-active" style="display:none;" data-blink="true" th:attr="data-text=#{label.file.processing}"></div>
        <div class="clearfix"></div>
             <section class="content-header" th:if="${messageError != null}">
                 <div class="alert alert-error">
@@ -204,7 +204,7 @@
             <th:block th:if="${session.reportStatus == null}">
                 <div class="row justify-content-center align-self-center">
                     <div class="col-lg-11 text-center">
-                        <input type="submit" class="btn btn-send-contact font-weight-bold" style="width: 120px;" th:value="#{membership.index.group.submitReview}" />
+                        <input type="submit" class="btn btn-send-contact font-weight-bold" style="width: 120px;" value="Gửi đánh giá" />
                     </div>
                 </div>
             </th:block>
