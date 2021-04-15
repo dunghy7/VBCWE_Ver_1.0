@@ -3002,7 +3002,7 @@
                             </div>
                             <input type="button" name="next" class="next d-none"/>
                             <th:block th:if="${session.reportStatus == null}">
-                                 <input type="button" name="next" class="action-button" id="completeSurvey" value="Hoàn thành" />
+                                 <input type="button" name="next" class="action-button" id="completeSurvey" th:value="#{form.button.complete}" />
                                  <input type="button" name="save" class="action-button stoped" th:value="#{form.button.save}" />
                             </th:block>
                             <input type="button" name="previous" class="previous action-button-previous float-left" th:value="#{form.button.back}" />
