@@ -108,18 +108,18 @@
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <div class="radio">
-                            <label th:text="#{label.account.type.free}">
-                              <input type="radio" checked="checked" value="02" th:field="*{userType}"/> Miễn phí
+                            <label>
+                           	  <input type="radio" checked="checked" value="02" th:field="*{userType}"/><span th:text="#{label.account.type.free}"> Miễn phí</span>
                             </label>
                           </div>
                           <div class="radio">
-                            <label th:text="#{label.account.type.charged}">
-                              <input type="radio" value="01" th:field="*{userType}"/> Trả phí
+                            <label>
+                              <input type="radio" value="01" th:field="*{userType}"/><span th:text="#{label.account.type.charged}">Trả phí</span>
                             </label>
                           </div>
                           <div class="radio">
-                            <label th:text="#{label.account.type.administrator}">
-                              <input type="radio" value="00" th:field="*{userType}"/> Administrator
+                            <label>
+                              <input type="radio" value="00" th:field="*{userType}"/><span th:text="#{label.account.type.administrator}"> Administrator</span>
                             </label>
                           </div>
                           <br />
